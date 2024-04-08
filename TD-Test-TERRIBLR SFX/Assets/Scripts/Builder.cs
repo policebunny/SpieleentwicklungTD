@@ -1,0 +1,71 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Builder : MonoBehaviour
+{
+    public Vector3 StartPosition;
+    public Vector3 newPosition;
+    public GameObject BobtheBuilder;
+    public float MovementSpeed;
+    public bool IsBuilding;
+    public bool IsMoving;
+    public bool DoneBuilding;
+    public int BuildTime = 1;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        StartPosition = transform.position;
+    }
+
+    public enum Doing
+    {
+        IsMoving,
+        DoneBuilding,
+        IsBuilding
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if(IsMoving)
+        {
+            
+            Debug.Log("Move it");
+            transform.position = Vector3.MoveTowards(transform.position, newPosition, MovementSpeed * Time.deltaTime);
+            if (Vector3.Distance(transform.position, newPosition) < .8f)
+            {
+                IsMoving = false;
+                IsBuilding = true;
+            }
+        }
+        if (IsBuilding)
+        {
+            if (BuildTime < 50)
+            {
+                BuildTime++;
+            } else
+            {
+                IsBuilding = false;
+                BuildTime = 0;
+                DoneBuilding = true;
+            }
+            
+        }
+        if (DoneBuilding)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, StartPosition, MovementSpeed * Time.deltaTime);
+        }
+    }
+
+    public bool StillMoving()
+    {
+        return IsMoving;
+    }
+
+    public bool Done_Building()
+    {
+        return DoneBuilding;
+    }
+}

@@ -66,9 +66,11 @@ public class TowerManager : MonoBehaviour
 
                         Vector3 mousePosition = indicator.position;
                         builder.newPosition = mousePosition;
+                        builder.DoneBuilding = false;
                         builder.IsMoving = true;
                         // BuildIt();
-                        
+                        builder.toBuild = activeTower;
+                        builder.indicatorTower = indicator;
                         
                         Instantiate(activeTower, indicator.position, activeTower.transform.rotation);
 

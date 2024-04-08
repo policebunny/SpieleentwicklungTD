@@ -4002,11 +4002,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: caa24dcb8a4532f4d9575de9e6fa17bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentPosition: {x: 0, y: 0, z: 0}
+  StartPosition: {x: 0, y: 0, z: 0}
   newPosition: {x: 0, y: 0, z: 0}
   BobtheBuilder: {fileID: 1068373691355944224}
   MovementSpeed: 2
   IsBuilding: 0
+  IsMoving: 0
+  DoneBuilding: 0
+  BuildTime: 1
+  indicatorTower: {fileID: 0}
+  BuildingList: []
+  toBuild: {fileID: 0}
 --- !u!1001 &5391037815097563263
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4292,7 +4298,7 @@ PrefabInstance:
     - target: {fileID: 8479615036720742009, guid: a7dcc7074eb2ed842b7036b09688bd2f, type: 3}
       propertyPath: builder
       value: 
-      objectReference: {fileID: 1068373691355944224}
+      objectReference: {fileID: 1068373691355944240}
     - target: {fileID: 8479615036761564326, guid: a7dcc7074eb2ed842b7036b09688bd2f, type: 3}
       propertyPath: m_Name
       value: Systems

@@ -13,6 +13,10 @@ public class Builder : MonoBehaviour
     public bool DoneBuilding;
     public int BuildTime = 1;
 
+    public Transform indicatorTower;
+    public List<Tower> BuildingList = new List<Tower>();
+    public Tower toBuild;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -44,12 +48,15 @@ public class Builder : MonoBehaviour
         {
             if (BuildTime < 50)
             {
+                toBuild.gameObject.SetActive(false);
                 BuildTime++;
             } else
             {
                 IsBuilding = false;
                 BuildTime = 0;
                 DoneBuilding = true;
+                toBuild.gameObject.SetActive(true);
+                // enable Tower, get input from TowerManager
             }
             
         }
@@ -68,4 +75,15 @@ public class Builder : MonoBehaviour
     {
         return DoneBuilding;
     }
+
+    /*
+     * Instantiate(activeTower, indicator.position, activeTower.transform.rotation);
+
+                        indicator.gameObject.SetActive(false);
+
+                        UIController.instance.notEnoughMoneyWarning.SetActive(false);
+
+                        AudioManager.instance.PlaySFX(8);
+     */
+
 }

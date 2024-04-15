@@ -66,12 +66,15 @@ public class TowerManager : MonoBehaviour
 
                         Vector3 mousePosition = indicator.position;
                         builder.newPosition = mousePosition;
-                        builder.DoneBuilding = false;
-                        builder.IsMoving = true;
+                        // builder.DoneBuilding = false;
+                        // builder.IsMoving = true;
                         // BuildIt();
                         builder.toBuild = activeTower;
                         builder.indicatorTower = indicator;
+
+                        builder.AddTowerToList(activeTower, indicator);
                         
+                        /*
                         Instantiate(activeTower, indicator.position, activeTower.transform.rotation);
 
                         indicator.gameObject.SetActive(false);
@@ -79,6 +82,7 @@ public class TowerManager : MonoBehaviour
                         UIController.instance.notEnoughMoneyWarning.SetActive(false);
 
                         AudioManager.instance.PlaySFX(8);
+                        */
                         
                     }
                 }
@@ -92,7 +96,7 @@ public class TowerManager : MonoBehaviour
 
         isPlacing = true;
 
-        Destroy(indicator.gameObject);
+        // Destroy(indicator.gameObject);
         Tower placeTower = Instantiate(activeTower);
         placeTower.enabled = false;
         placeTower.GetComponent<Collider>().enabled = false;

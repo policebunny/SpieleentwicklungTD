@@ -64,13 +64,9 @@ public class TowerManager : MonoBehaviour
 
                         isPlacing = false;
 
-                        Vector3 mousePosition = indicator.position;
-                        builder.newPosition = mousePosition;
-                        // builder.DoneBuilding = false;
-                        // builder.IsMoving = true;
-                        // BuildIt();
-                        builder.toBuild = activeTower;
-                        builder.indicatorTower = indicator;
+                        // Vector3 mousePosition = indicator.position;
+                        // builder.newPosition = mousePosition;
+
 
                         builder.AddTowerToList(activeTower, indicator);
                         

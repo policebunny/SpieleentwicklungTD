@@ -5,21 +5,21 @@ using UnityEngine;
 public class Builder : MonoBehaviour
 {
     public Vector3 StartPosition;
-    public Vector3 newPosition;
+    // public Vector3 newPosition;
     public Vector3 rightClickMovement;
     public GameObject BobtheBuilder;
     public float MovementSpeed;
+
     public bool IsBuilding;
     public bool IsMoving;
     public bool DoneBuilding;
+
     public float BuildTime = 1;
 
-    public Doing isDoing;
-
-    public Transform indicatorTower;
+    // public Transform indicatorTower;
     public List<Tower> BuildingList = new List<Tower>();
     public List<Transform> BuildTransformList = new List<Transform>();
-    public Tower toBuild;
+    // public Tower toBuild;
 
     // Start is called before the first frame update
     void Start()
@@ -28,13 +28,6 @@ public class Builder : MonoBehaviour
         
     }
 
-    public enum Doing
-    {
-        IsMoving,
-        DoneBuilding,
-        IsBuilding,
-        isAwaiting
-    }
 
     // Update is called once per frame
     void Update()
@@ -53,6 +46,7 @@ public class Builder : MonoBehaviour
                 foreach (Transform indicator in BuildTransformList)
                 {
                     indicator.gameObject.SetActive(false);
+                    Destroy(indicator.gameObject);
                 }
                 BuildingList.Clear();
                 BuildTransformList.Clear();
@@ -148,7 +142,7 @@ public class Builder : MonoBehaviour
         indicatorAdded.gameObject.SetActive(false);
         UIController.instance.notEnoughMoneyWarning.SetActive(false);
         AudioManager.instance.PlaySFX(8);
-
+        Destroy(indicatorAdded.gameObject);
         /*
      * Instantiate(activeTower, indicator.position, activeTower.transform.rotation);
 

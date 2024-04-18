@@ -130,17 +130,4 @@ public class TowerManager : MonoBehaviour
         }
     }
 
-    public void BuildIt()
-    {
-       /*
-        Instantiate(activeTower, indicator.position, activeTower.transform.rotation);
-
-        indicator.gameObject.SetActive(false);
-
-        UIController.instance.notEnoughMoneyWarning.SetActive(false);
-
-        AudioManager.instance.PlaySFX(8);
-       */
-    }
-
 }

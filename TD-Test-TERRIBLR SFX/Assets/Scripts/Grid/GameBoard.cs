@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using System.Diagnostics.Tracing;
 
 public class GameBoard : MonoBehaviour
 {
@@ -7,7 +8,11 @@ public class GameBoard : MonoBehaviour
     [SerializeField] Vector2Int size; // Size of the grid
     private Tile castle;
     private Tile[,] tiles; // 2D array to hold references to all tiles
-
+    public GameObject castlePrefab;
+    public GameObject pathPrefab;
+    public GameObject startPrefab;
+    public GameObject pathPointPrefab;
+    public GameObject path1;
     public void Initialize(Vector2Int psize)
     {
         size = psize;
@@ -30,6 +35,14 @@ public class GameBoard : MonoBehaviour
         FindPath(); // Example of how to use the pathfinding
     }
 
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            FindPath();
+        }
+    }
     private void SetNeighbors(Vector2Int gridSize)
     {
         for (int y = 0; y < gridSize.y; y++)
@@ -53,9 +66,12 @@ public class GameBoard : MonoBehaviour
         castle = selectedTile;
         selectedTile.gameObject.AddComponent<Castle_empty>();
         selectedTile.GetComponent<Renderer>().material.color = Color.magenta;
+        // Instantiate the castle prefab at the selected tile's position
+        GameObject castle1 = Instantiate(castlePrefab, selectedTile.transform.position, Quaternion.identity);
+        castle1.transform.SetParent(selectedTile.transform);
         Destroy(selectedTile.GetComponent<MyClickableObject>());
     }
- public void FindPath()
+    public void FindPath()
     {
         // Ensure the AStarPathfinding component is attached and properly set up
         AStarPathfinding pathfinding = GetComponent<AStarPathfinding>();
@@ -64,14 +80,34 @@ public class GameBoard : MonoBehaviour
             Debug.LogError("AStarPathfinding component is not attached to the game object!");
             return;
         }
-
-        var path = pathfinding.FindPath(CreateStart(), castle);
+        Tile startTile = CreateStart();
+        var path = pathfinding.FindPath(startTile, castle);
+        int counter = 0;
+        while (path == null && counter < 100)
+        {
+            startTile.GetComponent<Renderer>().material.color = Color.white;
+            startTile = CreateStart();
+            path = pathfinding.FindPath(CreateStart(), castle);
+            counter++;
+        }
         if (path != null)
         {
+            path1 = new GameObject("Path");
+            path1.AddComponent<Path>();
+            path1.GetComponent<Path>().points = new Transform[path.Count];
+            InitializeStart(startTile, path1);
             foreach (var tile in path)
-            {
                 // Do something with the path, e.g., highlight the tiles
                 tile.GetComponent<Renderer>().material.color = Color.green;
+                GameObject pathPoint = Instantiate(pathPointPrefab, startTile.transform.position, Quaternion.identity);
+            if (pathPoint != null)
+            {
+                path1.GetComponent<Path>().AddPoint(pathPoint.transform);
+                pathPoint.transform.SetParent(path1.transform);
+            }
+            else
+            {
+                Debug.LogError("Path point is null");
             }
         }
         else
@@ -79,7 +115,63 @@ public class GameBoard : MonoBehaviour
             Debug.Log("No path found.");
         }
     }
-        private Tile CreateStart()
+
+
+private void InitializeStart(Tile startTile, GameObject gamePath)
+{
+    if (startTile == null) {
+        Debug.LogError("InitializeStart: startTile is null.");
+        return;
+    }
+
+    // Change the color of the starting tile
+    Renderer tileRenderer = startTile.GetComponent<Renderer>();
+    if (tileRenderer != null) {
+        tileRenderer.material.color = Color.gray;
+    } else {
+        Debug.LogError("InitializeStart: Renderer component not found on startTile.");
+    }
+
+    // Instantiate the starting prefab at the position of the start tile
+    GameObject spawn = Instantiate(startPrefab, startTile.transform.position, Quaternion.identity);
+    if (spawn == null) {
+        Debug.LogError("InitializeStart: Failed to instantiate startPrefab.");
+        return;
+    }
+
+    // Get the EnemyWaveSpawner component
+    EnemyWaveSpawner spawner = spawn.GetComponent<EnemyWaveSpawner>();
+    if (spawner != null) {
+        // Ensure the gamePath GameObject has a Path component
+        Path pathComponent = gamePath.GetComponent<Path>();
+        if (pathComponent != null) {
+            spawner.thePath = pathComponent;
+        } else {
+            Debug.LogError("InitializeStart: Path component not found on gamePath GameObject.");
+        }
+
+        // Assign the castle component
+        if (castle != null) {
+            Castle castleComponent = castle.GetComponent<Castle>();
+            if (castleComponent != null) {
+                spawner.theCastle = castleComponent;
+                Debug.Log("Spawner Position: " + spawn.transform.position);
+                Debug.Log("Start Tile Position: " + startTile.transform.position);
+            } else {
+                Debug.LogError("InitializeStart: Castle component not found on castle GameObject.");
+            }
+        } else {
+            Debug.LogError("InitializeStart: castle GameObject is null.");
+        }
+    } else {
+        Debug.LogError("InitializeStart: EnemyWaveSpawner component not found on spawn GameObject.");
+    }
+
+    // Set the parent of the spawn GameObject to be the startTile
+    spawn.transform.SetParent(startTile.transform);
+}
+
+    private Tile CreateStart()
     {
         // Create a Path_temp from the center to the edge
         // Select a random edge tile
@@ -104,8 +196,6 @@ public class GameBoard : MonoBehaviour
             }
         }
         Debug.Log(edgeTile.gridPosition);
-        edgeTile.GetComponent<Renderer>().material.color = Color.gray; // Color the edge tile gray
-        edgeTile.gameObject.AddComponent<Path_temp>(); // Add Path_temp to the edge tile
         return edgeTile;
     }
 }

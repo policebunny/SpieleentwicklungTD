@@ -225,6 +225,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1017488312}
   - component: {fileID: 1017488310}
+  - component: {fileID: 1017488313}
   m_Layer: 0
   m_Name: GameBoard
   m_TagString: Untagged
@@ -246,6 +247,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tilePrefab: {fileID: 641271128727497709, guid: 80b8fe3ece73e00489b27fc57950403a, type: 3}
   size: {x: 0, y: 0}
+  castlePrefab: {fileID: 5391037814656261307, guid: 60456b14f65adf042914e62c8696fb50, type: 3}
+  pathPrefab: {fileID: 0}
+  startPrefab: {fileID: 8905853456707556790, guid: f8d5ac6066074264b9614d4e35f9be56, type: 3}
+  pathPointPrefab: {fileID: 2713415305430539615, guid: b84c4e3269ddd20418761a71aa1238e2, type: 3}
+  path1: {fileID: 0}
 --- !u!4 &1017488312
 Transform:
   m_ObjectHideFlags: 0
@@ -261,6 +267,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1017488313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1017488309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75ce94d8c3d21a54bae60a82cb3bbb6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gridWidth: 0
+  gridHeight: 0
+  startTile: {fileID: 0}
+  endTile: {fileID: 0}
 --- !u!1 &1692330033
 GameObject:
   m_ObjectHideFlags: 0
@@ -384,7 +406,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62138cb27a0506943ba6d93838548b45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boardSize: {x: 40, y: 40}
+  boardSize: {x: 100, y: 100}
   board: {fileID: 1017488310}
 --- !u!4 &1803538370
 Transform:

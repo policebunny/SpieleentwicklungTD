@@ -40,7 +40,7 @@ public class EnemyController : MonoBehaviour
         if(isFlying)
         {
             transform.position += Vector3.up * flyHeight;
-            currentPoint = thePath.points.Length - 1;
+           // currentPoint = thePath.points.Length - 1;
         }
     }
 
@@ -51,6 +51,7 @@ public class EnemyController : MonoBehaviour
         {
             if (reachedEnd == false)
             {
+                Debug.Log(thePath);
                 transform.LookAt(thePath.points[currentPoint]);
 
                 if (!isFlying)

@@ -29,9 +29,14 @@ public List<Tile> FindPath(Tile start, Tile end)
     {
         Tile currentTile = GetLowestFCostTile(openList);
         
-        if (currentTile == end)
+        // Check if any of currentTile's neighbors is the end tile
+        foreach (Tile neighbor in GetNeighboringTiles(currentTile))
         {
-            return RetracePath(start, currentTile);
+            if (neighbor == end)
+            {
+                // Return path up to the current tile, not including the end tile
+                return RetracePath(start, currentTile);
+            }
         }
 
         openList.Remove(currentTile);
@@ -39,12 +44,12 @@ public List<Tile> FindPath(Tile start, Tile end)
 
         foreach (Tile neighbor in GetNeighboringTiles(currentTile))
         {
-            if (!neighbor.isWalkable || closedList.Contains(neighbor))
+            if (closedList.Contains(neighbor) || !neighbor.isWalkable)
             {
                 continue;
             }
 
-            int tentativeGCost = currentTile.gCost + neighbor.tCost + CalculateHeuristicCost(currentTile, neighbor);
+            int tentativeGCost = currentTile.gCost + neighbor.tCost;
             if (tentativeGCost < neighbor.gCost || !openList.Contains(neighbor))
             {
                 neighbor.gCost = tentativeGCost;
@@ -60,23 +65,9 @@ public List<Tile> FindPath(Tile start, Tile end)
         }
     }
 
-    Debug.LogError("No path found.");
+    Debug.LogError("No path found to a tile before the end tile.");
     return null; // No path found
 }
-
-private Tile GetLowestFCostTile(List<Tile> openList)
-{
-    Tile lowestFCostTile = openList[0];
-    foreach (Tile tile in openList)
-    {
-        if (tile.fCost < lowestFCostTile.fCost)
-        {
-            lowestFCostTile = tile;
-        }
-    }
-    return lowestFCostTile;
-}
-
 
 
 
@@ -93,6 +84,18 @@ private Tile GetLowestFCostTile(List<Tile> openList)
         return path;
     }
 
+    private Tile GetLowestFCostTile(List<Tile> openList)
+    {
+        Tile lowestFCostTile = openList[0];
+        foreach (Tile tile in openList)
+        {
+            if (tile.fCost < lowestFCostTile.fCost)
+            {
+                lowestFCostTile = tile;
+            }
+        }
+        return lowestFCostTile;
+    }
 
     private List<Tile> GetNeighboringTiles(Tile tile)
     {

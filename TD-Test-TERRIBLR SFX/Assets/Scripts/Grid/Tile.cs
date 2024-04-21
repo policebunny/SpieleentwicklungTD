@@ -16,11 +16,11 @@ public class Tile : MonoBehaviour
     public List<Tile> Neighbors => neighbors; // Public accessor for neighbors
 
 
-    public void Start()
+    public void Awake()
     {
        //gCost = UnityEngine.Random.Range(0, 50);
        tCost = UnityEngine.Random.Range(0, 50);
-       if(tCost>30){
+       if(tCost>100){
            isWalkable = false;
        }
     }
@@ -37,9 +37,8 @@ public class Tile : MonoBehaviour
     // Method to add a neighbor tile
     public void AddNeighbor(Tile neighbor)
     {
-        if (!neighbors.Contains(neighbor))
+        if (!neighbors.Contains(neighbor) && neighbor.isWalkable)
         {
-            //Debug.Log("Adding neighbor " + neighbor.gridPosition + " to " + gridPosition);
             neighbors.Add(neighbor);
         }
     }

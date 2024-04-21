@@ -14,7 +14,7 @@ public class Castle : MonoBehaviour
     public Transform[] attackPoints;
 
     // Start is called before the first frame update
-    void Start()
+    void Initialize()
     {
         currentHealth = totalHealth;
 

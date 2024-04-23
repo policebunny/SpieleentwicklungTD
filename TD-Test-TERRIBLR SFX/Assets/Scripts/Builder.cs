@@ -15,10 +15,12 @@ public class Builder : MonoBehaviour
     public bool DoneBuilding;
 
     public float BuildTime = 1;
+    public float BuildDone = 5;
 
     // public Transform indicatorTower;
     public List<Tower> BuildingList = new List<Tower>();
     public List<Transform> BuildTransformList = new List<Transform>();
+    public List<bool> isUpgrade = new List<bool>();
     // public Tower toBuild;
 
     // Start is called before the first frame update
@@ -77,7 +79,7 @@ public class Builder : MonoBehaviour
             }
             if (IsBuilding)
             {
-                if (BuildTime < 5)
+                if (BuildTime < BuildDone)
                 {
                     BuildingList[0].gameObject.SetActive(false);
                     // toBuild.gameObject.SetActive(false);
@@ -89,8 +91,15 @@ public class Builder : MonoBehaviour
                     BuildTime = 0;
                     DoneBuilding = true;
                     BuildingList[0].gameObject.SetActive(true);
-                    CompletedTower();
-                    
+                    if (isUpgrade[0])
+                    {
+                        // tu upgrade statt neuen tower
+                        // UpgradedTower();
+                    } else
+                    {
+                        CompletedTower(); // when upgrade false dann ist neuer tower
+                    }
+
 
                     // enable Tower, get input from TowerManager
                 }
@@ -164,7 +173,7 @@ public class Builder : MonoBehaviour
         BuildTransformList.RemoveAt(0);
     }
 
-    public void AddTowerToList(Tower newOrderTower, Transform newOrderTransform)
+    public void AddTowerToList(Tower newOrderTower, Transform newOrderTransform, bool newisUpgrade)
     {
         if (BuildingList.Count == 0)
         {
@@ -173,10 +182,17 @@ public class Builder : MonoBehaviour
         newOrderTower.gameObject.SetActive(true);
         BuildingList.Add(newOrderTower);
         BuildTransformList.Add(newOrderTransform);
-        
-
-        
+        isUpgrade.Add(newisUpgrade);
+ 
     }
 
+    public void UpgradedTower()
+    {
+        // DO UPGRADE INITIATE
+
+        BuildingList.RemoveAt(0);
+        BuildTransformList.RemoveAt(0);
+        isUpgrade.RemoveAt(0);
+    }
 
 }

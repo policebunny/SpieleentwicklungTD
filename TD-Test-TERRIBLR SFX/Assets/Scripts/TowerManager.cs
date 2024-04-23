@@ -68,7 +68,7 @@ public class TowerManager : MonoBehaviour
                         // builder.newPosition = mousePosition;
 
 
-                        builder.AddTowerToList(activeTower, indicator);
+                        builder.AddTowerToList(activeTower, indicator, false);
                         
                         /*
                         Instantiate(activeTower, indicator.position, activeTower.transform.rotation);

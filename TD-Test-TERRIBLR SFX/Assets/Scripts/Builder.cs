@@ -21,7 +21,7 @@ public class Builder : MonoBehaviour
     public List<Transform> BuildTransformList = new List<Transform>();
     public List<int> WhatToDoList = new List<int>();
 
-    TowerUpgradeController upgrader;
+    public List<TowerUpgradeController> upgraderList = new List<TowerUpgradeController>();
     /* WhatToDoList Dictionary
      *  0 = default, new Tower
      *  1 = Upgrade Range
@@ -198,6 +198,7 @@ public class Builder : MonoBehaviour
         switch(WhatToDoList[0])
         {
             case 0:  // default new tower
+                // should never reach here
                 break;
             case 1:
                 // Upgrade Range
@@ -212,6 +213,7 @@ public class Builder : MonoBehaviour
         BuildingList.RemoveAt(0);
         BuildTransformList.RemoveAt(0);
         WhatToDoList.RemoveAt(0);
+        upgraderList.RemoveAt(0);
         
     }
 

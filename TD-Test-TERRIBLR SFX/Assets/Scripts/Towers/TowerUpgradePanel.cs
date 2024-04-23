@@ -57,6 +57,7 @@ public class TowerUpgradePanel : MonoBehaviour
 
                 // bob.AddTowerToList(TowerManager.instance.selectedTower, TowerManager.instance.selectedTower.transform, 1);
                 // Add Job Upgrade Range 1 to List
+                // bob.upgraderList.Add(upgrader);
 
                 SetupPanel();
 
@@ -80,6 +81,10 @@ public class TowerUpgradePanel : MonoBehaviour
             if (MoneyManager.instance.SpendMoney(upgrader.firerateUpgrades[upgrader.currentFirerateUpgrade].cost))
             {
                 upgrader.UpgradeFireRate();
+
+                // bob.AddTowerToList(TowerManager.instance.selectedTower, TowerManager.instance.selectedTower.transform, 1);
+                // Add Job Upgrade Range 1 to List
+                // bob.upgraderList.Add(upgrader);
 
                 SetupPanel();
 

@@ -5,10 +5,10 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour
 {
     public float moveSpeed;
-    [HideInInspector]
+    //[HideInInspector]
     public float speedMod = 1f;
 
-    private Path thePath;
+    public Path thePath;
     private int currentPoint;
     private bool reachedEnd;
 
@@ -17,7 +17,7 @@ public class EnemyController : MonoBehaviour
 
     private Castle theCastle;
 
-    private int selectedAttackPoint;
+    public int selectedAttackPoint;
 
     public bool isFlying;
     public float flyHeight;

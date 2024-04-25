@@ -7,6 +7,7 @@ public class TowerUpgradePanel : MonoBehaviour
 {
     public GameObject rangeButton, firerateButton;
     public TMP_Text rangeText, firerateText;
+    public Builder bob;
 
     public void SetupPanel()
     {
@@ -54,6 +55,10 @@ public class TowerUpgradePanel : MonoBehaviour
             {
                 upgrader.UpgradeRange();
 
+                // bob.AddTowerToList(TowerManager.instance.selectedTower, TowerManager.instance.selectedTower.transform, 1);
+                // Add Job Upgrade Range 1 to List
+                // bob.upgraderList.Add(upgrader);
+
                 SetupPanel();
 
                 UIController.instance.notEnoughMoneyWarning.SetActive(false);
@@ -76,6 +81,10 @@ public class TowerUpgradePanel : MonoBehaviour
             if (MoneyManager.instance.SpendMoney(upgrader.firerateUpgrades[upgrader.currentFirerateUpgrade].cost))
             {
                 upgrader.UpgradeFireRate();
+
+                // bob.AddTowerToList(TowerManager.instance.selectedTower, TowerManager.instance.selectedTower.transform, 1);
+                // Add Job Upgrade Range 1 to List
+                // bob.upgraderList.Add(upgrader);
 
                 SetupPanel();
 

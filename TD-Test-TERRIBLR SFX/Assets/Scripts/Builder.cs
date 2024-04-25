@@ -15,11 +15,19 @@ public class Builder : MonoBehaviour
     public bool DoneBuilding;
 
     public float BuildTime = 1;
+    public float BuildDone = 5;
 
-    // public Transform indicatorTower;
     public List<Tower> BuildingList = new List<Tower>();
     public List<Transform> BuildTransformList = new List<Transform>();
-    // public Tower toBuild;
+    public List<int> WhatToDoList = new List<int>();
+
+    public List<TowerUpgradeController> upgraderList = new List<TowerUpgradeController>();
+    /* WhatToDoList Dictionary
+     *  0 = default, new Tower
+     *  1 = Upgrade Range
+     *  2 = Upgrade Firerate
+     *  
+     */
 
     // Start is called before the first frame update
     void Start()
@@ -77,7 +85,7 @@ public class Builder : MonoBehaviour
             }
             if (IsBuilding)
             {
-                if (BuildTime < 5)
+                if (BuildTime < BuildDone)
                 {
                     BuildingList[0].gameObject.SetActive(false);
                     // toBuild.gameObject.SetActive(false);
@@ -89,8 +97,14 @@ public class Builder : MonoBehaviour
                     BuildTime = 0;
                     DoneBuilding = true;
                     BuildingList[0].gameObject.SetActive(true);
-                    CompletedTower();
-                    
+                    if (WhatToDoList[0] == 0)
+                    {
+                        CompletedTower();
+                    } else
+                    {
+                        UpgradedTower();
+                    }
+
 
                     // enable Tower, get input from TowerManager
                 }
@@ -162,9 +176,10 @@ public class Builder : MonoBehaviour
         TowerInstantiate(BuildingList[0], BuildTransformList[0]);
         BuildingList.RemoveAt(0);
         BuildTransformList.RemoveAt(0);
+        WhatToDoList.RemoveAt(0);
     }
 
-    public void AddTowerToList(Tower newOrderTower, Transform newOrderTransform)
+    public void AddTowerToList(Tower newOrderTower, Transform newOrderTransform, int whichJob)
     {
         if (BuildingList.Count == 0)
         {
@@ -173,10 +188,33 @@ public class Builder : MonoBehaviour
         newOrderTower.gameObject.SetActive(true);
         BuildingList.Add(newOrderTower);
         BuildTransformList.Add(newOrderTransform);
-        
-
-        
+        WhatToDoList.Add(whichJob);
+ 
     }
 
+    public void UpgradedTower()
+    {
+        // DO UPGRADE INITIATE
+        switch(WhatToDoList[0])
+        {
+            case 0:  // default new tower
+                // should never reach here
+                break;
+            case 1:
+                // Upgrade Range
+                break;
+            case 2:
+                // Upgrade Firerate
+                break;
+            default:
+                break;
+        }
+
+        BuildingList.RemoveAt(0);
+        BuildTransformList.RemoveAt(0);
+        WhatToDoList.RemoveAt(0);
+        upgraderList.RemoveAt(0);
+        
+    }
 
 }

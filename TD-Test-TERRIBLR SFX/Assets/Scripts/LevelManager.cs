@@ -73,10 +73,10 @@ public class LevelManager : MonoBehaviour
 
             if(!levelActive)
             {
-                //UIController.instance.levelFailScreen.SetActive(!levelVictory);
-                //UIController.instance.levelCompleteScreen.SetActive(levelVictory);
+                UIController.instance.levelFailScreen.SetActive(!levelVictory);
+                UIController.instance.levelCompleteScreen.SetActive(levelVictory);
 
-                //UIController.instance.CloseTowerUpgradePanel();
+                UIController.instance.CloseTowerUpgradePanel();
             }
         }
     }

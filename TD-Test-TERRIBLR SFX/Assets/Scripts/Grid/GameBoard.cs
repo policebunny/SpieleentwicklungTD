@@ -103,7 +103,7 @@ public class GameBoard : MonoBehaviour
             {
                 // Do something with the path, e.g., highlight the tiles
                 tile.GetComponent<Renderer>().material.color = Color.green;
-                GameObject pathPoint = Instantiate(pathPointPrefab, tile.transform.position, Quaternion.identity);
+                GameObject pathPoint = Instantiate(pathPointPrefab, tile.transform.position+new Vector3(0,1,0), Quaternion.identity);
             if (pathPoint != null)
                 {
                     path1.GetComponent<Path>().AddPoint(pathPoint.transform);

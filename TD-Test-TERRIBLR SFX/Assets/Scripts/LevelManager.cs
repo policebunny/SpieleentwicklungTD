@@ -30,7 +30,7 @@ public class LevelManager : MonoBehaviour
 
         levelActive = true;
 
-        AudioManager.instance.PlayBGM();
+        //AudioManager.instance.PlayBGM();
     }
 
     // Update is called once per frame

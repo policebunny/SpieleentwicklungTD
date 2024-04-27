@@ -39,8 +39,8 @@ public class EnemyWaveSpawner : MonoBehaviour
                 {
                     wavesToSpawn[0].shouldDisplayWave = false;
 
-                    UIController.instance.waveText.gameObject.SetActive(true);
-                    UIController.instance.waveText.text = "Wave " + waveCounter;
+                    //UIController.instance.waveText.gameObject.SetActive(true);
+                    //UIController.instance.waveText.text = "Wave " + waveCounter;
                     waveDisplayCounter = waveDisplayTime;
                 }
 

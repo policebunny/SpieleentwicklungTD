@@ -74,52 +74,41 @@ public class GameBoard : MonoBehaviour
         castle = castle1;
         //Destroy(selectedTile.GetComponent<MyClickableObject>());
     }
-    public void FindPath()
-    {
-        // Ensure the AStarPathfinding component is attached and properly set up
-        AStarPathfinding pathfinding = GetComponent<AStarPathfinding>();
-        if (pathfinding == null)
-        {
-            Debug.LogError("AStarPathfinding component is not attached to the game object!");
-            return;
-        }
-        Tile startTile = CreateStart();
-        var path = pathfinding.FindPath(startTile, castleTile);
-        int counter = 0;
-        while (path == null && counter < 100)
-        {
-            startTile.GetComponent<Renderer>().material.color = Color.white;
-            startTile = CreateStart();
-            path = pathfinding.FindPath(CreateStart(), castleTile);
-            counter++;
-        }
-        if (path != null)
-        {
-            path1 = new GameObject("Path");
-            path1.AddComponent<Path>();
-            path1.GetComponent<Path>().points = new Transform[path.Count];
-            InitializeStart(startTile, path1);
-            foreach (var tile in path)
-            {
-                // Do something with the path, e.g., highlight the tiles
-                tile.GetComponent<Renderer>().material.color = Color.green;
-                GameObject pathPoint = Instantiate(pathPointPrefab, tile.transform.position+new Vector3(0,1,0), Quaternion.identity);
-            if (pathPoint != null)
-                {
-                    path1.GetComponent<Path>().AddPoint(pathPoint.transform);
-                    pathPoint.transform.SetParent(path1.transform);
-                }
-                else
-                {
-                    Debug.LogError("Path point is null");
-                }
+public void FindPath() {
+    AStarPathfinding pathfinding = GetComponent<AStarPathfinding>();
+    if (pathfinding == null) {
+        Debug.LogError("AStarPathfinding component is not attached to the game object!");
+        return;
+    }
+    Tile startTile = CreateStart();
+    List<Tile> path = pathfinding.FindPath(startTile, castleTile);
+    int counter = 0;
+    while (path == null && counter < 100) {
+        startTile.GetComponent<Renderer>().material.color = Color.white;
+        startTile = CreateStart();
+        path = pathfinding.FindPath(startTile, castleTile);
+        counter++;
+    }
+    if (path != null) {
+        path1 = new GameObject("Path");
+        Path pathComponent = path1.AddComponent<Path>();
+        pathComponent.points = new Transform[0];  // Initialize with the exact count
+        InitializeStart(startTile, path1);
+        Debug.Log("Path found! Length: " + path.Count + " tiles.");
+        foreach (Tile tile in path) {
+            tile.GetComponent<Renderer>().material.color = Color.green;
+            GameObject pathPoint = Instantiate(pathPointPrefab, tile.transform.position, Quaternion.identity);
+            if (pathPoint != null) {
+                pathPoint.transform.SetParent(path1.transform);
+                pathComponent.AddPoint(pathPoint.transform);
+            } else {
+                Debug.LogError("Path point is null");
             }
         }
-        else
-        {
-            Debug.Log("No path found.");
-        }
+    } else {
+        Debug.Log("No path found.");
     }
+}
 
 
     private void InitializeStart(Tile startTile, GameObject gamePath)

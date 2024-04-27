@@ -9,8 +9,9 @@ public class EnemyController : MonoBehaviour
     public float speedMod = 1f;
 
     public Path thePath;
+    public GameObject pathpoint;
     private int currentPoint;
-    private bool reachedEnd;
+    public bool reachedEnd;
 
     public float timeBetweenAttacks, damagePerAttack;
     private float attackCounter;
@@ -40,18 +41,18 @@ public class EnemyController : MonoBehaviour
         if(isFlying)
         {
             transform.position += Vector3.up * flyHeight;
-           // currentPoint = thePath.points.Length - 1;
+            currentPoint = thePath.points.Length - 1;
         }
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (LevelManager.instance.levelActive)
+        //if (LevelManager.instance.levelActive)
         {
             if (reachedEnd == false)
             {
-                Debug.Log(thePath);
+                Debug.Log(thePath.points[currentPoint]);
                 transform.LookAt(thePath.points[currentPoint]);
 
                 if (!isFlying)

@@ -217,7 +217,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c890c0c996ec2b840a88963e3c9a0687, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tilePrefab: {fileID: 641271128727497709, guid: 80b8fe3ece73e00489b27fc57950403a, type: 3}
+  tilePrefab: {fileID: 641271128727497709, guid: 281f09f7806589d419bf137ec26d0345, type: 3}
   size: {x: 0, y: 0}
   castlePrefab: {fileID: 5391037814656261307, guid: 60456b14f65adf042914e62c8696fb50, type: 3}
   pathPrefab: {fileID: 0}

@@ -6,8 +6,6 @@ public class MyClickableObject : MonoBehaviour
 
     void Start()
     {
-        level = UnityEngine.Random.Range(0, 6); // Randomize level between 0 and 5
-        onClick();
     }
     void Update()
     {

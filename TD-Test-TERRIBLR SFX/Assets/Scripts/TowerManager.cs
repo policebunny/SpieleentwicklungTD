@@ -33,21 +33,21 @@ public class TowerManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(isPlacing)
+        if (isPlacing)
         {
             indicator.position = GetGridPosition();
-
             RaycastHit hit;
-            if(Input.mousePosition.y > Screen.height * (1f - (topSafePercent/ 100f)))
+            if (Input.mousePosition.y > Screen.height * (1f - (topSafePercent / 100f)))
             {
                 indicator.gameObject.SetActive(false);
-            } else if (Physics.Raycast(indicator.position + new Vector3(0f, -2f, 0f), Vector3.up, out hit, 10f, whatIsObstacle))
+            }
+            else if (Physics.Raycast(indicator.position + new Vector3(0f, -2f, 0f), Vector3.up, out hit, 10f, whatIsObstacle))
             {
                 indicator.gameObject.SetActive(false);
             }
@@ -69,7 +69,7 @@ public class TowerManager : MonoBehaviour
 
 
                         builder.AddTowerToList(activeTower, indicator, 0);
-                        
+
                         /*
                         Instantiate(activeTower, indicator.position, activeTower.transform.rotation);
 
@@ -79,7 +79,7 @@ public class TowerManager : MonoBehaviour
 
                         AudioManager.instance.PlaySFX(8);
                         */
-                        
+
                     }
                 }
             }
@@ -102,7 +102,28 @@ public class TowerManager : MonoBehaviour
         placeTower.rangeModel.transform.localScale = new Vector3(placeTower.range, 1f, placeTower.range);
     }
 
+    
     public Vector3 GetGridPosition()
+    {
+        Vector3 location = Vector3.zero;
+
+
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        Debug.DrawRay(ray.origin, ray.direction * 100f, Color.red);
+
+        RaycastHit hit;
+        if (Physics.Raycast(ray, out hit, 100f, whatIsPlacement))
+        {
+           Debug.Log(hit.transform.gameObject.name);
+           location = hit.transform.gameObject.transform.position;
+        }
+
+        location.y = 0f;
+
+        return location;
+    }
+
+        public Vector3 GetGridPosition1()
     {
         Vector3 location = Vector3.zero;
 
@@ -111,7 +132,7 @@ public class TowerManager : MonoBehaviour
         Debug.DrawRay(ray.origin, ray.direction * 200f, Color.red);
 
         RaycastHit hit;
-        if(Physics.Raycast(ray, out hit, 200f,  whatIsPlacement))
+        if (Physics.Raycast(ray, out hit, 200f, whatIsPlacement))
         {
             location = hit.point;
         }
@@ -121,9 +142,11 @@ public class TowerManager : MonoBehaviour
         return location;
     }
 
+
+
     public void MoveTowerSelectionEffect()
     {
-        if(selectedTower != null)
+        if (selectedTower != null)
         {
             selectedTowerEffect.transform.position = selectedTower.transform.position;
             selectedTowerEffect.SetActive(true);

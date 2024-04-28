@@ -36,6 +36,12 @@ public class LevelManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        theCastles = FindObjectsOfType<Castle>();
+        //enemySpawner = FindObjectOfType<SimpleEnemySpawner>();
+        waveSpawners = FindObjectsOfType<EnemyWaveSpawner>();
+
+        levelActive = true;
+        
         if(levelActive)
         {
             float totalCastleHealth = 0;

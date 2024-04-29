@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class TowerManager : MonoBehaviour
 {
@@ -24,6 +25,10 @@ public class TowerManager : MonoBehaviour
     public Tower selectedTower;
 
     public GameObject selectedTowerEffect;
+
+    public Builder builder;
+
+    public int BuilderSpeed;
 
     // Start is called before the first frame update
     void Start()
@@ -59,6 +64,13 @@ public class TowerManager : MonoBehaviour
 
                         isPlacing = false;
 
+                        // Vector3 mousePosition = indicator.position;
+                        // builder.newPosition = mousePosition;
+
+
+                        builder.AddTowerToList(activeTower, indicator, 0);
+                        
+                        /*
                         Instantiate(activeTower, indicator.position, activeTower.transform.rotation);
 
                         indicator.gameObject.SetActive(false);
@@ -66,6 +78,8 @@ public class TowerManager : MonoBehaviour
                         UIController.instance.notEnoughMoneyWarning.SetActive(false);
 
                         AudioManager.instance.PlaySFX(8);
+                        */
+                        
                     }
                 }
             }
@@ -78,7 +92,7 @@ public class TowerManager : MonoBehaviour
 
         isPlacing = true;
 
-        Destroy(indicator.gameObject);
+        // Destroy(indicator.gameObject);
         Tower placeTower = Instantiate(activeTower);
         placeTower.enabled = false;
         placeTower.GetComponent<Collider>().enabled = false;
@@ -115,4 +129,5 @@ public class TowerManager : MonoBehaviour
             selectedTowerEffect.SetActive(true);
         }
     }
+
 }

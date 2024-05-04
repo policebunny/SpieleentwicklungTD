@@ -4,11 +4,10 @@ using UnityEngine;
 
 public class Path : MonoBehaviour
 {
-    public Transform[] points;
+    public List<Transform> points = new List<Transform>();
 
 
 public void AddPoint(Transform point) {
-    List<Transform> newPoints = new List<Transform>(points) { point };
-    points = newPoints.ToArray();
+    points.Add(point);
 }
 }

@@ -5,7 +5,7 @@ using UnityEngine.UIElements;
 
 public class GameBoard : MonoBehaviour
 {
-    [SerializeField] Tile tilePrefab = default;
+    [SerializeField] Tile[] tilePrefab = default;
     [SerializeField] Vector2Int size; // Size of the grid
     private GameObject castle;
     private Tile castleTile;
@@ -24,7 +24,33 @@ public class GameBoard : MonoBehaviour
         {
             for (int x = 0; x < size.x; x++)
             {
-                Tile tile = Instantiate(tilePrefab);
+                int cost = UnityEngine.Random.Range(0, 100);
+                Tile tile;
+                switch(cost)
+                {
+                case <7:
+                    tile = Instantiate(tilePrefab[1]);
+                    break;
+                case <17:
+                    tile = Instantiate(tilePrefab[2]);
+                    break;
+                case <27:
+                    tile = Instantiate(tilePrefab[3]);
+                    break;
+                case <31:
+                    tile = Instantiate(tilePrefab[4]);
+                    break;
+                case <42:
+                    tile = Instantiate(tilePrefab[5]);
+                    break;
+                case <51:
+                    tile = Instantiate(tilePrefab[6]);
+                    break;  
+                default:
+                    tile = Instantiate(tilePrefab[0]);
+                    break;
+                };  
+                tile.setTcost(cost);
                 tile.transform.SetParent(transform, false);
                 tile.transform.localPosition = new Vector3(x - offset.x, 0f, y - offset.y);
                 tile.SetPosition(x, y);
@@ -91,8 +117,7 @@ public void FindPath() {
     }
     if (path != null) {
         path1 = new GameObject("Path");
-        Path pathComponent = path1.AddComponent<Path>();
-        pathComponent.points = new Transform[0];  // Initialize with the exact count
+        Path pathComponent = path1.AddComponent<Path>();  // Initialize with the exact count
         InitializeStart(startTile, path1);
         Debug.Log("Path found! Length: " + path.Count + " tiles.");
         foreach (Tile tile in path) {

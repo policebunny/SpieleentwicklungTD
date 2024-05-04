@@ -34,6 +34,10 @@ public class Tile : MonoBehaviour
         gridPosition = new Vector2Int(x, y);
     }
 
+    public void setTcost(int cost){
+        tCost = cost;
+    }
+
     // Method to add a neighbor tile
     public void AddNeighbor(Tile neighbor)
     {

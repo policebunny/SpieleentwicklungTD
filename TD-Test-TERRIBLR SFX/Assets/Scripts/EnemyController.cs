@@ -41,7 +41,7 @@ public class EnemyController : MonoBehaviour
         if(isFlying)
         {
             transform.position += Vector3.up * flyHeight;
-            currentPoint = thePath.points.Length - 1;
+            currentPoint = thePath.points.Count - 1;
         }
     }
 
@@ -63,7 +63,7 @@ public class EnemyController : MonoBehaviour
                     if (Vector3.Distance(transform.position, thePath.points[currentPoint].position) < .01f)
                     {
                         currentPoint = currentPoint + 1;
-                        if (currentPoint >= thePath.points.Length)
+                        if (currentPoint >= thePath.points.Count)
                         {
                             reachedEnd = true;
 
@@ -77,7 +77,7 @@ public class EnemyController : MonoBehaviour
                     if (Vector3.Distance(transform.position, thePath.points[currentPoint].position + (Vector3.up * flyHeight)) < .01f)
                     {
                         currentPoint = currentPoint + 1;
-                        if (currentPoint >= thePath.points.Length)
+                        if (currentPoint >= thePath.points.Count)
                         {
                             reachedEnd = true;
 

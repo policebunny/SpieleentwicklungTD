@@ -23,7 +23,6 @@ public class LevelSelectController : MonoBehaviour
     {
         HandleZoom();
         Vector2 adjustedMousePos = new Vector2(Input.mousePosition.x / Screen.width, Input.mousePosition.y / Screen.height);
-        Debug.Log(adjustedMousePos);
 
 
         if (adjustedMousePos.x > .75f)

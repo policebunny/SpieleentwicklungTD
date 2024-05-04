@@ -40,7 +40,7 @@ public class Builder : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // 0 für left mouse button, 1 für right mouse button, 2 für middle mouse button
+        // 0 fï¿½r left mouse button, 1 fï¿½r right mouse button, 2 fï¿½r middle mouse button
         if (Input.GetMouseButtonDown(1))  
         {
             // reset list of Build and move instead
@@ -75,7 +75,7 @@ public class Builder : MonoBehaviour
             if (IsMoving)
             {
                 
-                Debug.Log("Move it");
+                //Debug.Log("Move it");
                 transform.position = Vector3.MoveTowards(transform.position, BuildTransformList[0].position, MovementSpeed * Time.deltaTime);
                 if (Vector3.Distance(transform.position, BuildTransformList[0].position) < .8f)
                 {

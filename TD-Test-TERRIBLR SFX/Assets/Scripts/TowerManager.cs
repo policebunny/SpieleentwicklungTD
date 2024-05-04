@@ -114,7 +114,7 @@ public class TowerManager : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit, 100f, whatIsPlacement))
         {
-           Debug.Log(hit.transform.gameObject.name);
+           //Debug.Log(hit.transform.gameObject.name);
            location = hit.transform.gameObject.transform.position;
         }
 

@@ -52,12 +52,10 @@ public class EnemyController : MonoBehaviour
         {
             if (reachedEnd == false)
             {
-                Debug.Log(thePath.points[currentPoint]);
                 transform.LookAt(thePath.points[currentPoint]);
 
                 if (!isFlying)
                 {
-
                     transform.position = Vector3.MoveTowards(transform.position, thePath.points[currentPoint].position, moveSpeed * Time.deltaTime * speedMod);
 
                     if (Vector3.Distance(transform.position, thePath.points[currentPoint].position) < .01f)

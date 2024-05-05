@@ -257,6 +257,15 @@ MonoBehaviour:
   - {fileID: -4593941494651084710, guid: 115e19f45cfeb3648b9618a720e2f288, type: 3}
   - {fileID: -6247968726390127376, guid: 79488be375cdbca4e887818fba0d25f2, type: 3}
   size: {x: 0, y: 0}
+  dekoPrefeb:
+  - {fileID: 122670, guid: f7e91e1d54c5ad64f8125310343f0d30, type: 3}
+  - {fileID: 157752, guid: bc69307c2f84e9748bd3cedb18c6e7fa, type: 3}
+  - {fileID: 144238, guid: e56f1fbea0219724398a7942c07f3618, type: 3}
+  - {fileID: 142994, guid: d6389bfdb7e456640b3a45339aac60a4, type: 3}
+  - {fileID: 135202, guid: 888a19a6a2e12e240b806f77f4d0ed07, type: 3}
+  - {fileID: 151234, guid: 390c2bf1514a09e49a2aa0361d9e314c, type: 3}
+  - {fileID: 185154, guid: bd797f8b461dda044840c3a0bd197fe7, type: 3}
+  - {fileID: 110840, guid: 1d456465ccee43b43a70e33675d29bd8, type: 3}
   castlePrefab: {fileID: 5391037814656261307, guid: 60456b14f65adf042914e62c8696fb50, type: 3}
   pathPrefab: {fileID: 0}
   startPrefab: {fileID: 8905853456707556790, guid: f8d5ac6066074264b9614d4e35f9be56, type: 3}
@@ -271,7 +280,7 @@ Transform:
   m_GameObject: {fileID: 560750555}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1010,6 +1019,10 @@ PrefabInstance:
     - target: {fileID: 6591708523829170350, guid: 222fe1be734f1b448bf5aaa672878d88, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -1213.0002
+      objectReference: {fileID: 0}
+    - target: {fileID: 6591708524225509569, guid: 222fe1be734f1b448bf5aaa672878d88, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -21.776367
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

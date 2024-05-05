@@ -1,10 +1,13 @@
 using UnityEngine;
 using System.Collections.Generic;
+using System.Diagnostics;
 
 public class Tile : MonoBehaviour
 {
     public Vector2Int gridPosition;
     public bool isWalkable = true;
+    public GameBoard gameBoard;
+
     public int gCost; 
     public int hCost; 
     public int fCost; 
@@ -18,11 +21,7 @@ public class Tile : MonoBehaviour
 
     public void Awake()
     {
-       //gCost = UnityEngine.Random.Range(0, 50);
-       tCost = UnityEngine.Random.Range(0, 50);
-       if(tCost>100){
-           isWalkable = false;
-       }
+        
     }
     public void CalculateFCost()
     {
@@ -36,8 +35,35 @@ public class Tile : MonoBehaviour
 
     public void setTcost(int cost){
         tCost = cost;
+        spawnDeko(cost);
+
     }
 
+    public void spawnDeko(int cost){
+        switch(cost){
+            case 67:
+                Instantiate(gameBoard.dekoPrefeb[6] ,transform);
+                break;
+            case 12:
+                Instantiate(gameBoard.dekoPrefeb[1],transform);
+                break;
+            case 27:
+                Instantiate(gameBoard.dekoPrefeb[2],transform);
+                break;
+            case 31:
+                Instantiate(gameBoard.dekoPrefeb[3],transform);
+                break;
+            case 42:
+                Instantiate(gameBoard.dekoPrefeb[4],transform);
+                break;
+            case 51:
+                Instantiate(gameBoard.dekoPrefeb[5],transform);
+                break;  
+            default:
+                break;
+        };
+    }
+    
     // Method to add a neighbor tile
     public void AddNeighbor(Tile neighbor)
     {

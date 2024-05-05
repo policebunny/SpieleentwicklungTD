@@ -7,6 +7,7 @@ public class GameBoard : MonoBehaviour
 {
     [SerializeField] Tile[] tilePrefab = default;
     [SerializeField] Vector2Int size; // Size of the grid
+    public GameObject[] dekoPrefeb;
     private GameObject castle;
     private Tile castleTile;
     private Tile[,] tiles; // 2D array to hold references to all tiles
@@ -19,7 +20,7 @@ public class GameBoard : MonoBehaviour
     {
         size = psize;
         tiles = new Tile[size.x, size.y];
-        Vector2 offset = new Vector2((size.x - 1) * 0.5f, (size.y - 1) * 0.5f);
+        Vector3 offset = new Vector3((size.x - 1) * 0.5f,0, (size.y - 1) * 0.5f);
         for (int y = 0; y < size.y; y++)
         {
             for (int x = 0; x < size.x; x++)
@@ -29,7 +30,7 @@ public class GameBoard : MonoBehaviour
                 switch(cost)
                 {
                 case <7:
-                    tile = Instantiate(tilePrefab[1]);
+                    tile = Instantiate(tilePrefab[1],offset,Quaternion.identity);
                     break;
                 case <17:
                     tile = Instantiate(tilePrefab[2]);
@@ -50,6 +51,7 @@ public class GameBoard : MonoBehaviour
                     tile = Instantiate(tilePrefab[0]);
                     break;
                 };  
+                tile.gameBoard = this;
                 tile.setTcost(cost);
                 tile.transform.SetParent(transform, false);
                 tile.transform.localPosition = new Vector3(x - offset.x, 0f, y - offset.y);

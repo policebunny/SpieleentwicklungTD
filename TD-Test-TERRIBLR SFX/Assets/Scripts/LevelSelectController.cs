@@ -22,6 +22,9 @@ public class LevelSelectController : MonoBehaviour
     void Update()
     {
         HandleZoom();
+        if(Input.GetMouseButton(1))
+        {
+        
         Vector2 adjustedMousePos = new Vector2(Input.mousePosition.x / Screen.width, Input.mousePosition.y / Screen.height);
 
 
@@ -72,7 +75,7 @@ public class LevelSelectController : MonoBehaviour
                 theCam.position -= theCam.forward * moveSpeed * Time.deltaTime * .5f;
             }
         }
-
+        }
         //theCam.position = new Vector3(Mathf.Clamp(theCam.position.x, minPos.position.x, maxPos.position.x), theCam.position.y, Mathf.Clamp(theCam.position.z, minPos.position.z, maxPos.position.z));
     }
 

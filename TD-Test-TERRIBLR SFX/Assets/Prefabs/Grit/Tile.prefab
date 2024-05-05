@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 7555418915520244541}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7070799, y: 0.006170608, z: -0.006170608, w: 0.7070799}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -121,6 +121,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridPosition: {x: 0, y: 0}
   isWalkable: 1
+  gameBoard: {fileID: 0}
   gCost: 0
   hCost: 0
   fCost: 0

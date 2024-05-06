@@ -30,12 +30,18 @@ public class LevelManager : MonoBehaviour
 
         levelActive = true;
 
-        AudioManager.instance.PlayBGM();
+        //AudioManager.instance.PlayBGM();
     }
 
     // Update is called once per frame
     void Update()
     {
+        theCastles = FindObjectsOfType<Castle>();
+        //enemySpawner = FindObjectOfType<SimpleEnemySpawner>();
+        waveSpawners = FindObjectsOfType<EnemyWaveSpawner>();
+
+        levelActive = true;
+        
         if(levelActive)
         {
             float totalCastleHealth = 0;
@@ -73,7 +79,7 @@ public class LevelManager : MonoBehaviour
 
             if(!levelActive)
             {
-                UIController.instance.levelFailScreen.SetActive(!levelVictory);
+                //UIController.instance.levelFailScreen.SetActive(!levelVictory);
                 UIController.instance.levelCompleteScreen.SetActive(levelVictory);
 
                 UIController.instance.CloseTowerUpgradePanel();

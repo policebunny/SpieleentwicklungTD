@@ -128,7 +128,7 @@ public class Builder : MonoBehaviour
             if (IsMoving)
             {
 
-                Debug.Log("Move it");
+                //Debug.Log("Move it");
                 transform.position = Vector3.MoveTowards(transform.position, rightClickMovement, MovementSpeed * Time.deltaTime);
                 if (Vector3.Distance(transform.position, rightClickMovement) < .1f)
                 {

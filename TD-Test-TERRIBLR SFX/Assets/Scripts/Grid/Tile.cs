@@ -45,7 +45,7 @@ public class Tile : MonoBehaviour
                 Instantiate(gameBoard.dekoPrefeb[6] ,transform);
                 break;
             case 12:
-                Instantiate(gameBoard.dekoPrefeb[1],transform);
+                Instantiate(gameBoard.dekoPrefeb[1]);
                 break;
             case 27:
                 Instantiate(gameBoard.dekoPrefeb[2],transform);

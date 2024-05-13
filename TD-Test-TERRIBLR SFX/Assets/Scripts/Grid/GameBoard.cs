@@ -2,11 +2,17 @@ using UnityEngine;
 using System.Collections.Generic;
 using System.Diagnostics.Tracing;
 using UnityEngine.UIElements;
+using System.Security.Cryptography;
 
 public class GameBoard : MonoBehaviour
 {
     [SerializeField] Tile[] tilePrefab = default;
     [SerializeField] Vector2Int size; // Size of the grid
+
+
+    public GameObject straightWay;
+    public GameObject cornerWay;
+    public GameObject tWay;
     public GameObject[] dekoPrefeb;
     private GameObject castle;
     private Tile castleTile;
@@ -20,37 +26,37 @@ public class GameBoard : MonoBehaviour
     {
         size = psize;
         tiles = new Tile[size.x, size.y];
-        Vector3 offset = new Vector3((size.x - 1) * 0.5f,0, (size.y - 1) * 0.5f);
+        Vector3 offset = new Vector3((size.x - 1) * 0.5f, 0, (size.y - 1) * 0.5f);
         for (int y = 0; y < size.y; y++)
         {
             for (int x = 0; x < size.x; x++)
             {
                 int cost = UnityEngine.Random.Range(0, 100);
                 Tile tile;
-                switch(cost)
+                switch (cost)
                 {
-                case <7:
-                    tile = Instantiate(tilePrefab[1],offset,Quaternion.identity);
-                    break;
-                case <17:
-                    tile = Instantiate(tilePrefab[2]);
-                    break;
-                case <27:
-                    tile = Instantiate(tilePrefab[3]);
-                    break;
-                case <31:
-                    tile = Instantiate(tilePrefab[4]);
-                    break;
-                case <42:
-                    tile = Instantiate(tilePrefab[5]);
-                    break;
-                case <51:
-                    tile = Instantiate(tilePrefab[6]);
-                    break;  
-                default:
-                    tile = Instantiate(tilePrefab[0]);
-                    break;
-                };  
+                    case < 7:
+                        tile = Instantiate(tilePrefab[1], offset, Quaternion.identity);
+                        break;
+                    case < 17:
+                        tile = Instantiate(tilePrefab[2], offset, Quaternion.identity);
+                        break;
+                    case < 27:
+                        tile = Instantiate(tilePrefab[3], offset, Quaternion.identity);
+                        break;
+                    case < 31:
+                        tile = Instantiate(tilePrefab[4], offset, Quaternion.identity);
+                        break;
+                    case < 42:
+                        tile = Instantiate(tilePrefab[5], offset, Quaternion.identity);
+                        break;
+                    case < 51:
+                        tile = Instantiate(tilePrefab[6], offset, Quaternion.identity);
+                        break;
+                    default:
+                        tile = Instantiate(tilePrefab[0], offset, Quaternion.identity);
+                        break;
+                };
                 tile.gameBoard = this;
                 tile.setTcost(cost);
                 tile.transform.SetParent(transform, false);
@@ -62,7 +68,7 @@ public class GameBoard : MonoBehaviour
 
         PlaceCastle(); // Function to place a castle on the board
         SetNeighbors(size); // Establish neighbors for each tile
-        FindPath(); // Example of how to use the pathfinding
+        FindPath(0); // Example of how to use the pathfinding
     }
 
 
@@ -70,7 +76,7 @@ public class GameBoard : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.P))
         {
-            FindPath();
+            FindPath(0.2f);
         }
     }
     private void SetNeighbors(Vector2Int gridSize)
@@ -97,48 +103,69 @@ public class GameBoard : MonoBehaviour
         selectedTile.gameObject.AddComponent<Castle_empty>();
         selectedTile.GetComponent<Renderer>().material.color = Color.magenta;
         // Instantiate the castle prefab at the selected tile's position
-        GameObject castle1 = Instantiate(castlePrefab, selectedTile.transform.position, Quaternion.identity);
+        GameObject castle1 = Instantiate(castlePrefab, selectedTile.transform.position+new Vector3(-0.5f,0,-0.5f), Quaternion.identity);
         castle1.transform.SetParent(selectedTile.transform);
         castle = castle1;
         //Destroy(selectedTile.GetComponent<MyClickableObject>());
     }
-public void FindPath() {
-    AStarPathfinding pathfinding = GetComponent<AStarPathfinding>();
-    if (pathfinding == null) {
-        Debug.LogError("AStarPathfinding component is not attached to the game object!");
-        return;
-    }
-    Tile startTile = CreateStart();
-    List<Tile> path = pathfinding.FindPath(startTile, castleTile);
-    int counter = 0;
-    while (path == null && counter < 100) {
-        startTile.GetComponent<Renderer>().material.color = Color.white;
-        startTile = CreateStart();
-        path = pathfinding.FindPath(startTile, castleTile);
-        counter++;
-    }
-    if (path != null) {
-        path1 = new GameObject("Path");
-        Path pathComponent = path1.AddComponent<Path>();  // Initialize with the exact count
-        InitializeStart(startTile, path1);
-        Debug.Log("Path found! Length: " + path.Count + " tiles.");
-        foreach (Tile tile in path) {
-            tile.GetComponent<Renderer>().material.color = Color.green;
-            GameObject pathPoint = Instantiate(pathPointPrefab, tile.transform.position, Quaternion.identity);
-            if (pathPoint != null) {
-                pathPoint.transform.SetParent(path1.transform);
-                pathComponent.AddPoint(pathPoint.transform);
-            } else {
-                Debug.LogError("Path point is null");
+    public void FindPath(float timeinterval)
+    {
+        AStarPathfinding pathfinding = GetComponent<AStarPathfinding>();
+        if (pathfinding == null)
+        {
+            Debug.LogError("AStarPathfinding component is not attached to the game object!");
+            return;
+        }
+        Tile startTile = CreateStart();
+        List<Tile> path = pathfinding.FindPath(startTile, castleTile);
+        int counter = 0;
+        while (path == null && counter < 100)
+        {
+            startTile.GetComponent<Renderer>().material.color = Color.white;
+            startTile = CreateStart();
+            path = pathfinding.FindPath(startTile, castleTile);
+            counter++;
+        }
+        if (path != null)
+        {
+            path1 = new GameObject("Path");
+            Path pathComponent = path1.AddComponent<Path>();  // Initialize with the exact count
+            path1.AddComponent<PathBuilder>();
+            PathBuilder pb = path1.GetComponent<PathBuilder>();
+            pb.pathList = path;
+            pb.straightWay = straightWay;
+            pb.cornerWay = cornerWay;
+            pb.startTiel = startTile;
+            pb.endTile = castleTile;
+            pb.startPrefab = startPrefab;
+            pb.gameBoard = this;
+            pb.timeinterval = timeinterval;
+            if (timeinterval == 0)
+                InitializeStart(startTile, path1);
+            Debug.Log("Path found! Length: " + path.Count + " tiles.");
+            foreach (Tile tile in path)
+            {
+                tile.GetComponent<Renderer>().material.color = Color.green;
+                GameObject pathPoint = Instantiate(pathPointPrefab, tile.transform.position+new Vector3(-0.5f,0,-0.5f), Quaternion.identity);
+                if (pathPoint != null)
+                {
+                    pathPoint.transform.SetParent(path1.transform);
+                    pathComponent.AddPoint(pathPoint.transform);
+                }
+                else
+                {
+                    Debug.LogError("Path point is null");
+                }
             }
         }
-    } else {
-        Debug.Log("No path found.");
+        else
+        {
+            Debug.Log("No path found.");
+        }
     }
-}
 
 
-    private void InitializeStart(Tile startTile, GameObject gamePath)
+    public void InitializeStart(Tile startTile, GameObject gamePath)
     {
         if (startTile == null)
         {
@@ -158,7 +185,7 @@ public void FindPath() {
         }
 
         // Instantiate the starting prefab at the position of the start tile
-        GameObject spawn = Instantiate(startPrefab, startTile.transform.position, Quaternion.identity);
+        GameObject spawn = Instantiate(startPrefab, startTile.transform.position+new Vector3(-0.5f,0,-0.5f), Quaternion.identity);
         if (spawn == null)
         {
             Debug.LogError("InitializeStart: Failed to instantiate startPrefab.");
@@ -237,4 +264,5 @@ public void FindPath() {
         Debug.Log(edgeTile.gridPosition);
         return edgeTile;
     }
+
 }

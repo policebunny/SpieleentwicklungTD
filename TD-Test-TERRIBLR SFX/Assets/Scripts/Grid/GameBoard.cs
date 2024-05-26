@@ -9,7 +9,7 @@ public class GameBoard : MonoBehaviour
     [SerializeField] Tile[] tilePrefab = default;
     [SerializeField] Vector2Int size; // Size of the grid
 
-
+    public GameObject waypref;
     public GameObject straightWay;
     public GameObject cornerWay;
     public GameObject tWay;

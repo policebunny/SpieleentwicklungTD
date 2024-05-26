@@ -29,7 +29,6 @@ public class PathBuilder : MonoBehaviour
         timer -= Time.deltaTime;
         if (timer <= 0)
         {
-            Debug.Log(pathPointer+"--"+pathList.Count);
             if (pathPointer == 0)
             {
                 buildPath(startTiel,pathList[pathPointer], pathList[pathPointer + 1]);
@@ -57,7 +56,6 @@ public class PathBuilder : MonoBehaviour
         Vector3 directionpref = thisTile.transform.position - prefTile.transform.position;
         Vector3 directionnext = thisTile.transform.position - nextTile.transform.position;
         //Debug.Log(direction);
-        Debug.Log(directionnext+"-"+directionpref);
 
         if (direction == new Vector3(0, 0, 2) || direction == new Vector3(0, 0, -2))
         {

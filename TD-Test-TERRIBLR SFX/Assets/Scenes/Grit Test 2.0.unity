@@ -184,7 +184,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62138cb27a0506943ba6d93838548b45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boardSize: {x: 100, y: 110}
+  boardSize: {x: 40, y: 40}
   board: {fileID: 560750557}
 --- !u!4 &532242886
 Transform:
@@ -257,13 +257,14 @@ MonoBehaviour:
   - {fileID: -4593941494651084710, guid: 115e19f45cfeb3648b9618a720e2f288, type: 3}
   - {fileID: -6247968726390127376, guid: 79488be375cdbca4e887818fba0d25f2, type: 3}
   size: {x: 0, y: 0}
+  waypref: {fileID: 0}
   straightWay: {fileID: 123434, guid: c87a99b4c24b9ce48bac40727eb1ecb6, type: 3}
   cornerWay: {fileID: 155188, guid: 277c7d167d4d0af4aac55cdde94e2ff6, type: 3}
   tWay: {fileID: 136306, guid: 6071db37dae58dc418710a47e22faca7, type: 3}
   dekoPrefeb:
   - {fileID: 122670, guid: f7e91e1d54c5ad64f8125310343f0d30, type: 3}
   - {fileID: 157752, guid: bc69307c2f84e9748bd3cedb18c6e7fa, type: 3}
-  - {fileID: 144238, guid: e56f1fbea0219724398a7942c07f3618, type: 3}
+  - {fileID: 112838, guid: fb90cbb8aa7bd7449b1f54b46cc66a18, type: 3}
   - {fileID: 142994, guid: d6389bfdb7e456640b3a45339aac60a4, type: 3}
   - {fileID: 135202, guid: 888a19a6a2e12e240b806f77f4d0ed07, type: 3}
   - {fileID: 151234, guid: 390c2bf1514a09e49a2aa0361d9e314c, type: 3}

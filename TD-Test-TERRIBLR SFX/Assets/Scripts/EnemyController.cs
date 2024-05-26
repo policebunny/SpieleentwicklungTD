@@ -5,19 +5,20 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour
 {
     public float moveSpeed;
-    [HideInInspector]
+    //[HideInInspector]
     public float speedMod = 1f;
 
-    private Path thePath;
+    public Path thePath;
+    public GameObject pathpoint;
     private int currentPoint;
-    private bool reachedEnd;
+    public bool reachedEnd;
 
     public float timeBetweenAttacks, damagePerAttack;
     private float attackCounter;
 
     private Castle theCastle;
 
-    private int selectedAttackPoint;
+    public int selectedAttackPoint;
 
     public bool isFlying;
     public float flyHeight;
@@ -40,14 +41,14 @@ public class EnemyController : MonoBehaviour
         if(isFlying)
         {
             transform.position += Vector3.up * flyHeight;
-            currentPoint = thePath.points.Length - 1;
+            currentPoint = thePath.points.Count - 1;
         }
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (LevelManager.instance.levelActive)
+        //if (LevelManager.instance.levelActive)
         {
             if (reachedEnd == false)
             {
@@ -55,13 +56,12 @@ public class EnemyController : MonoBehaviour
 
                 if (!isFlying)
                 {
-
                     transform.position = Vector3.MoveTowards(transform.position, thePath.points[currentPoint].position, moveSpeed * Time.deltaTime * speedMod);
 
                     if (Vector3.Distance(transform.position, thePath.points[currentPoint].position) < .01f)
                     {
                         currentPoint = currentPoint + 1;
-                        if (currentPoint >= thePath.points.Length)
+                        if (currentPoint >= thePath.points.Count)
                         {
                             reachedEnd = true;
 
@@ -75,7 +75,7 @@ public class EnemyController : MonoBehaviour
                     if (Vector3.Distance(transform.position, thePath.points[currentPoint].position + (Vector3.up * flyHeight)) < .01f)
                     {
                         currentPoint = currentPoint + 1;
-                        if (currentPoint >= thePath.points.Length)
+                        if (currentPoint >= thePath.points.Count)
                         {
                             reachedEnd = true;
 

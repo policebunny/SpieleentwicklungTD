@@ -10,6 +10,7 @@ public class EnemyHealthController : MonoBehaviour
     public Slider healthBar;
 
     public int moneyOnDeath = 50;
+    public int magicOnDeath = 10;
 
     // Start is called before the first frame update
     void Start()
@@ -19,7 +20,7 @@ public class EnemyHealthController : MonoBehaviour
 
         LevelManager.instance.activeEnemies.Add(this);
 
-        AudioManager.instance.PlaySFX(7);
+        //AudioManager.instance.PlaySFX(7);
     }
 
     // Update is called once per frame
@@ -38,6 +39,8 @@ public class EnemyHealthController : MonoBehaviour
             Destroy(gameObject);
 
             MoneyManager.instance.GiveMoney(moneyOnDeath);
+
+            ForschungSystem.instance.GetXP(magicOnDeath); // getting ressource "magic" which equals to xp in our system
 
             LevelManager.instance.activeEnemies.Remove(this);
 

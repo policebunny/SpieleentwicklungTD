@@ -22,7 +22,6 @@ public class LevelSelectController : MonoBehaviour
     void Update()
     {
         HandleZoom();
-        Debug.Log("Zooming");
         if(Input.GetMouseButton(2))
         {
         

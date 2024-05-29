@@ -20,7 +20,7 @@ public class EnemyHealthController : MonoBehaviour
 
         LevelManager.instance.activeEnemies.Add(this);
 
-        AudioManager.instance.PlaySFX(7);
+        //AudioManager.instance.PlaySFX(7);
     }
 
     // Update is called once per frame

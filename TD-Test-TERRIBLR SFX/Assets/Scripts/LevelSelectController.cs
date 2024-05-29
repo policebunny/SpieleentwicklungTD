@@ -8,6 +8,8 @@ public class LevelSelectController : MonoBehaviour
 
     public float moveSpeed;
 
+    public float zoomSpeed;  // Speed of the zoom effect
+    public float minZoom, maxZoom;  // Minimum and maximum zoom limits
     public Transform minPos, maxPos;
 
     // Start is called before the first frame update
@@ -19,8 +21,11 @@ public class LevelSelectController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        HandleZoom();
+        if(Input.GetMouseButton(2))
+        {
+        
         Vector2 adjustedMousePos = new Vector2(Input.mousePosition.x / Screen.width, Input.mousePosition.y / Screen.height);
-        Debug.Log(adjustedMousePos);
 
 
         if (adjustedMousePos.x > .75f)
@@ -70,7 +75,14 @@ public class LevelSelectController : MonoBehaviour
                 theCam.position -= theCam.forward * moveSpeed * Time.deltaTime * .5f;
             }
         }
+        }
+        //theCam.position = new Vector3(Mathf.Clamp(theCam.position.x, minPos.position.x, maxPos.position.x), theCam.position.y, Mathf.Clamp(theCam.position.z, minPos.position.z, maxPos.position.z));
+    }
 
-        theCam.position = new Vector3(Mathf.Clamp(theCam.position.x, minPos.position.x, maxPos.position.x), theCam.position.y, Mathf.Clamp(theCam.position.z, minPos.position.z, maxPos.position.z));
+      private void HandleZoom()
+    {
+        Vector3 pos = theCam.position;
+        pos.y -= Input.mouseScrollDelta.y * 1;
+        theCam.position = pos;
     }
 }

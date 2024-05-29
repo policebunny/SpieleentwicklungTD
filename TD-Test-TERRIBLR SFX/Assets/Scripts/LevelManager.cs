@@ -30,12 +30,18 @@ public class LevelManager : MonoBehaviour
 
         levelActive = true;
 
-        AudioManager.instance.PlayBGM();
+        //AudioManager.instance.PlayBGM();
     }
 
     // Update is called once per frame
     void Update()
     {
+        theCastles = FindObjectsOfType<Castle>();
+        //enemySpawner = FindObjectOfType<SimpleEnemySpawner>();
+        waveSpawners = FindObjectsOfType<EnemyWaveSpawner>();
+
+        levelActive = true;
+        
         if(levelActive)
         {
             float totalCastleHealth = 0;
@@ -64,7 +70,7 @@ public class LevelManager : MonoBehaviour
 
             if(activeEnemies.Count == 0 && wavesComplete)
             {
-                levelActive = false;
+                //levelActive = false;
                 levelVictory = true;
 
                 

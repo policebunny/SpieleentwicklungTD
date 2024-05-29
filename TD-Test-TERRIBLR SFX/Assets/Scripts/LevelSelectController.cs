@@ -22,7 +22,8 @@ public class LevelSelectController : MonoBehaviour
     void Update()
     {
         HandleZoom();
-        if(Input.GetMouseButton(1))
+        Debug.Log("Zooming");
+        if(Input.GetMouseButton(2))
         {
         
         Vector2 adjustedMousePos = new Vector2(Input.mousePosition.x / Screen.width, Input.mousePosition.y / Screen.height);

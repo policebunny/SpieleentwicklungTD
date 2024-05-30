@@ -17,6 +17,9 @@ public class Builder : MonoBehaviour
     public float BuildTime = 1;
     public float BuildDone = 5;
 
+    // public List<Auftrag> AuftragList = new List<Auftrag> ();
+    // public Auftrag Auftrage;
+
     public List<Tower> BuildingList = new List<Tower>();
     public List<Transform> BuildTransformList = new List<Transform>();
     public List<int> WhatToDoList = new List<int>();
@@ -47,6 +50,7 @@ public class Builder : MonoBehaviour
             if (BuildingList.Count != 0)
             {
                 // brich ab und refund money
+
                 foreach (Tower tower in BuildingList)
                 {
                     MoneyManager.instance.GiveMoney(tower.cost);
@@ -58,7 +62,7 @@ public class Builder : MonoBehaviour
                 }
                 BuildingList.Clear();
                 BuildTransformList.Clear();
-
+                
             }
 
             // get new mouse position to move towards
@@ -152,7 +156,7 @@ public class Builder : MonoBehaviour
 
     public void TowerInstantiate(Tower TowerAdded, Transform indicatorAdded)
     {
-        Instantiate(TowerAdded, indicatorAdded.position, BuildingList[0].transform.rotation);
+        Instantiate(TowerAdded, indicatorAdded.position, indicatorAdded.rotation);
         indicatorAdded.gameObject.SetActive(false);
         UIController.instance.notEnoughMoneyWarning.SetActive(false);
         AudioManager.instance.PlaySFX(8);
@@ -201,19 +205,19 @@ public class Builder : MonoBehaviour
                 // should never reach here
                 break;
             case 1:
+                BuildingList[0].upgrader.UpgradeRange();
                 // Upgrade Range
                 break;
             case 2:
+                BuildingList[0].upgrader.UpgradeFireRate();
                 // Upgrade Firerate
                 break;
             default:
                 break;
         }
-
         BuildingList.RemoveAt(0);
         BuildTransformList.RemoveAt(0);
         WhatToDoList.RemoveAt(0);
-        upgraderList.RemoveAt(0);
         
     }
 

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIControllerNew : MonoBehaviour
 {
@@ -16,6 +17,9 @@ public class UIControllerNew : MonoBehaviour
     public GameObject citadel;
     public GameObject research;
     public GameObject enchant;
+    
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -88,5 +92,7 @@ public class UIControllerNew : MonoBehaviour
             Time.timeScale = 1f;
         }
     }
+
+ 
 }
 

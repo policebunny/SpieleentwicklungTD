@@ -332,6 +332,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Game
       objectReference: {fileID: 0}
+    - target: {fileID: 5261068599848498702, guid: 0d8a5ca87d83fe341ae86423d4684011, type: 3}
+      propertyPath: cornerWay
+      value: 
+      objectReference: {fileID: 919132149155446097, guid: 35244a918f06cba44885cdaa37cb9e30, type: 3}
+    - target: {fileID: 5261068599848498702, guid: 0d8a5ca87d83fe341ae86423d4684011, type: 3}
+      propertyPath: straightWay
+      value: 
+      objectReference: {fileID: 919132149155446097, guid: cc2c156e6b45d9a4b951fc09bbf15330, type: 3}
     - target: {fileID: 8870591147775614334, guid: 0d8a5ca87d83fe341ae86423d4684011, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

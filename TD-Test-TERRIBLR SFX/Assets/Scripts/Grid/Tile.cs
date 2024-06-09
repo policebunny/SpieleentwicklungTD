@@ -35,29 +35,29 @@ public class Tile : MonoBehaviour
 
     public void setTcost(int cost){
         tCost = cost;
-        spawnDeko(cost);
+        //spawnDeko(cost);
 
     }
 
     public void spawnDeko(int cost){
         switch(cost){
             case 67:
-                Instantiate(gameBoard.dekoPrefeb[6] ,transform);
+                Instantiate(gameBoard.dekoPrefeb[6].deco ,transform);
                 break;
             case 12:
-                Instantiate(gameBoard.dekoPrefeb[1]);
+                Instantiate(gameBoard.dekoPrefeb[1].deco ,transform);
                 break;
             case 27:
-                Instantiate(gameBoard.dekoPrefeb[2],transform);
+                Instantiate(gameBoard.dekoPrefeb[2].deco,transform);
                 break;
             case 31:
-                Instantiate(gameBoard.dekoPrefeb[3],transform);
+                Instantiate(gameBoard.dekoPrefeb[3].deco,transform);
                 break;
             case 42:
-                Instantiate(gameBoard.dekoPrefeb[4],transform);
+                Instantiate(gameBoard.dekoPrefeb[4].deco,transform);
                 break;
             case 51:
-                Instantiate(gameBoard.dekoPrefeb[5],transform);
+                Instantiate(gameBoard.dekoPrefeb[5].deco,transform);
                 break;  
             default:
                 break;

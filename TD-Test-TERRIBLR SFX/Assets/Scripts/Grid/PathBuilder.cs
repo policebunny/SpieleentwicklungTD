@@ -55,58 +55,70 @@ public class PathBuilder : MonoBehaviour
         Vector3 direction = prefTile.transform.position - nextTile.transform.position;
         Vector3 directionpref = thisTile.transform.position - prefTile.transform.position;
         Vector3 directionnext = thisTile.transform.position - nextTile.transform.position;
+        Vector3 scale = new Vector3(6,6,6);
         //Debug.Log(direction);
 
         if (direction == new Vector3(0, 0, 2) || direction == new Vector3(0, 0, -2))
         {
-            GameObject newWay = GameObject.Instantiate(straightWay, thisTile.transform.position + new Vector3(-0.24f, 0.01f, -1), Quaternion.Euler(0, 0, 0));
+            GameObject newWay = GameObject.Instantiate(straightWay, thisTile.transform.position + new Vector3(-0f,0.025f,-1), Quaternion.Euler(0, 0, 0));
             newWay.transform.SetParent(thisTile.transform);
+            newWay.transform.localScale = scale;
         }
         else if (direction == new Vector3(2, 0, 0) || direction == new Vector3(-2, 0, 0))
         {
-            GameObject newWay = GameObject.Instantiate(straightWay, thisTile.transform.position + new Vector3(-1, 0.01f, -0.86f), Quaternion.Euler(0, 90, 0));
+            GameObject newWay = GameObject.Instantiate(straightWay, thisTile.transform.position + new Vector3(-1,0.025f,-1f), Quaternion.Euler(0, 90, 0));
             newWay.transform.SetParent(thisTile.transform);
+            newWay.transform.localScale = scale;
         }
         else if (directionnext == new Vector3(1, 0, 0) && directionpref == new Vector3(0, 0, 1))
         {
-            GameObject newWay = GameObject.Instantiate(cornerWay, thisTile.transform.position + new Vector3(-0f, 0.01f, -1f), Quaternion.Euler(0, 0, 0));
+            GameObject newWay = GameObject.Instantiate(cornerWay, thisTile.transform.position + new Vector3(-0f,0.025f,-1f), Quaternion.Euler(0, 0, 0));
             newWay.transform.SetParent(thisTile.transform);
+            newWay.transform.localScale = scale;
         }
         else if (directionnext == new Vector3(1, 0, 0) && directionpref == new Vector3(0, 0, -1))
         {
-            GameObject newWay = GameObject.Instantiate(cornerWay, thisTile.transform.position + new Vector3(-1f, 0.01f, -1f), Quaternion.Euler(0, 90, 0));//-----------
+            GameObject newWay = GameObject.Instantiate(cornerWay, thisTile.transform.position + new Vector3(-1f,0.025f,-1f), Quaternion.Euler(0, 90, 0));//-----------
             newWay.transform.SetParent(thisTile.transform);
+            newWay.transform.localScale = scale;
         }
         else if (directionnext == new Vector3(-1, 0, 0) && directionpref == new Vector3(0, 0, 1))
         {
-            GameObject newWay = GameObject.Instantiate(cornerWay, thisTile.transform.position + new Vector3(-0f, 0.01f, 0f), Quaternion.Euler(0, 270, 0));
+            GameObject newWay = GameObject.Instantiate(cornerWay, thisTile.transform.position + new Vector3(-0f,0.025f,0f), Quaternion.Euler(0, 270, 0));
             newWay.transform.SetParent(thisTile.transform);
+            newWay.transform.localScale = scale;
         }
         else if (directionnext == new Vector3(-1, 0, 0) && directionpref == new Vector3(0, 0, -1))
         {
-            GameObject newWay = GameObject.Instantiate(cornerWay, thisTile.transform.position + new Vector3(-1f, 0.01f, 0f), Quaternion.Euler(0, 180, 0));//----
+            GameObject newWay = GameObject.Instantiate(cornerWay, thisTile.transform.position + new Vector3(-1f,0.025f,0f), Quaternion.Euler(0, 180, 0));//----
             newWay.transform.SetParent(thisTile.transform);
+            newWay.transform.localScale = scale;
         } 
         else if (directionnext == new Vector3(0, 0, 1) && directionpref == new Vector3(1, 0, 0))
         {
-            GameObject newWay = GameObject.Instantiate(cornerWay, thisTile.transform.position + new Vector3(-0f, 0.01f, -1f), Quaternion.Euler(0, 0, 0));
+            GameObject newWay = GameObject.Instantiate(cornerWay, thisTile.transform.position + new Vector3(-0f,0.025f,-1f), Quaternion.Euler(0, 0, 0));
             newWay.transform.SetParent(thisTile.transform);
+            newWay.transform.localScale = scale;
         }
         else if (directionnext == new Vector3(0, 0, 1) && directionpref == new Vector3(-1, 0, 0))
         {
-            GameObject newWay = GameObject.Instantiate(cornerWay, thisTile.transform.position + new Vector3(-0f, 0.01f, -0f), Quaternion.Euler(0, 270, 0));
+            GameObject newWay = GameObject.Instantiate(cornerWay, thisTile.transform.position + new Vector3(-0f,0.025f,-0f), Quaternion.Euler(0, 270, 0));
             newWay.transform.SetParent(thisTile.transform);
+            newWay.transform.localScale = scale;
         }
         else if (directionnext == new Vector3(0, 0, -1) && directionpref == new Vector3(1, 0, 0))
         {
-            GameObject newWay = GameObject.Instantiate(cornerWay, thisTile.transform.position + new Vector3(-1f, 0.01f, -1f), Quaternion.Euler(0, 90, 0));//-----
+            GameObject newWay = GameObject.Instantiate(cornerWay, thisTile.transform.position + new Vector3(-1f,0.025f,-1f), Quaternion.Euler(0, 90, 0));//-----
             newWay.transform.SetParent(thisTile.transform);
+            newWay.transform.localScale = scale;
         }
         else if (directionnext == new Vector3(0, 0, -1) && directionpref == new Vector3(-1, 0, 0))
         {
-            GameObject newWay = GameObject.Instantiate(cornerWay, thisTile.transform.position + new Vector3(-1f, 0.01f, 0f), Quaternion.Euler(0, 180, 0));//-----
+            GameObject newWay = GameObject.Instantiate(cornerWay, thisTile.transform.position + new Vector3(-1f,0.025f,0f), Quaternion.Euler(0, 180, 0));//-----
             newWay.transform.SetParent(thisTile.transform);
+            newWay.transform.localScale = scale;
         }
+        thisTile.GetComponent<Renderer>().material.color = Color.blue;
     }
 
 

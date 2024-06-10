@@ -5,6 +5,18 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
+  - enabled: 0
+    path: Assets/Scenes/StartScreen.unity
+    guid: 94c3667392df9dd4490d7c5f70994558
+  - enabled: 0
+    path: Assets/Scenes/Lore.unity
+    guid: 05a5989f4fb50554d8925ec2ac10e24b
+  - enabled: 0
+    path: Assets/Scenes/MenuYggdrasil.unity
+    guid: 35fad3174b3824d4d8ded52e68606341
+  - enabled: 0
+    path: Assets/Scenes/InGame.unity
+    guid: bc28339583547e04bbf3b2ce24e59667
   - enabled: 1
     path: Assets/Scenes/Main Menu.unity
     guid: fadc48f67f48ba84abbb678b7b050276

@@ -15,6 +15,8 @@ public class Builder : MonoBehaviour
     public bool DoneBuilding;
     public bool IsIdle; // CHANGE CODE
 
+    // maybe change to enum ?
+
     public float BuildTime = 1;
     public float BuildDone = 5;
 

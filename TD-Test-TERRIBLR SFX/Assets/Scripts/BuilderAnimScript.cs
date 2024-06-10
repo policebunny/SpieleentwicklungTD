@@ -34,5 +34,9 @@ public class BuilderAnimScript : MonoBehaviour
             // _animation.SetBool("otheranim_name", false);
             // _animation.SetBool("anim_name", true);
         }
+        if (selfBob.DoneBuilding)
+        {
+
+        }
     }
 }

@@ -13,6 +13,7 @@ public class Builder : MonoBehaviour
     public bool IsBuilding;
     public bool IsMoving;
     public bool DoneBuilding;
+    public bool IsIdle; // CHANGE CODE
 
     public float BuildTime = 1;
     public float BuildDone = 5;

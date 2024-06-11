@@ -10,5 +10,7 @@ public class LevelSelectButton : MonoBehaviour
     public void LoadLevel()
     {
         SceneManager.LoadScene(levelToLoad);
+        AudioManager.Instance.PlayUI("Defend");
+
     }
 }

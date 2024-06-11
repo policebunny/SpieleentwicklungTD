@@ -29,13 +29,13 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Test 2.unity
     guid: bbe47312bb869cd4c9d40b773cea20c3
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Test 3.unity
     guid: b395f5744362a544fb4ac5b1e6108dd7
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Test 4.unity
     guid: f6f42c065f7500444bcadb1bc6d2a39b
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Test 5.unity
     guid: 48cae3da89d139644a383fe3622257a6
   m_configObjects: {}

@@ -12,6 +12,8 @@ public class TowerButton : MonoBehaviour
         {
 
             TowerManager.instance.StartTowerPlacement(towerToPlace);
+            AudioManager.Instance.PlayUI("Tower_select_1");
+
         }
     }
 }

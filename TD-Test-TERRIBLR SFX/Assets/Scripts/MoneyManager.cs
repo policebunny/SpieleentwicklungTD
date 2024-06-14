@@ -17,6 +17,7 @@ public class MoneyManager : MonoBehaviour
     void Start()
     {
         UIController.instance.goldText.text = currentMoney.ToString();
+        UIControllerNew.instance.boneText.text = currentMoney.ToString();
     }
 
     // Update is called once per frame
@@ -30,6 +31,7 @@ public class MoneyManager : MonoBehaviour
         currentMoney += amountToGive;
 
         UIController.instance.goldText.text = currentMoney.ToString();
+        UIControllerNew.instance.boneText.text = currentMoney.ToString();
     }
 
     public bool SpendMoney(int amountToSpend)
@@ -45,6 +47,7 @@ public class MoneyManager : MonoBehaviour
         }
 
         UIController.instance.goldText.text = currentMoney.ToString();
+        UIControllerNew.instance.boneText.text = currentMoney.ToString();
 
         return canSpend;
     }

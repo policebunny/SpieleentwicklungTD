@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
+using UnityEngine.SceneManagement;
 
 public class UIControllerNew : MonoBehaviour
 {
@@ -17,8 +19,9 @@ public class UIControllerNew : MonoBehaviour
     public GameObject citadel;
     public GameObject research;
     public GameObject enchant;
-    
 
+    public TMP_Text boneText;
+    public TMP_Text magicText;
 
 
     // Start is called before the first frame update

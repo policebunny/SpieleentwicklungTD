@@ -1090,6 +1090,10 @@ PrefabInstance:
       propertyPath: lorePopUp
       value: 
       objectReference: {fileID: 1479977302}
+    - target: {fileID: 8125719550892056101, guid: 3df7193f61823446fb047a4fbd67c516, type: 3}
+      propertyPath: levelToLoad
+      value: InGame
+      objectReference: {fileID: 0}
     - target: {fileID: 8140797331203257803, guid: 3df7193f61823446fb047a4fbd67c516, type: 3}
       propertyPath: m_IsActive
       value: 0

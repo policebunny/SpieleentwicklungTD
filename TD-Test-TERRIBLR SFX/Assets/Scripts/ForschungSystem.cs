@@ -28,7 +28,7 @@ public class ForschungSystem : MonoBehaviour
 
     void Start()
     {
-
+        UIControllerNew.instance.magicText.text = CurrentXP.ToString();
     }
 
     // Update is called once per frame
@@ -41,8 +41,8 @@ public class ForschungSystem : MonoBehaviour
     {
         CurrentXP += amountOfXP;
         checkLvlUp();
-        // UIController.instance.goldText.text = currentMoney.ToString();
-        // change to currentXP.ToString(); fitting to UI object
+
+        UIControllerNew.instance.magicText.text = CurrentXP.ToString();
     }
 
     public void addSkillpoint ()
@@ -72,8 +72,7 @@ public class ForschungSystem : MonoBehaviour
             // maybe add here lvl up sound?
 
             CurrentXP = 0;
-            // UIController.instance.goldText.text = currentMoney.ToString();
-            // change to currentXP.ToString(); fitting to UI object
+            UIControllerNew.instance.magicText.text = CurrentXP.ToString();
         }
     }
 }

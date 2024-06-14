@@ -915,7 +915,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1458415742}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.28815562
+  m_Size: 0.3016332
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1074,6 +1074,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 521291835314325136, guid: 3df7193f61823446fb047a4fbd67c516, type: 3}
+      propertyPath: levelToLoad
+      value: InGame
+      objectReference: {fileID: 0}
     - target: {fileID: 631900398675728529, guid: 3df7193f61823446fb047a4fbd67c516, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -1090,6 +1094,10 @@ PrefabInstance:
       propertyPath: lorePopUp
       value: 
       objectReference: {fileID: 1479977302}
+    - target: {fileID: 5599725891776102713, guid: 3df7193f61823446fb047a4fbd67c516, type: 3}
+      propertyPath: levelToLoad
+      value: InGame
+      objectReference: {fileID: 0}
     - target: {fileID: 8125719550892056101, guid: 3df7193f61823446fb047a4fbd67c516, type: 3}
       propertyPath: levelToLoad
       value: InGame

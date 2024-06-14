@@ -22,6 +22,10 @@ public class UIControllerNew : MonoBehaviour
 
     public TMP_Text boneText;
     public TMP_Text magicText;
+    public TMP_Text LvlText;
+    public List<TMP_Text> lvlTextList = new List<TMP_Text>();
+    public TMP_Text skillPointsText;
+    public List<TMP_Text> skillPointsList = new List<TMP_Text>();
 
 
     // Start is called before the first frame update
@@ -96,6 +100,12 @@ public class UIControllerNew : MonoBehaviour
         }
     }
 
- 
+    public void changeButton()
+    {
+        // change colour of new button to color code
+
+        // change other button to neutral color code
+    }
+
 }
 

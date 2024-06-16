@@ -27,7 +27,7 @@ public class GameBoard : MonoBehaviour
     public class DecoObject
     {
         public GameObject deco;
-        public bool isWalkable;
+        public bool notWalkable;
         public int size;
         public float weighting;
     }
@@ -45,6 +45,7 @@ public class GameBoard : MonoBehaviour
                 
                 int cost = UnityEngine.Random.Range(0, 100);
                 Tile tile;
+                
                 switch (cost)
                 {
                     case < 7:
@@ -273,7 +274,7 @@ public class GameBoard : MonoBehaviour
                     break;
             }
         }
-        Debug.Log(edgeTile.gridPosition);
+        //Debug.Log(edgeTile.gridPosition);
         return edgeTile;
     }
 

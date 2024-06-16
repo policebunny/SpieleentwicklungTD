@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657838, g: 0.49641228, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -385,9 +385,49 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 90126158549676616, guid: 3df7193f61823446fb047a4fbd67c516, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 248101926000626298, guid: 3df7193f61823446fb047a4fbd67c516, type: 3}
+      propertyPath: levelToLoad
+      value: InGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 521291835314325136, guid: 3df7193f61823446fb047a4fbd67c516, type: 3}
+      propertyPath: levelToLoad
+      value: InGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 1158454027830839879, guid: 3df7193f61823446fb047a4fbd67c516, type: 3}
+      propertyPath: levelToLoad
+      value: InGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 1626757978859433811, guid: 3df7193f61823446fb047a4fbd67c516, type: 3}
+      propertyPath: levelToLoad
+      value: InGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 2452396985378677621, guid: 3df7193f61823446fb047a4fbd67c516, type: 3}
+      propertyPath: levelToLoad
+      value: InGame
+      objectReference: {fileID: 0}
     - target: {fileID: 3977725676756792503, guid: 3df7193f61823446fb047a4fbd67c516, type: 3}
       propertyPath: m_Name
       value: Canvas StartMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 5599725891776102713, guid: 3df7193f61823446fb047a4fbd67c516, type: 3}
+      propertyPath: levelToLoad
+      value: InGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 7330512849252507666, guid: 3df7193f61823446fb047a4fbd67c516, type: 3}
+      propertyPath: levelToLoad
+      value: InGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 8125719550892056101, guid: 3df7193f61823446fb047a4fbd67c516, type: 3}
+      propertyPath: levelToLoad
+      value: InGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 8405916310310295779, guid: 3df7193f61823446fb047a4fbd67c516, type: 3}
+      propertyPath: levelToLoad
+      value: InGame
       objectReference: {fileID: 0}
     - target: {fileID: 8958079601592801481, guid: 3df7193f61823446fb047a4fbd67c516, type: 3}
       propertyPath: m_Pivot.x

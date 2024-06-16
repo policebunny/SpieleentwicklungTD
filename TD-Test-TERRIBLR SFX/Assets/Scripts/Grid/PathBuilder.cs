@@ -55,9 +55,13 @@ public class PathBuilder : MonoBehaviour
         Vector3 direction = prefTile.transform.position - nextTile.transform.position;
         Vector3 directionpref = thisTile.transform.position - prefTile.transform.position;
         Vector3 directionnext = thisTile.transform.position - nextTile.transform.position;
-        Vector3 scale = new Vector3(6,6,6);
+        Vector3 scale = new Vector3(5,5,5);
         //Debug.Log(direction);
-
+        // Delete all child objects of thisTile
+        foreach (Transform child in thisTile.transform)
+        {
+            GameObject.Destroy(child.gameObject);
+        }
         if (direction == new Vector3(0, 0, 2) || direction == new Vector3(0, 0, -2))
         {
             GameObject newWay = GameObject.Instantiate(straightWay, thisTile.transform.position + new Vector3(-0f,0.025f,-1), Quaternion.Euler(0, 0, 0));
@@ -135,6 +139,7 @@ public class PathBuilder : MonoBehaviour
         if (tileRenderer != null)
         {
             tileRenderer.material.color = Color.gray;
+
         }
         else
         {

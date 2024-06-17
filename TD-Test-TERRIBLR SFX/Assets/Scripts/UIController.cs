@@ -45,6 +45,10 @@ public class UIController : MonoBehaviour
 
     public void PauseUnpause()
     {
+
+        AudioManager.Instance.PlayUI("Button_click_1");
+
+
         if(pauseScreen.activeSelf == false)
         {
             pauseScreen.SetActive(true);

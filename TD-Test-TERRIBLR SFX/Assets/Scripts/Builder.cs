@@ -159,7 +159,7 @@ public class Builder : MonoBehaviour
         Instantiate(TowerAdded, indicatorAdded.position, indicatorAdded.rotation);
         indicatorAdded.gameObject.SetActive(false);
         UIController.instance.notEnoughMoneyWarning.SetActive(false);
-        AudioManager.instance.PlaySFX(8);
+        AudioManager.Instance.PlaySFX("Construction_complete_1");
         Destroy(indicatorAdded.gameObject);
         /*
      * Instantiate(activeTower, indicator.position, activeTower.transform.rotation);

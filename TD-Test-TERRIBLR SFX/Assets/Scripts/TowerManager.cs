@@ -27,6 +27,7 @@ public class TowerManager : MonoBehaviour
     public GameObject selectedTowerEffect;
 
     public Builder builder;
+    public bool builderMove = true;
 
     public int BuilderSpeed;
 
@@ -63,7 +64,7 @@ public class TowerManager : MonoBehaviour
                     {
 
                         isPlacing = false;
-
+                        builderMove = true;
 
                         builder.AddTowerToList(activeTower, indicator, 0);
 
@@ -79,6 +80,12 @@ public class TowerManager : MonoBehaviour
 
                     }
                 }
+                if (Input.GetMouseButtonDown(1))
+                {
+                    isPlacing = false;
+                    indicator.gameObject.SetActive(false);
+                    builderMove = true;
+                }
             }
         }
     }
@@ -88,6 +95,7 @@ public class TowerManager : MonoBehaviour
         activeTower = towerToPlace;
 
         isPlacing = true;
+        builderMove = false;
 
         // Destroy(indicator.gameObject);
         Tower placeTower = Instantiate(activeTower);

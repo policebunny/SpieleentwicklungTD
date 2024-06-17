@@ -16,7 +16,9 @@ public class LevelSelectController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        AudioManager.instance.PlayLevelSelectMusic();
+        AudioManager.Instance.musicPlaylist = new string[] { "Ingame_1", "Ingame_2", "Ingame_3" };
+        AudioManager.Instance.StartPlaylist();
+        AudioManager.Instance.PlayUI("Woosh");
     }
 
     // Update is called once per frame
@@ -27,20 +29,19 @@ public class LevelSelectController : MonoBehaviour
         {
             HandleCameraMovement();
         }
-        if(Input.GetKey(KeyCode.W))
+        if(Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
         {
             CameraUp();
         }
-        if(Input.GetKey(KeyCode.S))
+        if(Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
         {
             CameraDown();
         }
-        if(Input.GetKey(KeyCode.A))
+        if(Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
             CameraLeft();
         }
-        if(Input.GetKey(KeyCode.D))
-        {
+        if(Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow)){
             CameraRight();
         }
     }

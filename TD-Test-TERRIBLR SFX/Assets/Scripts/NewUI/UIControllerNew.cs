@@ -60,6 +60,7 @@ public class UIControllerNew : MonoBehaviour
     {
         if(enchant.activeSelf == false)
         {
+            CheckIfDiscovered(); // does nothing for now
             enchant.SetActive(true);
 
             Time.timeScale = 0f;
@@ -75,6 +76,7 @@ public class UIControllerNew : MonoBehaviour
     {
         if(research.activeSelf == false)
         {
+            CheckIfDiscovered(); // does nothing for now
             research.SetActive(true);
 
             Time.timeScale = 0f;
@@ -105,6 +107,21 @@ public class UIControllerNew : MonoBehaviour
         // change colour of new button to color code
 
         // change other button to neutral color code
+        return;
+    }
+
+    public void CheckIfDiscovered()
+    {
+        // momentan nur für ice forschung
+        for(int i = 0; i < ForschungsController.instance.discoveredCalm.Length; i++)
+        {
+            if (ForschungsController.instance.discoveredCalm[i] != 0)
+            {
+                // change button accordingly
+                changeButton(); // does nothing for now
+                return;
+            }
+        }
     }
 
 }

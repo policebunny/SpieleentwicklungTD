@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657838, g: 0.49641228, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -450,9 +450,21 @@ PrefabInstance:
       propertyPath: levelToLoad
       value: InGame
       objectReference: {fileID: 0}
+    - target: {fileID: 332443177328341312, guid: 3df7193f61823446fb047a4fbd67c516, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 466384668127488976, guid: 3df7193f61823446fb047a4fbd67c516, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 521291835314325136, guid: 3df7193f61823446fb047a4fbd67c516, type: 3}
       propertyPath: levelToLoad
       value: InGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 631900398675728529, guid: 3df7193f61823446fb047a4fbd67c516, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1158454027830839879, guid: 3df7193f61823446fb047a4fbd67c516, type: 3}
       propertyPath: levelToLoad
@@ -466,6 +478,10 @@ PrefabInstance:
       propertyPath: levelToLoad
       value: InGame
       objectReference: {fileID: 0}
+    - target: {fileID: 3914387664740417571, guid: 3df7193f61823446fb047a4fbd67c516, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3977725676756792503, guid: 3df7193f61823446fb047a4fbd67c516, type: 3}
       propertyPath: m_Name
       value: Canvas StartMenu
@@ -474,13 +490,61 @@ PrefabInstance:
       propertyPath: levelToLoad
       value: InGame
       objectReference: {fileID: 0}
+    - target: {fileID: 6350440390454894440, guid: 3df7193f61823446fb047a4fbd67c516, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6701007358305400317, guid: 3df7193f61823446fb047a4fbd67c516, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6701007358305400317, guid: 3df7193f61823446fb047a4fbd67c516, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6701007358305400317, guid: 3df7193f61823446fb047a4fbd67c516, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6701007358305400317, guid: 3df7193f61823446fb047a4fbd67c516, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 122
+      objectReference: {fileID: 0}
     - target: {fileID: 7330512849252507666, guid: 3df7193f61823446fb047a4fbd67c516, type: 3}
       propertyPath: levelToLoad
       value: InGame
       objectReference: {fileID: 0}
+    - target: {fileID: 7800292988732554120, guid: 3df7193f61823446fb047a4fbd67c516, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7800292988732554120, guid: 3df7193f61823446fb047a4fbd67c516, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7800292988732554120, guid: 3df7193f61823446fb047a4fbd67c516, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7800292988732554120, guid: 3df7193f61823446fb047a4fbd67c516, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7800292988732554120, guid: 3df7193f61823446fb047a4fbd67c516, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7800292988732554120, guid: 3df7193f61823446fb047a4fbd67c516, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8125719550892056101, guid: 3df7193f61823446fb047a4fbd67c516, type: 3}
       propertyPath: levelToLoad
       value: InGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 8134191817576213480, guid: 3df7193f61823446fb047a4fbd67c516, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8405916310310295779, guid: 3df7193f61823446fb047a4fbd67c516, type: 3}
       propertyPath: levelToLoad

@@ -1074,17 +1074,25 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 248101926000626298, guid: 3df7193f61823446fb047a4fbd67c516, type: 3}
+      propertyPath: levelToLoad
+      value: InGame
+      objectReference: {fileID: 0}
     - target: {fileID: 521291835314325136, guid: 3df7193f61823446fb047a4fbd67c516, type: 3}
       propertyPath: levelToLoad
       value: InGame
       objectReference: {fileID: 0}
-    - target: {fileID: 631900398675728529, guid: 3df7193f61823446fb047a4fbd67c516, type: 3}
-      propertyPath: m_IsActive
-      value: 1
+    - target: {fileID: 1158454027830839879, guid: 3df7193f61823446fb047a4fbd67c516, type: 3}
+      propertyPath: levelToLoad
+      value: InGame
       objectReference: {fileID: 0}
-    - target: {fileID: 3914387664740417571, guid: 3df7193f61823446fb047a4fbd67c516, type: 3}
-      propertyPath: m_IsActive
-      value: 1
+    - target: {fileID: 1626757978859433811, guid: 3df7193f61823446fb047a4fbd67c516, type: 3}
+      propertyPath: levelToLoad
+      value: InGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 2452396985378677621, guid: 3df7193f61823446fb047a4fbd67c516, type: 3}
+      propertyPath: levelToLoad
+      value: InGame
       objectReference: {fileID: 0}
     - target: {fileID: 3977725676756792503, guid: 3df7193f61823446fb047a4fbd67c516, type: 3}
       propertyPath: m_Name
@@ -1098,13 +1106,13 @@ PrefabInstance:
       propertyPath: levelToLoad
       value: InGame
       objectReference: {fileID: 0}
-    - target: {fileID: 8125719550892056101, guid: 3df7193f61823446fb047a4fbd67c516, type: 3}
+    - target: {fileID: 7330512849252507666, guid: 3df7193f61823446fb047a4fbd67c516, type: 3}
       propertyPath: levelToLoad
       value: InGame
       objectReference: {fileID: 0}
-    - target: {fileID: 8140797331203257803, guid: 3df7193f61823446fb047a4fbd67c516, type: 3}
-      propertyPath: m_IsActive
-      value: 0
+    - target: {fileID: 8125719550892056101, guid: 3df7193f61823446fb047a4fbd67c516, type: 3}
+      propertyPath: levelToLoad
+      value: InGame
       objectReference: {fileID: 0}
     - target: {fileID: 8405916310310295779, guid: 3df7193f61823446fb047a4fbd67c516, type: 3}
       propertyPath: levelToLoad
@@ -1206,4 +1214,4 @@ SceneRoots:
   - {fileID: 487965284}
   - {fileID: 2039251924}
   - {fileID: 6559448183027546493}
-  - {fileID: 744391448}
+  - {fileID: 1029518908}

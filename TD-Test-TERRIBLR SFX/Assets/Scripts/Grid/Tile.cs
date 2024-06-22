@@ -8,9 +8,9 @@ public class Tile : MonoBehaviour
     public bool isWalkable = true;
     public GameBoard gameBoard;
 
-    public int gCost; 
-    public int hCost; 
-    public int fCost; 
+    public int gCost;
+    public int hCost;
+    public int fCost;
     public Tile parent;
     public int tCost = 1;
 
@@ -18,10 +18,10 @@ public class Tile : MonoBehaviour
 
     public List<Tile> Neighbors => neighbors; // Public accessor for neighbors
 
-
-    public void Awake()
+    private Vector3 offset = new Vector3(-0.5f,0,-0.5f);
+    public void Start()
     {
-        
+        transform.localPosition += new Vector3(-0.5f, 0, -0.5f);
     }
     public void CalculateFCost()
     {
@@ -33,37 +33,42 @@ public class Tile : MonoBehaviour
         gridPosition = new Vector2Int(x, y);
     }
 
-    public void setTcost(int cost){
+    public void setTcost(int cost)
+    {
         tCost = cost;
-        spawnDeko(cost);
+        spawnDeko();
 
     }
 
-    public void spawnDeko(int cost){
-        switch(cost){
-            case 67:
-                Instantiate(gameBoard.dekoPrefeb[6] ,transform);
+    public void spawnDeko()
+    {
+        float totalWeight = 0;
+        foreach (var deco in gameBoard.dekoPrefeb)
+        {
+            totalWeight += deco.weighting;
+        }
+        float randomValue = UnityEngine.Random.Range(0, totalWeight);
+        float cumulativeWeight = 0;
+
+        foreach (var deco in gameBoard.dekoPrefeb)
+        {
+            cumulativeWeight += deco.weighting;
+            if (randomValue <= cumulativeWeight)
+            {
+                if (deco.deco!=null)
+                {
+                    Instantiate(deco.deco, transform.position+offset,Quaternion.Euler(0, UnityEngine.Random.Range(0, 360), 0),this.transform);
+                    if(deco.notWalkable)
+                    {
+                        isWalkable = false;
+                    }
+                }
                 break;
-            case 12:
-                Instantiate(gameBoard.dekoPrefeb[1]);
-                break;
-            case 27:
-                Instantiate(gameBoard.dekoPrefeb[2],transform);
-                break;
-            case 31:
-                Instantiate(gameBoard.dekoPrefeb[3],transform);
-                break;
-            case 42:
-                Instantiate(gameBoard.dekoPrefeb[4],transform);
-                break;
-            case 51:
-                Instantiate(gameBoard.dekoPrefeb[5],transform);
-                break;  
-            default:
-                break;
-        };
+            }
+        }
+
     }
-    
+
     // Method to add a neighbor tile
     public void AddNeighbor(Tile neighbor)
     {

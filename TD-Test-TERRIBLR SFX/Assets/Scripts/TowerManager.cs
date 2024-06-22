@@ -68,6 +68,7 @@ public class TowerManager : MonoBehaviour
 
                         builder.AddTowerToList(activeTower, indicator, 0);
 
+                        AudioManager.Instance.PlaySFX("Tower_placed_1");
                         /*
                         Instantiate(activeTower, indicator.position, activeTower.transform.rotation);
 
@@ -75,7 +76,6 @@ public class TowerManager : MonoBehaviour
 
                         UIController.instance.notEnoughMoneyWarning.SetActive(false);
 
-                        AudioManager.instance.PlaySFX(8);
                         */
 
                     }

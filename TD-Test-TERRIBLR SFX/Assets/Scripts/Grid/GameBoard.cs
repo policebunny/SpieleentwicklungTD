@@ -8,12 +8,12 @@ public class GameBoard : MonoBehaviour
 {
     [SerializeField] Tile[] tilePrefab = default;
     [SerializeField] Vector2Int size; // Size of the grid
-
+    
     public GameObject waypref;
     public GameObject straightWay;
     public GameObject cornerWay;
     public GameObject tWay;
-    public GameObject[] dekoPrefeb;
+    public DecoObject[] dekoPrefeb;
     private GameObject castle;
     private Tile castleTile;
     private Tile[,] tiles; // 2D array to hold references to all tiles
@@ -22,39 +22,52 @@ public class GameBoard : MonoBehaviour
     public GameObject startPrefab;
     public GameObject pathPointPrefab;
     public GameObject path1;
+
+    [System.Serializable]
+    public class DecoObject
+    {
+        public GameObject deco;
+        public bool notWalkable;
+        public int size;
+        public float weighting;
+    }
+
     public void Initialize(Vector2Int psize)
     {
         size = psize;
+        int rotation = 0;//Random.Range(0, 4) * 90;
         tiles = new Tile[size.x, size.y];
         Vector3 offset = new Vector3((size.x - 1) * 0.5f, 0, (size.y - 1) * 0.5f);
         for (int y = 0; y < size.y; y++)
         {
             for (int x = 0; x < size.x; x++)
             {
+                
                 int cost = UnityEngine.Random.Range(0, 100);
                 Tile tile;
+                
                 switch (cost)
                 {
                     case < 7:
-                        tile = Instantiate(tilePrefab[1], offset, Quaternion.identity);
+                        tile = Instantiate(tilePrefab[1], offset, Quaternion.Euler(0, rotation, 0));
                         break;
                     case < 17:
-                        tile = Instantiate(tilePrefab[2], offset, Quaternion.identity);
+                        tile = Instantiate(tilePrefab[2], offset, Quaternion.Euler(0, rotation, 0));
                         break;
                     case < 27:
-                        tile = Instantiate(tilePrefab[3], offset, Quaternion.identity);
+                        tile = Instantiate(tilePrefab[3], offset, Quaternion.Euler(0, rotation, 0));
                         break;
                     case < 31:
-                        tile = Instantiate(tilePrefab[4], offset, Quaternion.identity);
+                        tile = Instantiate(tilePrefab[4], offset, Quaternion.Euler(0, rotation, 0));
                         break;
                     case < 42:
-                        tile = Instantiate(tilePrefab[5], offset, Quaternion.identity);
+                        tile = Instantiate(tilePrefab[5], offset, Quaternion.Euler(0, rotation, 0));
                         break;
                     case < 51:
-                        tile = Instantiate(tilePrefab[6], offset, Quaternion.identity);
+                        tile = Instantiate(tilePrefab[6], offset, Quaternion.Euler(0, rotation, 0));
                         break;
                     default:
-                        tile = Instantiate(tilePrefab[0], offset, Quaternion.identity);
+                        tile = Instantiate(tilePrefab[0], offset, Quaternion.Euler(0, rotation, 0));
                         break;
                 };
                 tile.gameBoard = this;
@@ -103,7 +116,7 @@ public class GameBoard : MonoBehaviour
         selectedTile.gameObject.AddComponent<Castle_empty>();
         selectedTile.GetComponent<Renderer>().material.color = Color.magenta;
         // Instantiate the castle prefab at the selected tile's position
-        GameObject castle1 = Instantiate(castlePrefab, selectedTile.transform.position+new Vector3(-0.5f,0,-0.5f), Quaternion.identity);
+        GameObject castle1 = Instantiate(castlePrefab, selectedTile.transform.position+new Vector3(-0.5f,0,-0.5f), Quaternion.Euler(0, Random.Range(0, 4) * 90, 0));
         castle1.transform.SetParent(selectedTile.transform);
         castle = castle1;
         //Destroy(selectedTile.GetComponent<MyClickableObject>());
@@ -146,7 +159,7 @@ public class GameBoard : MonoBehaviour
             foreach (Tile tile in path)
             {
                 tile.GetComponent<Renderer>().material.color = Color.green;
-                GameObject pathPoint = Instantiate(pathPointPrefab, tile.transform.position+new Vector3(-0.5f,0,-0.5f), Quaternion.identity);
+                GameObject pathPoint = Instantiate(pathPointPrefab, tile.transform.position+new Vector3(-0.5f,0,-0.5f), Quaternion.Euler(0, Random.Range(0, 4) * 90, 0));
                 if (pathPoint != null)
                 {
                     pathPoint.transform.SetParent(path1.transform);
@@ -185,7 +198,7 @@ public class GameBoard : MonoBehaviour
         }
 
         // Instantiate the starting prefab at the position of the start tile
-        GameObject spawn = Instantiate(startPrefab, startTile.transform.position+new Vector3(-0.5f,0,-0.5f), Quaternion.identity);
+        GameObject spawn = Instantiate(startPrefab, startTile.transform.position+new Vector3(-0.5f,0,-0.5f), Quaternion.Euler(0, Random.Range(0, 4) * 90, 0));
         if (spawn == null)
         {
             Debug.LogError("InitializeStart: Failed to instantiate startPrefab.");
@@ -261,7 +274,7 @@ public class GameBoard : MonoBehaviour
                     break;
             }
         }
-        Debug.Log(edgeTile.gridPosition);
+        //Debug.Log(edgeTile.gridPosition);
         return edgeTile;
     }
 

@@ -14,7 +14,7 @@ public class MenuYggUIController : MonoBehaviour
 
     public GameObject menuScreen;
     public GameObject startscreen;
-    public GameObject lorePopUp;
+    public GameObject loreScreen;
     // Start is called before the first frame update
     void Start()
     {
@@ -56,14 +56,14 @@ public class MenuYggUIController : MonoBehaviour
     }
      public void loreScreenShowHide()
     {
-        if(lorePopUp.activeSelf == false)
+        if(loreScreen.activeSelf == false)
         {
-            lorePopUp.SetActive(true);
+            loreScreen.SetActive(true);
 
             Time.timeScale = 0f;
         } else
         {
-            lorePopUp.SetActive(false);
+            loreScreen.SetActive(false);
 
             Time.timeScale = 1f;
         }

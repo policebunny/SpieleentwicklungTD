@@ -31,16 +31,7 @@ public class ForschungSystem : MonoBehaviour
 
     void Start()
     {
-        UIControllerNew.instance.magicText.text = CurrentXP.ToString();
-        // UIControllerNew.instance.LvlText.text = CurrentLvl.ToString();
-        foreach (TMP_Text LvL in UIControllerNew.instance.lvlTextList)
-        {
-            LvL.text = CurrentLvl.ToString();
-        }
-        foreach (TMP_Text skillPoint in UIControllerNew.instance.skillPointsList)
-        {
-            skillPoint.text = Skillpoints.ToString();
-        }
+        
         // UIControllerNew.instance.skillPointsText.text = Skillpoints.ToString();
     }
 
@@ -109,5 +100,20 @@ public class ForschungSystem : MonoBehaviour
     public void ResetList()
     {
         activeTowers.Clear();
+    }
+
+    public int returnCurrentXP()
+    {
+        return CurrentXP;
+    }
+
+    public int returnCurrentLvl()
+    {
+        return CurrentLvl;
+    }
+
+    public int returnSkill()
+    {
+        return Skillpoints;
     }
 }

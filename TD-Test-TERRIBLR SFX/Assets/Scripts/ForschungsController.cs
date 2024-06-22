@@ -10,8 +10,8 @@ public class ForschungsController : MonoBehaviour
     public bool isAvailable;
 
     // index für spriterenderer für jeden button on change
-    private Image CIRangeColorImage;
-    public GameObject CIRangeIcon;
+    // private Image CIRangeColorImage;
+    // public GameObject CIRangeIcon;
 
     public int[] discoveredCalm = new int[12];
 
@@ -22,7 +22,7 @@ public class ForschungsController : MonoBehaviour
         {
 
             instance = this;
-            CIRangeColorImage = CIRangeIcon.GetComponent<Image>();
+            // CIRangeColorImage = CIRangeIcon.GetComponent<Image>();
 
             DontDestroyOnLoad(gameObject);
         }
@@ -39,7 +39,7 @@ public class ForschungsController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        CIRangeColorImage = CIRangeIcon.GetComponent<Image>();
+        // CIRangeColorImage = CIRangeIcon.GetComponent<Image>();
     }
     // methode für jede research
     public void CalmnessIceRange()

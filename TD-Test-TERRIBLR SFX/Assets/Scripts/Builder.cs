@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using UnityEngine.SceneManagement;
 
 public class Builder : MonoBehaviour
 {
@@ -42,7 +44,18 @@ public class Builder : MonoBehaviour
     void Start()
     {
         StartPosition = transform.position;
-        
+
+        UIControllerNew.instance.magicText.text = ForschungSystem.instance.returnCurrentXP().ToString();
+        // UIControllerNew.instance.LvlText.text = CurrentLvl.ToString();
+        foreach (TMP_Text LvL in UIControllerNew.instance.lvlTextList)
+        {
+            LvL.text = ForschungSystem.instance.returnCurrentLvl().ToString();
+        }
+        foreach (TMP_Text skillPoint in UIControllerNew.instance.skillPointsList)
+        {
+            skillPoint.text = ForschungSystem.instance.returnSkill().ToString();
+        }
+
     }
 
 

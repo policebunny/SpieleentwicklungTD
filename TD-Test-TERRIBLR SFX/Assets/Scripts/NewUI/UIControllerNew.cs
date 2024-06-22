@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
+using UnityEngine.SceneManagement;
 
 public class UIControllerNew : MonoBehaviour
 {
@@ -16,6 +19,14 @@ public class UIControllerNew : MonoBehaviour
     public GameObject citadel;
     public GameObject research;
     public GameObject enchant;
+
+    public TMP_Text boneText;
+    public TMP_Text magicText;
+    public TMP_Text LvlText;
+    public List<TMP_Text> lvlTextList = new List<TMP_Text>();
+    public TMP_Text skillPointsText;
+    public List<TMP_Text> skillPointsList = new List<TMP_Text>();
+
 
     // Start is called before the first frame update
     void Start()
@@ -49,6 +60,7 @@ public class UIControllerNew : MonoBehaviour
     {
         if(enchant.activeSelf == false)
         {
+            CheckIfDiscovered(); // does nothing for now
             enchant.SetActive(true);
 
             Time.timeScale = 0f;
@@ -64,6 +76,7 @@ public class UIControllerNew : MonoBehaviour
     {
         if(research.activeSelf == false)
         {
+            CheckIfDiscovered(); // does nothing for now
             research.SetActive(true);
 
             Time.timeScale = 0f;
@@ -88,5 +101,28 @@ public class UIControllerNew : MonoBehaviour
             Time.timeScale = 1f;
         }
     }
+
+    public void changeButton()
+    {
+        // change colour of new button to color code
+
+        // change other button to neutral color code
+        return;
+    }
+
+    public void CheckIfDiscovered()
+    {
+        // momentan nur für ice forschung
+        for(int i = 0; i < ForschungsController.instance.discoveredCalm.Length; i++)
+        {
+            if (ForschungsController.instance.discoveredCalm[i] != 0)
+            {
+                // change button accordingly
+                changeButton(); // does nothing for now
+                return;
+            }
+        }
+    }
+
 }
 

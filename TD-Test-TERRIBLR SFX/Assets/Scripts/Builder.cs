@@ -9,10 +9,16 @@ public class Builder : MonoBehaviour
     public Vector3 rightClickMovement;
     public GameObject BobtheBuilder;
     public float MovementSpeed;
+    public GameObject selectedBuilderEffect;
 
     public bool IsBuilding;
     public bool IsMoving;
     public bool DoneBuilding;
+    public bool IsIdle; // CHANGE CODE
+    public bool isSelected = false;
+    public bool mouseOver = false;
+
+    // maybe change to enum ?
 
     public float BuildTime = 1;
     public float BuildDone = 5;
@@ -44,7 +50,12 @@ public class Builder : MonoBehaviour
     void Update()
     {
         // 0 f�r left mouse button, 1 f�r right mouse button, 2 f�r middle mouse button
-        if (Input.GetMouseButtonDown(1))  
+        if(Input.GetMouseButtonDown(0) && !mouseOver)
+        {
+            isSelected = false;
+            selectedBuilderEffect.SetActive(false);
+        }
+        if (Input.GetMouseButtonUp(1) && isSelected)  
         {
             // reset list of Build and move instead
             if (BuildingList.Count != 0)
@@ -72,6 +83,7 @@ public class Builder : MonoBehaviour
             DoneBuilding = false;
             IsMoving = true;
         }
+        
 
         if (BuildingList.Count != 0)
         {
@@ -157,9 +169,10 @@ public class Builder : MonoBehaviour
     public void TowerInstantiate(Tower TowerAdded, Transform indicatorAdded)
     {
         Instantiate(TowerAdded, indicatorAdded.position, indicatorAdded.rotation);
+        ForschungSystem.instance.activeTowers.Add(TowerAdded);
         indicatorAdded.gameObject.SetActive(false);
         UIController.instance.notEnoughMoneyWarning.SetActive(false);
-        AudioManager.instance.PlaySFX(8);
+        // AudioManager.instance.PlaySFX(8);
         Destroy(indicatorAdded.gameObject);
         /*
      * Instantiate(activeTower, indicator.position, activeTower.transform.rotation);
@@ -219,6 +232,21 @@ public class Builder : MonoBehaviour
         BuildTransformList.RemoveAt(0);
         WhatToDoList.RemoveAt(0);
         
+    }
+
+    public void OnMouseOver()
+    {
+        if(Input.GetMouseButtonDown(0))
+        {
+            isSelected = true;
+            selectedBuilderEffect.SetActive(true);
+            mouseOver = true;
+        }
+    }
+
+    public void OnMouseExit()
+    {
+        mouseOver = false;
     }
 
 }

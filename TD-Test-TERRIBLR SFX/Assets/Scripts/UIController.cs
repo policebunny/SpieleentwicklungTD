@@ -86,6 +86,7 @@ public class UIController : MonoBehaviour
     {
         if (LevelManager.instance.levelActive)
         {
+            Debug.Log("open tower upgrade");
             towerUpgradePanel.gameObject.SetActive(true);
             towerUpgradePanel.SetupPanel();
         }
@@ -93,6 +94,7 @@ public class UIController : MonoBehaviour
 
     public void CloseTowerUpgradePanel()
     {
+        Debug.Log("close tower upgrade");
         towerUpgradePanel.gameObject.SetActive(false);
 
         if (TowerManager.instance.selectedTower != null)

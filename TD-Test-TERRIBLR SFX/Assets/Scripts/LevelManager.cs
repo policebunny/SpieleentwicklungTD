@@ -94,6 +94,7 @@ public class LevelManager : MonoBehaviour
 
                 UIController.instance.levelFailScreen.SetActive(!levelVictory);
                 UIController.instance.levelCompleteScreen.SetActive(levelVictory);
+                ForschungSystem.instance.ResetList();
 
                 UIController.instance.CloseTowerUpgradePanel();
             }

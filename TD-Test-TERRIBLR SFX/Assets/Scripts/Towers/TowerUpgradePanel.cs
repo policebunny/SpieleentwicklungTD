@@ -42,7 +42,6 @@ public class TowerUpgradePanel : MonoBehaviour
 
         UIController.instance.CloseTowerUpgradePanel();
 
-        AudioManager.instance.PlaySFX(9);
     }
 
     public void UpgradeRange()
@@ -65,7 +64,6 @@ public class TowerUpgradePanel : MonoBehaviour
 
                 UIController.instance.notEnoughMoneyWarning.SetActive(false);
 
-                AudioManager.instance.PlaySFX(10);
             } else
             {
                 UIController.instance.notEnoughMoneyWarning.SetActive(true);
@@ -94,7 +92,6 @@ public class TowerUpgradePanel : MonoBehaviour
 
                 UIController.instance.notEnoughMoneyWarning.SetActive(false);
 
-                AudioManager.instance.PlaySFX(10);
             }
             else
             {

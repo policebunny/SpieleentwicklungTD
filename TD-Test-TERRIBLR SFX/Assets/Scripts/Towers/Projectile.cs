@@ -18,7 +18,7 @@ public class Projectile : MonoBehaviour
     {
         theRB.velocity = transform.forward * moveSpeed;
 
-        AudioManager.instance.PlaySFX(2);
+        AudioManager.Instance.PlaySFX("Cannon_shot_1");
     }
 
     private void OnTriggerEnter(Collider other)
@@ -31,7 +31,7 @@ public class Projectile : MonoBehaviour
 
         Instantiate(impactEffect, transform.position, Quaternion.identity);
 
-        AudioManager.instance.PlaySFX(6);
+        AudioManager.Instance.PlaySFX("Cannon_hit_1");
 
         Destroy(gameObject);
     }

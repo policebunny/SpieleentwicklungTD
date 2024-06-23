@@ -5,37 +5,10 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/StartScreen.unity
-    guid: 94c3667392df9dd4490d7c5f70994558
-  - enabled: 0
-    path: Assets/Scenes/Lore.unity
-    guid: 05a5989f4fb50554d8925ec2ac10e24b
   - enabled: 1
     path: Assets/Scenes/MenuYggdrasil.unity
     guid: 65763210937abab43b8faa5f44e8d621
   - enabled: 1
     path: Assets/Scenes/InGame.unity
     guid: e5f0a97e15c66a64f8372f44f85be800
-  - enabled: 0
-    path: Assets/Scenes/Main Menu.unity
-    guid: fadc48f67f48ba84abbb678b7b050276
-  - enabled: 0
-    path: Assets/Scenes/Test 1.unity
-    guid: 3fd1d622052dd6b43ae192418c1787aa
-  - enabled: 0
-    path: Assets/Scenes/Level Select.unity
-    guid: b2ba933cd947ac5498f0d88cfa234678
-  - enabled: 0
-    path: Assets/Scenes/Test 2.unity
-    guid: bbe47312bb869cd4c9d40b773cea20c3
-  - enabled: 1
-    path: Assets/Scenes/Test 3.unity
-    guid: b395f5744362a544fb4ac5b1e6108dd7
-  - enabled: 1
-    path: Assets/Scenes/Test 4.unity
-    guid: f6f42c065f7500444bcadb1bc6d2a39b
-  - enabled: 1
-    path: Assets/Scenes/Test 5.unity
-    guid: 48cae3da89d139644a383fe3622257a6
   m_configObjects: {}

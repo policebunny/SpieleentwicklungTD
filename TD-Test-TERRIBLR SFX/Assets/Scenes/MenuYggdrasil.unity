@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657838, g: 0.49641228, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -307,6 +307,63 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1001 &1029518908
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3707686855262022535, guid: b1760d6c49197474eb852e241114d83f, type: 3}
+      propertyPath: m_Name
+      value: Audio Manager
+      objectReference: {fileID: 0}
+    - target: {fileID: 7446423337357059003, guid: b1760d6c49197474eb852e241114d83f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 489.30054
+      objectReference: {fileID: 0}
+    - target: {fileID: 7446423337357059003, guid: b1760d6c49197474eb852e241114d83f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 248.1838
+      objectReference: {fileID: 0}
+    - target: {fileID: 7446423337357059003, guid: b1760d6c49197474eb852e241114d83f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -7.2603855
+      objectReference: {fileID: 0}
+    - target: {fileID: 7446423337357059003, guid: b1760d6c49197474eb852e241114d83f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7446423337357059003, guid: b1760d6c49197474eb852e241114d83f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7446423337357059003, guid: b1760d6c49197474eb852e241114d83f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7446423337357059003, guid: b1760d6c49197474eb852e241114d83f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7446423337357059003, guid: b1760d6c49197474eb852e241114d83f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7446423337357059003, guid: b1760d6c49197474eb852e241114d83f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7446423337357059003, guid: b1760d6c49197474eb852e241114d83f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b1760d6c49197474eb852e241114d83f, type: 3}
 --- !u!1 &723968558
 GameObject:
   m_ObjectHideFlags: 0
@@ -365,53 +422,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Not all Jo\u0308tunn are made equal. Not all Stories end with the last
-    chapter. Some, few indeed, but still some stories travel forward, cut from time,
-    from the mind of man, until they reappear in our minds, our lives, and they bring
-    change.\nRagnarok has ended. The end of time, the world and all that is known
-    to men and god destroyed. As it was written and foretold from the beginning of
-    all that was known.. But like all prophecies not everything was as expected..
-    Ragnarok the death of the gods, the cataclysm that destroyed the realms was not
-    an ending. It was the beginning and the cycle began anew.\nIn the icy realm of
-    Niflheim, where frost clung to the very air and snow whispered secrets of old,
-    there was born a giant, a being of ice and cold, born of a lineage shrouded in
-    mystery. This giant, unlike his brethren of war and strife, bore within him a
-    spark of creation, a flame that burned brighter than the bitter winds of his
-    homeland. The last gift of the builder and his trusted companion Sva\xF0ilfari,
-    sent to his aid after his death by the hand of Thor, son of Odin.\nAs the ages
-    passed and Ragnarok swept the realms in its cataclysmic embrace, this young giant
-    wandered the frozen expanse, his heart heavy with solitude amidst the ruins of
-    gods and worlds. Yet, in his solitude, he found solace in the whispers of the
-    wind and the silent wisdom of the ancient ice.\nOne day, as the echoes of Ragnarok
-    faded into the past, the giant felt a stirring within him, a longing for adventure
-    and purpose beyond the desolation of Niflheim. Heeding the call of the unknown,
-    he embarked on a journey through the newly formed realms, each one a tapestry
-    woven with wonders and marvels he had never dared to dream.\nIn his travels,
-    the giant encountered civilizations teeming with life, from the ethereal forests
-    of Alfheim to the bustling cities of Midgard. Along the way, he unearthed remnants
-    of forgotten magic, echoes of a time when gods and mortals walked side by side.\nDrawn
-    to the mysteries of magic like a moth to a flame, the giant delved deep into
-    his own abilities, unlocking hidden talents and ancient powers passed down from
-    his forebears. With each revelation, he felt the weight of destiny upon his broad
-    shoulders, a legacy beckoning him to rise above the ashes of destruction and
-    forge a new path.\nInspired by the beauty and creativity of the realms, the giant
-    resolved to wield his powers not as a weapon of war, but as a beacon of hope
-    and enlightenment. In the heart of Niflheim, he raised a citadel of ice and crystal,
-    a sanctuary where scholars and mages from across the realms could gather in harmony
-    and unity.\nLore\nWithin the walls of his citadel, the giant fostered a spirit
-    of cooperation and understanding, as beings of all races and creeds came together
-    to study the mysteries of magic and the wonders of the cosmos. Together, they
-    sought to unlock the full potential of their abilities, forging bonds that transcended
-    the boundaries of time and space.\nBut the giant's quest did not end there. Armed
-    with knowledge and wisdom, he ventured forth into the far reaches of the realms,
-    bringing light to the darkest corners and solace to the weary souls he encountered.
-    Wherever he went, he left behind a legacy of peace and enlightenment, a testament
-    to the power of compassion and unity in a world scarred by strife.\nAnd so, the
-    young giant embraced his destiny with a fierce determination, knowing that in
-    his hands lay the power to shape a new era of prosperity and understanding for
-    all who dwelled in the realms. And though the road ahead was fraught with challenges
-    and trials, he faced it with courage and conviction, a true champion of creation
-    and enlightenment in a world reborn from the ashes of Ragnarok."
+  m_text: "Not all Jo\u0308tunn are made equal. Not all Stories end with the last chapter. Some, few indeed, but still some stories travel forward, cut from time, from the mind of man, until they reappear in our minds, our lives, and they bring change.\nRagnarok has ended. The end of time, the world and all that is known to men and god destroyed. As it was written and foretold from the beginning of all that was known.. But like all prophecies not everything was as expected.. Ragnarok the death of the gods, the cataclysm that destroyed the realms was not an ending. It was the beginning and the cycle began anew.\nIn the icy realm of Niflheim, where frost clung to the very air and snow whispered secrets of old, there was born a giant, a being of ice and cold, born of a lineage shrouded in mystery. This giant, unlike his brethren of war and strife, bore within him a spark of creation, a flame that burned brighter than the bitter winds of his homeland. The last gift of the builder and his trusted companion Sva\xF0ilfari, sent to his aid after his death by the hand of Thor, son of Odin.\nAs the ages passed and Ragnarok swept the realms in its cataclysmic embrace, this young giant wandered the frozen expanse, his heart heavy with solitude amidst the ruins of gods and worlds. Yet, in his solitude, he found solace in the whispers of the wind and the silent wisdom of the ancient ice.\nOne day, as the echoes of Ragnarok faded into the past, the giant felt a stirring within him, a longing for adventure and purpose beyond the desolation of Niflheim. Heeding the call of the unknown, he embarked on a journey through the newly formed realms, each one a tapestry woven with wonders and marvels he had never dared to dream.\nIn his travels, the giant encountered civilizations teeming with life, from the ethereal forests of Alfheim to the bustling cities of Midgard. Along the way, he unearthed remnants of forgotten magic, echoes of a time when gods and mortals walked side by side.\nDrawn to the mysteries of magic like a moth to a flame, the giant delved deep into his own abilities, unlocking hidden talents and ancient powers passed down from his forebears. With each revelation, he felt the weight of destiny upon his broad shoulders, a legacy beckoning him to rise above the ashes of destruction and forge a new path.\nInspired by the beauty and creativity of the realms, the giant resolved to wield his powers not as a weapon of war, but as a beacon of hope and enlightenment. In the heart of Niflheim, he raised a citadel of ice and crystal, a sanctuary where scholars and mages from across the realms could gather in harmony and unity.\nLore\nWithin the walls of his citadel, the giant fostered a spirit of cooperation and understanding, as beings of all races and creeds came together to study the mysteries of magic and the wonders of the cosmos. Together, they sought to unlock the full potential of their abilities, forging bonds that transcended the boundaries of time and space.\nBut the giant's quest did not end there. Armed with knowledge and wisdom, he ventured forth into the far reaches of the realms, bringing light to the darkest corners and solace to the weary souls he encountered. Wherever he went, he left behind a legacy of peace and enlightenment, a testament to the power of compassion and unity in a world scarred by strife.\nAnd so, the young giant embraced his destiny with a fierce determination, knowing that in his hands lay the power to shape a new era of prosperity and understanding for all who dwelled in the realms. And though the road ahead was fraught with challenges and trials, he faced it with courage and conviction, a true champion of creation and enlightenment in a world reborn from the ashes of Ragnarok."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1074,6 +1085,18 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 248101926000626298, guid: 3df7193f61823446fb047a4fbd67c516, type: 3}
+      propertyPath: levelToLoad
+      value: InGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 332443177328341312, guid: 3df7193f61823446fb047a4fbd67c516, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 466384668127488976, guid: 3df7193f61823446fb047a4fbd67c516, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 521291835314325136, guid: 3df7193f61823446fb047a4fbd67c516, type: 3}
       propertyPath: levelToLoad
       value: InGame
@@ -1090,10 +1113,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas StartMenu
       objectReference: {fileID: 0}
-    - target: {fileID: 4648241379052491572, guid: 3df7193f61823446fb047a4fbd67c516, type: 3}
-      propertyPath: lorePopUp
-      value: 
-      objectReference: {fileID: 1479977302}
     - target: {fileID: 5599725891776102713, guid: 3df7193f61823446fb047a4fbd67c516, type: 3}
       propertyPath: levelToLoad
       value: InGame
@@ -1206,4 +1225,5 @@ SceneRoots:
   - {fileID: 487965284}
   - {fileID: 2039251924}
   - {fileID: 6559448183027546493}
+  - {fileID: 1029518908}
   - {fileID: 744391448}

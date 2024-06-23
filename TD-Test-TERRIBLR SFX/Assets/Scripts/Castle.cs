@@ -13,6 +13,9 @@ public class Castle : MonoBehaviour
 
     public Transform[] attackPoints;
 
+    private List<string> SFX = new List<string> { "Castle_damage_1", "Castle_damage_2", "Castle_damage_3" };
+
+
     // Start is called before the first frame update
     void Initialize()
     {
@@ -37,12 +40,16 @@ public class Castle : MonoBehaviour
             currentHealth = 0;
             gameObject.SetActive(false);
 
-            AudioManager.instance.PlaySFX(3);
         } else
         {
-            AudioManager.instance.PlaySFX(4);
+            AudioManager.Instance.PlaySFX(getRandomSound());
         }
 
         healthSlider.value = currentHealth;
+    }
+
+    private string getRandomSound(){
+        int index = Random.Range(0, SFX.Count);
+        return SFX[index];
     }
 }

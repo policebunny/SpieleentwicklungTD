@@ -19,6 +19,7 @@ public class UIControllerNew : MonoBehaviour
     public GameObject citadel;
     public GameObject research;
     public GameObject enchant;
+    public GameObject glossary;
 
     public TMP_Text boneText;
     public TMP_Text magicText;
@@ -39,6 +40,9 @@ public class UIControllerNew : MonoBehaviour
     public GameObject ResearchRed;
     public GameObject ResearchYellow;
     public GameObject ResearchLightblue;
+
+    public GameObject InfoCitadel;
+    public GameObject InfoMidgard;
 
 
     // Start is called before the first frame update
@@ -115,6 +119,29 @@ public class UIControllerNew : MonoBehaviour
 
             Time.timeScale = 1f;
         }
+    }
+
+    public void ShowHideGlossary()
+    {
+        if(glossary.activeSelf == false)
+        {
+            glossary.SetActive(true);
+        } else
+        {
+            glossary.SetActive(false);
+        }
+    }
+
+    public void GlossaryCitadel()
+    {
+        InfoMidgard.SetActive(false);
+        InfoCitadel.SetActive(true);
+    }
+
+    public void GlossaryMidgard()
+    {
+        InfoCitadel.SetActive(false);
+        InfoMidgard.SetActive(true);
     }
 
     public void changeButton()

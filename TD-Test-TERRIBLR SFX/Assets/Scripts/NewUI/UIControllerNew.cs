@@ -27,6 +27,19 @@ public class UIControllerNew : MonoBehaviour
     public TMP_Text skillPointsText;
     public List<TMP_Text> skillPointsList = new List<TMP_Text>();
 
+    public GameObject SidePanelGreen;
+    public GameObject SidePanelBlue;
+    public GameObject SidePanelRed;
+    public GameObject SidePanelYellow;
+    public GameObject SidePanelLightblue;
+    // public List<GameObject> SidePanel = new List<GameObject>();
+    // public List<GameObject> Researchtree = new List<GameObject>();
+    public GameObject ResearchGreen;
+    public GameObject ResearchBlue;
+    public GameObject ResearchRed;
+    public GameObject ResearchYellow;
+    public GameObject ResearchLightblue;
+
 
     // Start is called before the first frame update
     void Start()
@@ -124,6 +137,88 @@ public class UIControllerNew : MonoBehaviour
                 return;
             }
         }
+    }
+
+    public void HideAllSidePanel()
+    {
+        SidePanelGreen.SetActive(false);
+        SidePanelBlue.SetActive(false);
+        SidePanelRed.SetActive(false);
+        SidePanelYellow.SetActive(false);
+        SidePanelLightblue.SetActive(false);
+    }
+
+    public void HideAllResearchtree()
+    {
+        ResearchGreen.SetActive(false);
+        ResearchBlue.SetActive(false);
+        ResearchRed.SetActive(false);
+        ResearchYellow.SetActive(false);
+        ResearchLightblue.SetActive(false);
+    }
+
+    public void ShowGreenSidepanel()
+    {
+        HideAllSidePanel();
+        SidePanelGreen.SetActive(true);
+    }
+    public void ShowBlueSidepanel()
+    {
+        HideAllSidePanel();
+        SidePanelBlue.SetActive(true);
+    }
+
+    public void ShowRedSidepanel()
+    {
+        HideAllSidePanel();
+        SidePanelRed.SetActive(true);
+    }
+
+    public void ShowYellowSidepanel()
+    {
+        HideAllSidePanel();
+        SidePanelYellow.SetActive(true);
+    }
+
+    public void ShowLightblueSidepanel()
+    {
+        HideAllSidePanel();
+        SidePanelLightblue.SetActive(true);
+    }
+
+    public void ShowGreenResearch()
+    {
+        HideAllResearchtree();
+        ShowHideResearch();
+        ResearchGreen.SetActive(true);
+    }
+
+    public void ShowBlueResearch()
+    {
+        HideAllResearchtree();
+        ShowHideResearch();
+        ResearchBlue.SetActive(true);
+    }
+
+    public void ShowRedResearch()
+    {
+        HideAllResearchtree();
+        ShowHideResearch();
+        ResearchRed.SetActive(true);
+    }
+
+    public void ShowYellowResearch()
+    {
+        HideAllResearchtree();
+        ShowHideResearch();
+        ResearchYellow.SetActive(true);
+    }
+
+    public void ShowLightblieResearch()
+    {
+        HideAllResearchtree();
+        ShowHideResearch();
+        ResearchLightblue.SetActive(true);
     }
 
 }

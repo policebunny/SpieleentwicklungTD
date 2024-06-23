@@ -186,7 +186,7 @@ public class Builder : MonoBehaviour
         indicatorAdded.gameObject.SetActive(false);
         UIController.instance.notEnoughMoneyWarning.SetActive(false);
 
-        AudioManager.Instance.PlaySFX("Construction_complete_1");
+        // AudioManager.Instance.PlaySFX("Construction_complete_1");
 
         Destroy(indicatorAdded.gameObject);
         /*

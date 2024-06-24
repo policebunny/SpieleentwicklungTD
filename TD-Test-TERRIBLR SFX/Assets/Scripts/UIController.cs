@@ -80,6 +80,7 @@ public class UIController : MonoBehaviour
     public void TryAgain()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        ForschungSystem.instance.ResetList();
     }
 
     public void NextLevel()

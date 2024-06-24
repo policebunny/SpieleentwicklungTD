@@ -91,7 +91,7 @@ public class LevelManager : MonoBehaviour
 
             if (!levelActive)
             {
-
+                Debug.Log(levelVictory);
                 UIController.instance.levelFailScreen.SetActive(!levelVictory);
                 UIController.instance.levelCompleteScreen.SetActive(levelVictory);
                 ForschungSystem.instance.ResetList();

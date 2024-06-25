@@ -77,6 +77,7 @@ public class TowerManager : MonoBehaviour
                         UIController.instance.notEnoughMoneyWarning.SetActive(false);
 
                         */
+                        StartTowerPlacement(activeTower);
 
                     }
                 }

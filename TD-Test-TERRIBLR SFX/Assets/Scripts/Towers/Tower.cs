@@ -18,6 +18,7 @@ public class Tower : MonoBehaviour
     public bool enemiesUpdated;
 
     public GameObject rangeModel;
+    private bool mouseExit;
 
     public int cost = 100;
 
@@ -35,6 +36,12 @@ public class Tower : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(Input.GetMouseButtonDown(0) && mouseExit)
+        {
+            TowerManager.instance.selectedTowerEffect.SetActive(false);
+            TowerManager.instance.selectedTower.rangeModel.SetActive(false);
+            TowerManager.instance.selectedTower = null;
+        }
         enemiesUpdated = false;
 
         checkCounter -= Time.deltaTime;
@@ -63,6 +70,7 @@ public class Tower : MonoBehaviour
 
     private void OnMouseDown()
     {
+        mouseExit = false;
         if (LevelManager.instance.levelActive)
         {
 
@@ -73,9 +81,14 @@ public class Tower : MonoBehaviour
 
             TowerManager.instance.selectedTower = this;
 
-            UIController.instance.OpenTowerUpgradePanel();
+            // UIController.instance.OpenTowerUpgradePanel();
 
             TowerManager.instance.MoveTowerSelectionEffect();
         }
+    }
+
+    private void OnMouseExit()
+    {
+        mouseExit = true;
     }
 }

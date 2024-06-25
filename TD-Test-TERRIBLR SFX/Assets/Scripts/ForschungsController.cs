@@ -30,6 +30,7 @@ public class ForschungsController : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        discoveredCalm = new int[12];
         for(int i = 0; i < discoveredCalm.Length; i++)
         {
             discoveredCalm[i] = 0;
@@ -47,7 +48,7 @@ public class ForschungsController : MonoBehaviour
         return discoveredCalm;
     }
 
-    public bool checkIfDiscovered(int whichResearch)
+    public bool checkIfDiscoveredCalm(int whichResearch)
     {
         bool isDiscovered = false;
         if (discoveredCalm[whichResearch] != 0)
@@ -57,13 +58,48 @@ public class ForschungsController : MonoBehaviour
         return isDiscovered;
     }
 
+    public void ApplySpecificResearch(Tower toApply, int whatToApply)
+    {
+        switch(whatToApply)
+        {
+            case 0:
+                // case CalmnessIceRange
+                toApply.upgrader.UpgradeRange();
+                break;
+            case 1:
+                break;
+            case 2:
+                break;
+            case 3:
+                // tickspeed == attackspeed
+                toApply.upgrader.UpgradeFireRate();
+                break;
+            case 4:
+                break;
+            case 5:
+                break;
+            case 6:
+                // attackspeed == tickspeed
+                toApply.upgrader.UpgradeFireRate();
+                break;
+            case 7:
+                break;
+            case 8:
+                break;
+            case 9:
+                break;
+            default:
+                break;
+        }
+    }
+
     // methode für jede research
     public void CalmnessIceRange()
     {
         isAvailable = ForschungSystem.instance.removeSkillpoint();
         if(isAvailable)
         {
-            if(!checkIfDiscovered(0))
+            if(!checkIfDiscoveredCalm(0))
             {
                 foreach (Tower researchTower in ForschungSystem.instance.activeTowers)
                 {
@@ -85,7 +121,7 @@ public class ForschungsController : MonoBehaviour
         isAvailable = ForschungSystem.instance.removeSkillpoint();
         if (isAvailable)
         {
-            if (!checkIfDiscovered(1))
+            if (!checkIfDiscoveredCalm(1))
             {
                 foreach (Tower researchTower in ForschungSystem.instance.activeTowers)
                 {
@@ -108,7 +144,7 @@ public class ForschungsController : MonoBehaviour
         isAvailable = ForschungSystem.instance.removeSkillpoint();
         if (isAvailable)
         {
-            if (!checkIfDiscovered(2))
+            if (!checkIfDiscoveredCalm(2))
             {
                 foreach (Tower researchTower in ForschungSystem.instance.activeTowers)
                 {
@@ -127,14 +163,15 @@ public class ForschungsController : MonoBehaviour
     public void CalmnessTickSpeed()
     {
         // ??? Available twice
+        // is basically Attackspeed
         isAvailable = ForschungSystem.instance.removeSkillpoint();
         if (isAvailable)
         {
-            if (!checkIfDiscovered(3))
+            if (!checkIfDiscoveredCalm(3))
             {
                 foreach (Tower researchTower in ForschungSystem.instance.activeTowers)
                 {
-                    // todo
+                    researchTower.upgrader.UpgradeFireRate();
                 }
                 discoveredCalm[3] = 1; // gesetzt als discovered
             }
@@ -154,7 +191,7 @@ public class ForschungsController : MonoBehaviour
         isAvailable = ForschungSystem.instance.removeSkillpoint();
         if (isAvailable)
         {
-            if (!checkIfDiscovered(4))
+            if (!checkIfDiscoveredCalm(4))
             {
                 foreach (Tower researchTower in ForschungSystem.instance.activeTowers)
                 {
@@ -177,7 +214,7 @@ public class ForschungsController : MonoBehaviour
         isAvailable = ForschungSystem.instance.removeSkillpoint();
         if (isAvailable)
         {
-            if (!checkIfDiscovered(5))
+            if (!checkIfDiscoveredCalm(5))
             {
                 foreach (Tower researchTower in ForschungSystem.instance.activeTowers)
                 {
@@ -200,7 +237,7 @@ public class ForschungsController : MonoBehaviour
         isAvailable = ForschungSystem.instance.removeSkillpoint();
         if (isAvailable)
         {
-            if (!checkIfDiscovered(6))
+            if (!checkIfDiscoveredCalm(6))
             {
                 foreach (Tower researchTower in ForschungSystem.instance.activeTowers)
                 {
@@ -222,7 +259,7 @@ public class ForschungsController : MonoBehaviour
         isAvailable = ForschungSystem.instance.removeSkillpoint();
         if (isAvailable)
         {
-            if (!checkIfDiscovered(7))
+            if (!checkIfDiscoveredCalm(7))
             {
                 foreach (Tower researchTower in ForschungSystem.instance.activeTowers)
                 {
@@ -244,7 +281,7 @@ public class ForschungsController : MonoBehaviour
         isAvailable = ForschungSystem.instance.removeSkillpoint();
         if (isAvailable)
         {
-            if (!checkIfDiscovered(8))
+            if (!checkIfDiscoveredCalm(8))
             {
                 foreach (Tower researchTower in ForschungSystem.instance.activeTowers)
                 {
@@ -266,7 +303,7 @@ public class ForschungsController : MonoBehaviour
         isAvailable = ForschungSystem.instance.removeSkillpoint();
         if (isAvailable)
         {
-            if (!checkIfDiscovered(9))
+            if (!checkIfDiscoveredCalm(9))
             {
                 foreach (Tower researchTower in ForschungSystem.instance.activeTowers)
                 {

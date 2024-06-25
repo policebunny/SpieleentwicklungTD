@@ -181,8 +181,8 @@ public class Builder : MonoBehaviour
 
     public void TowerInstantiate(Tower TowerAdded, Transform indicatorAdded)
     {
-        Instantiate(TowerAdded, indicatorAdded.position, indicatorAdded.rotation);
-        ForschungSystem.instance.activeTowers.Add(TowerAdded);
+        Tower t = Instantiate(TowerAdded, indicatorAdded.position, indicatorAdded.rotation);
+        ForschungSystem.instance.activeTowers.Add(t);
         indicatorAdded.gameObject.SetActive(false);
         UIController.instance.notEnoughMoneyWarning.SetActive(false);
 

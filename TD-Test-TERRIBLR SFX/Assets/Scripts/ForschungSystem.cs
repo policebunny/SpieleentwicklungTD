@@ -89,6 +89,14 @@ public class ForschungSystem : MonoBehaviour
 
     public void AddActiveTower(Tower newTower)
     {
+        for(int i = 0; i < ForschungsController.instance.discoveredCalm.Length; i++)
+        {
+            if(ForschungsController.instance.checkIfDiscoveredCalm(i))
+            {
+                ForschungsController.instance.ApplySpecificResearch(newTower, i);
+            }
+            
+        }
         activeTowers.Add(newTower);
     }
 

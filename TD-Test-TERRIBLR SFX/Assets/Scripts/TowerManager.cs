@@ -85,6 +85,7 @@ public class TowerManager : MonoBehaviour
                 {
                     isPlacing = false;
                     indicator.gameObject.SetActive(false);
+                    UIController.instance.notEnoughMoneyWarning.SetActive(false);
                     // builderMove = true;
                 }
             }

@@ -63,7 +63,7 @@ public class TowerManager : MonoBehaviour
                     if (MoneyManager.instance.SpendMoney(activeTower.cost))
                     {
 
-                        isPlacing = false;
+                        // isPlacing = false;
                         builderMove = true;
 
                         builder.AddTowerToList(activeTower, indicator, 0);
@@ -84,7 +84,7 @@ public class TowerManager : MonoBehaviour
                 {
                     isPlacing = false;
                     indicator.gameObject.SetActive(false);
-                    builderMove = true;
+                    // builderMove = true;
                 }
             }
         }
@@ -95,7 +95,7 @@ public class TowerManager : MonoBehaviour
         activeTower = towerToPlace;
 
         isPlacing = true;
-        builderMove = false;
+        // builderMove = false;
 
         // Destroy(indicator.gameObject);
         Tower placeTower = Instantiate(activeTower);

@@ -62,4 +62,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ead71e11ebc92949838ed07e815abdc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bob: {fileID: 0}
   isAvailable: 0
+  discovered: 000000000000000000000000000000000000000000000000

@@ -155,9 +155,9 @@ public class UIControllerNew : MonoBehaviour
     public void CheckIfDiscovered()
     {
         // momentan nur für ice forschung
-        for(int i = 0; i < ForschungsController.instance.discoveredCalm.Length; i++)
+        for(int i = 0; i < ForschungsController.instance.discovered.Length; i++)
         {
-            if (ForschungsController.instance.discoveredCalm[i] != 0)
+            if (ForschungsController.instance.discovered[i] != 0)
             {
                 // change button accordingly
                 changeButton(); // does nothing for now

@@ -87,6 +87,7 @@ public class ForschungSystem : MonoBehaviour
         }
     }
 
+    /*
     public void AddActiveTower(Tower newTower)
     {
         for(int i = 0; i < ForschungsController.instance.discoveredCalm.Length; i++)
@@ -104,6 +105,7 @@ public class ForschungSystem : MonoBehaviour
     {
         activeTowers.Remove(toRemove);
     }
+    */
 
     public void ResetList()
     {

@@ -22,7 +22,7 @@ public class Builder : MonoBehaviour
 
     // maybe change to enum ?
 
-    public float BuildTime = 1;
+    public float BuildTime = 0;
     public float BuildDone = 5;
 
     // public List<Auftrag> AuftragList = new List<Auftrag> ();
@@ -46,15 +46,7 @@ public class Builder : MonoBehaviour
         StartPosition = transform.position;
 
         UIControllerNew.instance.magicText.text = ForschungSystem.instance.returnCurrentXP().ToString();
-        // UIControllerNew.instance.LvlText.text = CurrentLvl.ToString();
-        foreach (TMP_Text LvL in UIControllerNew.instance.lvlTextList)
-        {
-            LvL.text = ForschungSystem.instance.returnCurrentLvl().ToString();
-        }
-        foreach (TMP_Text skillPoint in UIControllerNew.instance.skillPointsList)
-        {
-            skillPoint.text = ForschungSystem.instance.returnSkill().ToString();
-        }
+        StartUp();
 
     }
 
@@ -91,6 +83,7 @@ public class Builder : MonoBehaviour
 
             // get new mouse position to move towards
             rightClickMovement = TowerManager.instance.GetGridPosition();
+            rightClickMovement = rightClickMovement + (new Vector3(0, 0.5f, 0));
 
             IsBuilding = false;
             DoneBuilding = false;
@@ -182,7 +175,7 @@ public class Builder : MonoBehaviour
     public void TowerInstantiate(Tower TowerAdded, Transform indicatorAdded)
     {
         Tower t = Instantiate(TowerAdded, indicatorAdded.position, indicatorAdded.rotation);
-        ForschungSystem.instance.activeTowers.Add(t);
+        // ForschungSystem.instance.activeTowers.Add(t);
         indicatorAdded.gameObject.SetActive(false);
         UIController.instance.notEnoughMoneyWarning.SetActive(false);
 
@@ -249,6 +242,16 @@ public class Builder : MonoBehaviour
         
     }
 
+    public void UpgradeMovement()
+    {
+        MovementSpeed += 1;
+    }
+
+    public void UpgradeBuildtime()
+    {
+        BuildDone -= 1;
+    }
+
     public void OnMouseOver()
     {
         if(Input.GetMouseButtonDown(0))
@@ -262,6 +265,26 @@ public class Builder : MonoBehaviour
     public void OnMouseExit()
     {
         mouseOver = false;
+    }
+
+    public void StartUp()
+    {
+        foreach (TMP_Text LvL in UIControllerNew.instance.lvlTextList)
+        {
+            LvL.text = ForschungSystem.instance.returnCurrentLvl().ToString();
+        }
+        foreach (TMP_Text skillPoint in UIControllerNew.instance.skillPointsList)
+        {
+            skillPoint.text = ForschungSystem.instance.returnSkill().ToString();
+        }
+        for(int i = 0; i < ForschungsController.instance.discovered.Length; i++)
+        {
+            if(ForschungsController.instance.checkIfdiscovered(i))
+            {
+                ForschungsController.instance.ApplySpecificResearch(i);
+            }
+            
+        }
     }
 
 }

@@ -87,7 +87,7 @@ MonoBehaviour:
   IsIdle: 0
   isSelected: 0
   mouseOver: 0
-  BuildTime: 1
+  BuildTime: 0
   BuildDone: 5
   BuildingList: []
   BuildTransformList: []

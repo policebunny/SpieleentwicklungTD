@@ -13,7 +13,7 @@ public class Castle : MonoBehaviour
 
     public Transform[] attackPoints;
 
-    private List<string> SFX = new List<string> { "Castle_damage_1", "Castle_damage_2", "Castle_damage_3" };
+    private List<string> SFX = new List<string> { "Castle_damage_1", "Castle_damage_2", "Castle_damage_3", "Castle_damage_4", "Castle_damage_5", "Castle_damage_6", "Castle_damage_7", "Castle_damage_8" };
 
 
     // Start is called before the first frame update

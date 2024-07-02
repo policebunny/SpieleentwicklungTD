@@ -10705,7 +10705,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8479615036434985943, guid: a7dcc7074eb2ed842b7036b09688bd2f, type: 3}
       propertyPath: nextLevel
-      value: Test 2
+      value: InGame
       objectReference: {fileID: 0}
     - target: {fileID: 8479615036577595814, guid: a7dcc7074eb2ed842b7036b09688bd2f, type: 3}
       propertyPath: thePath

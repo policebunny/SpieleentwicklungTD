@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class UIControllerNew : MonoBehaviour
 {
@@ -16,6 +17,14 @@ public class UIControllerNew : MonoBehaviour
     public GameObject citadel;
     public GameObject research;
     public GameObject enchant;
+
+    public TMP_Text boneText;
+    public TMP_Text magicText;
+    public TMP_Text LvlText;
+    public List<TMP_Text> lvlTextList = new List<TMP_Text>();
+    public TMP_Text skillPointsText;
+    public List<TMP_Text> skillPointsList = new List<TMP_Text>();
+
 
     // Start is called before the first frame update
     void Start()

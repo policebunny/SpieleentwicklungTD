@@ -17,6 +17,13 @@ public class UIControllerNew : MonoBehaviour
     public GameObject citadel;
     public GameObject research;
     public GameObject enchant;
+    public GameObject glossary;
+    public GameObject options;
+
+    public GameObject InfoCitadel;
+    public GameObject InfoMidgard;
+    public GameObject OpSound;
+    public GameObject OpDisplay;
 
     public TMP_Text boneText;
     public TMP_Text magicText;
@@ -98,6 +105,54 @@ public class UIControllerNew : MonoBehaviour
 
             Time.timeScale = 1f;
         }
+    }
+
+    public void ShowHideGlossary()
+    {
+        if (glossary.activeSelf == false)
+        {
+            glossary.SetActive(true);
+        }
+        else
+        {
+            glossary.SetActive(false);
+        }
+    }
+
+    public void GlossaryCitadel()
+    {
+        InfoMidgard.SetActive(false);
+        InfoCitadel.SetActive(true);
+    }
+
+    public void GlossaryMidgard()
+    {
+        InfoCitadel.SetActive(false);
+        InfoMidgard.SetActive(true);
+    }
+
+    public void ShowHideOptions()
+    {
+        if (options.activeSelf == false)
+        {
+            options.SetActive(true);
+        }
+        else
+        {
+            options.SetActive(false);
+        }
+    }
+
+    public void OptionsSound()
+    {
+        OpDisplay.SetActive(false);
+        OpSound.SetActive(true);
+    }
+
+    public void OptionsDisplay()
+    {
+        OpSound.SetActive(false);
+        OpDisplay.SetActive(true);
     }
 }
 

@@ -423,7 +423,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   totalHealth: 100
   currentHealth: 0
-  healthSlider: {fileID: 0}
+  healthSlider: {fileID: 5391037814808076129}
   attackPoints: []
 --- !u!1 &5391037814709880703
 GameObject:

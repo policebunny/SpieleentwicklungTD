@@ -23,6 +23,8 @@ public class TowerManager : MonoBehaviour
     [HideInInspector]
     public Tower selectedTower;
 
+    public Builder builder;
+
     public GameObject selectedTowerEffect;
 
     // Start is called before the first frame update
@@ -57,16 +59,33 @@ public class TowerManager : MonoBehaviour
                     if (MoneyManager.instance.SpendMoney(activeTower.cost))
                     {
 
-                        isPlacing = false;
+                        
 
+                        UIController.instance.notEnoughMoneyWarning.SetActive(false);
+
+                        
+
+                        builder.AddTowerToList(activeTower, indicator, 0);
+
+                        AudioManager.Instance.PlaySFX("Tower_placed_1");
+                        /*
                         Instantiate(activeTower, indicator.position, activeTower.transform.rotation);
 
                         indicator.gameObject.SetActive(false);
 
                         UIController.instance.notEnoughMoneyWarning.SetActive(false);
 
-                        AudioManager.Instance.PlaySFX("Tower_placed_1");
+                        */
+                        StartTowerPlacement(activeTower);
                     }
+                    
+                }
+                if (Input.GetMouseButtonDown(1))
+                {
+                    isPlacing = false;
+                    indicator.gameObject.SetActive(false);
+                    UIController.instance.notEnoughMoneyWarning.SetActive(false);
+                    // builderMove = true;
                 }
             }
         }

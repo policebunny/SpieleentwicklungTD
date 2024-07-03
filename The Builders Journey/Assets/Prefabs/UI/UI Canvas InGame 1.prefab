@@ -4992,12 +4992,12 @@ GameObject:
   - component: {fileID: 6786885407742547871}
   - component: {fileID: 8228073691935194110}
   m_Layer: 5
-  m_Name: UI Canvas InGame
+  m_Name: UI Canvas InGame 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2571460832388585290
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5108,19 +5108,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 752961077486761640}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91bb67e68e3147c49ab9348412c51048, type: 3}
+  m_Script: {fileID: 11500000, guid: 970a739c863f9be498639978f7402402, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  goldText: {fileID: 1815518368974745795}
-  notEnoughMoneyWarning: {fileID: 6128221658197866189}
-  levelCompleteScreen: {fileID: 7962708777516306943}
-  levelFailScreen: {fileID: 6488058754886060239}
-  towerButtons: {fileID: 1636023220534730933}
-  levelSelectScene: Level Select
-  mainMenuScene: MenuYggdrasil
-  pauseScreen: {fileID: 4710291649405228203}
-  towerUpgradePanel: {fileID: 1051066193403311641}
-  waveText: {fileID: 1405915028396935859}
+  goldText: {fileID: 0}
+  notEnoughMoneyWarning: {fileID: 0}
+  levelCompleteScreen: {fileID: 0}
+  levelFailScreen: {fileID: 0}
+  towerButtons: {fileID: 0}
+  levelSelectScene: 
+  mainMenuScene: 
+  pauseScreen: {fileID: 0}
+  towerUpgradePanel: {fileID: 0}
+  waveText: {fileID: 0}
 --- !u!114 &6786885407742547871
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5137,7 +5137,6 @@ MonoBehaviour:
   citadel: {fileID: 3055251383331940429}
   research: {fileID: 559289710524296418}
   enchant: {fileID: 3570745051877511294}
-  glossary: {fileID: 7288963615432685709}
   boneText: {fileID: 663257440365432839}
   magicText: {fileID: 2004159460327217901}
   LvlText: {fileID: 2207244154584113187}
@@ -5147,18 +5146,6 @@ MonoBehaviour:
   - {fileID: 224745615443056913}
   - {fileID: 6453515986636942478}
   - {fileID: 2912799651319124043}
-  SidePanelGreen: {fileID: 2160488002649728115}
-  SidePanelBlue: {fileID: 4688658139037000488}
-  SidePanelRed: {fileID: 2181548884283144672}
-  SidePanelYellow: {fileID: 7475111907731546687}
-  SidePanelLightblue: {fileID: 989496463647393115}
-  ResearchGreen: {fileID: 3935846517508655767}
-  ResearchBlue: {fileID: 8567430714250690518}
-  ResearchRed: {fileID: 5338824271201403376}
-  ResearchYellow: {fileID: 1490957396179536569}
-  ResearchLightblue: {fileID: 8672973556096845643}
-  InfoCitadel: {fileID: 2503277760542638763}
-  InfoMidgard: {fileID: 2149314568223223959}
 --- !u!114 &8228073691935194110
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5168,21 +5155,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 752961077486761640}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c5ff810ffac88e843ab2f28091ff5539, type: 3}
+  m_Script: {fileID: 11500000, guid: 167ed77355b62d64fae386605b82cd4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   SidepanelGreen: []
   SidepanelBlue: []
   SidepanelRed: []
   SidepanelYellow: []
-  SidepanelLightblue:
-  - {fileID: 6718173507169182433}
-  - {fileID: 4524426874378414721}
-  - {fileID: 7765317601875967719}
-  - {fileID: 3520316659205890633}
-  - {fileID: 2488622233403955297}
-  - {fileID: 601596173488238458}
-  - {fileID: 4358118063461134415}
+  SidepanelLightblue: []
 --- !u!1 &776144621845638672
 GameObject:
   m_ObjectHideFlags: 0
@@ -66721,7 +66701,6 @@ MonoBehaviour:
   firerateButton: {fileID: 4120958215747193705}
   rangeText: {fileID: 6839138474911141970}
   firerateText: {fileID: 4120958216181153379}
-  bob: {fileID: 0}
 --- !u!1 &8470940466671765405
 GameObject:
   m_ObjectHideFlags: 0
@@ -81618,6 +81597,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5394508284668027223}
     m_Modifications:
+    - target: {fileID: 2635084916389997647, guid: d10d5eccc8e152d4895b93e8a19d81a7, type: 3}
+      propertyPath: m_text
+      value: Pause
+      objectReference: {fileID: 0}
+    - target: {fileID: 2635084916389997647, guid: d10d5eccc8e152d4895b93e8a19d81a7, type: 3}
+      propertyPath: m_fontSize
+      value: 34.8
+      objectReference: {fileID: 0}
     - target: {fileID: 400881372710524646, guid: aa4249faf08d06b4293bfba1d122e3bd, type: 3}
       propertyPath: m_Colors.m_NormalColor.b
       value: 1
@@ -81773,14 +81760,6 @@ PrefabInstance:
     - target: {fileID: 7768739816571356703, guid: aa4249faf08d06b4293bfba1d122e3bd, type: 3}
       propertyPath: m_Name
       value: StandardButton (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 2635084916389997647, guid: d10d5eccc8e152d4895b93e8a19d81a7, type: 3}
-      propertyPath: m_text
-      value: Pause
-      objectReference: {fileID: 0}
-    - target: {fileID: 2635084916389997647, guid: d10d5eccc8e152d4895b93e8a19d81a7, type: 3}
-      propertyPath: m_fontSize
-      value: 34.8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -94412,6 +94391,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5394508284668027223}
     m_Modifications:
+    - target: {fileID: 2635084916389997647, guid: d10d5eccc8e152d4895b93e8a19d81a7, type: 3}
+      propertyPath: m_text
+      value: Pause
+      objectReference: {fileID: 0}
+    - target: {fileID: 2635084916389997647, guid: d10d5eccc8e152d4895b93e8a19d81a7, type: 3}
+      propertyPath: m_fontSize
+      value: 34.8
+      objectReference: {fileID: 0}
     - target: {fileID: 400881372710524646, guid: aa4249faf08d06b4293bfba1d122e3bd, type: 3}
       propertyPath: m_Colors.m_NormalColor.b
       value: 1
@@ -94559,14 +94546,6 @@ PrefabInstance:
     - target: {fileID: 7768739816571356703, guid: aa4249faf08d06b4293bfba1d122e3bd, type: 3}
       propertyPath: m_Name
       value: StandardButton
-      objectReference: {fileID: 0}
-    - target: {fileID: 2635084916389997647, guid: d10d5eccc8e152d4895b93e8a19d81a7, type: 3}
-      propertyPath: m_text
-      value: Pause
-      objectReference: {fileID: 0}
-    - target: {fileID: 2635084916389997647, guid: d10d5eccc8e152d4895b93e8a19d81a7, type: 3}
-      propertyPath: m_fontSize
-      value: 34.8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -95212,6 +95191,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5394508284668027223}
     m_Modifications:
+    - target: {fileID: 2635084916389997647, guid: d10d5eccc8e152d4895b93e8a19d81a7, type: 3}
+      propertyPath: m_text
+      value: Pause
+      objectReference: {fileID: 0}
+    - target: {fileID: 2635084916389997647, guid: d10d5eccc8e152d4895b93e8a19d81a7, type: 3}
+      propertyPath: m_fontSize
+      value: 34.8
+      objectReference: {fileID: 0}
     - target: {fileID: 400881372710524646, guid: aa4249faf08d06b4293bfba1d122e3bd, type: 3}
       propertyPath: m_Colors.m_NormalColor.b
       value: 1
@@ -95359,14 +95346,6 @@ PrefabInstance:
     - target: {fileID: 7768739816571356703, guid: aa4249faf08d06b4293bfba1d122e3bd, type: 3}
       propertyPath: m_Name
       value: StandardButton (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 2635084916389997647, guid: d10d5eccc8e152d4895b93e8a19d81a7, type: 3}
-      propertyPath: m_text
-      value: Pause
-      objectReference: {fileID: 0}
-    - target: {fileID: 2635084916389997647, guid: d10d5eccc8e152d4895b93e8a19d81a7, type: 3}
-      propertyPath: m_fontSize
-      value: 34.8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:

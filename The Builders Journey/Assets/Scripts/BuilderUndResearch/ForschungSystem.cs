@@ -76,12 +76,12 @@ public class ForschungSystem : MonoBehaviour
             CurrentLvl++;
             addSkillpoint();
             Threshold += Threshold;
-
+            /*
             foreach (TMP_Text LvL in UIControllerNew.instance.lvlTextList)
             {
                 LvL.text = CurrentLvl.ToString();
             }
-
+            */
             CurrentXP = 0;
             UIControllerNew.instance.magicText.text = CurrentXP.ToString();
         }

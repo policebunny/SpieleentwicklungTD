@@ -45,6 +45,7 @@ public class UIController : MonoBehaviour
 
     public void PauseUnpause()
     {
+        /*
         if(pauseScreen.activeSelf == false)
         {
             pauseScreen.SetActive(true);
@@ -56,6 +57,7 @@ public class UIController : MonoBehaviour
 
             Time.timeScale = 1f;
         }
+        */
     }
 
     public void LevelSelect()

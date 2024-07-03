@@ -15,16 +15,16 @@ public class EnemyHealthController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //healthBar.maxValue = totalHealth;
-        //healthBar.value = totalHealth;
+        healthBar.maxValue = totalHealth;
+        healthBar.value = totalHealth;
 
-        //LevelManager.instance.activeEnemies.Add(this);
+        LevelManager.instance.activeEnemies.Add(this);
     }
 
     // Update is called once per frame
     void Update()
     {
-        //healthBar.transform.rotation = Camera.main.transform.rotation;
+        healthBar.transform.rotation = Camera.main.transform.rotation;
     }
 
     public void TakeDamage(float damageAmount)
@@ -36,13 +36,13 @@ public class EnemyHealthController : MonoBehaviour
 
             Destroy(gameObject);
 
-            //MoneyManager.instance.GiveMoney(moneyOnDeath);
+            MoneyManager.instance.GiveMoney(moneyOnDeath);
 
-            //ForschungSystem.instance.GetXP(magicOnDeath); // getting ressource "magic" which equals to xp in our system
+            ForschungSystem.instance.GetXP(magicOnDeath); // getting ressource "magic" which equals to xp in our system
 
-            //LevelManager.instance.activeEnemies.Remove(this);
+            LevelManager.instance.activeEnemies.Remove(this);
 
-            //AudioManager.Instance.PlaySFX("Enemy_damage_1");
+            AudioManager.Instance.PlaySFX("Enemy_damage_1");
         }
 
         healthBar.value = totalHealth;

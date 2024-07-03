@@ -27,13 +27,18 @@ public class Projectile : MonoBehaviour
         {
             other.GetComponent<EnemyHealthController>().TakeDamage(damageAmount);
             hasDamaged = true;
+
         }
 
-        Instantiate(impactEffect, transform.position, Quaternion.identity);
+        if(other.tag =="Enemy" && hasDamaged)
+        {
+            Instantiate(impactEffect, transform.position, Quaternion.identity);
 
-        AudioManager.Instance.PlaySFX("Enemy_damage_1");
+            AudioManager.Instance.PlaySFX("Enemy_damage_1");
 
-        Destroy(gameObject);
+            Destroy(gameObject);
+        }
+
     }
 
     private void OnBecameInvisible()

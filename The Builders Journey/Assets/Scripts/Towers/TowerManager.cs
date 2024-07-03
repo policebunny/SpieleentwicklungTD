@@ -97,7 +97,7 @@ public class TowerManager : MonoBehaviour
 
         isPlacing = true;
 
-        Destroy(indicator.gameObject);
+       // Destroy(indicator.gameObject);
         Tower placeTower = Instantiate(activeTower);
         placeTower.enabled = false;
         placeTower.GetComponent<Collider>().enabled = false;

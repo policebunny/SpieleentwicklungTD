@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028331, g: 0.2257133, b: 0.3069217, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -970,6 +970,10 @@ PrefabInstance:
       propertyPath: builder
       value: 
       objectReference: {fileID: 808462415}
+    - target: {fileID: 8479615036720742009, guid: c91e607b8d4cc6043ae3a0e8ff3f260f, type: 3}
+      propertyPath: whatIsObstacle.m_Bits
+      value: 256
+      objectReference: {fileID: 0}
     - target: {fileID: 8479615036761564326, guid: c91e607b8d4cc6043ae3a0e8ff3f260f, type: 3}
       propertyPath: m_Name
       value: Systems (1)
@@ -2515,7 +2519,7 @@ PrefabInstance:
     - target: {fileID: 5261068599848498702, guid: 0d8a5ca87d83fe341ae86423d4684011, type: 3}
       propertyPath: castlePrefab
       value: 
-      objectReference: {fileID: 5391037814656261307, guid: 59ef40273d7fbfe4eb561c1d93d27a30, type: 3}
+      objectReference: {fileID: 5391037814656261307, guid: 93db93f01db1b78458e8bdb8e56c4672, type: 3}
     - target: {fileID: 8870591147775614334, guid: 0d8a5ca87d83fe341ae86423d4684011, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -17888,7 +17892,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31a170efe8e5c42418737013b2b0a23a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  towerToPlace: {fileID: 8492344930071035218, guid: 93843032fd83444458f4f3b69f261c93, type: 3}
+  towerToPlace: {fileID: 2679890732734550170, guid: 20a9ca87e1a98fa489c545b2f146aae5, type: 3}
 --- !u!224 &1024559970359324986
 RectTransform:
   m_ObjectHideFlags: 0
@@ -122657,7 +122661,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31a170efe8e5c42418737013b2b0a23a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  towerToPlace: {fileID: 8492344930071035218, guid: 93843032fd83444458f4f3b69f261c93, type: 3}
+  towerToPlace: {fileID: 5268485137428662981, guid: a04dd91e61583164bbcdf89efcaa8463, type: 3}
 --- !u!114 &8042624751520217633
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -128180,7 +128184,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31a170efe8e5c42418737013b2b0a23a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  towerToPlace: {fileID: 8492344930071035218, guid: 93843032fd83444458f4f3b69f261c93, type: 3}
+  towerToPlace: {fileID: 6440877876096579661, guid: 2a52ae729645fb045b47466e4a416fe9, type: 3}
 --- !u!114 &8381885291928776141
 MonoBehaviour:
   m_ObjectHideFlags: 0

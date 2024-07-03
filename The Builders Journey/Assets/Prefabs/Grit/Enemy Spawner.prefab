@@ -48,6 +48,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wavesToSpawn:
   - enemySpawnOrder:
+    - {fileID: 3876139098263079905, guid: 81291ba671f7f694e930d4b5edfc386d, type: 3}
+    - {fileID: 2576072045250749385, guid: f37e7e47d8c29f146a9fa5eb83cade3e, type: 3}
+    - {fileID: 2576072045250749385, guid: f37e7e47d8c29f146a9fa5eb83cade3e, type: 3}
+    - {fileID: 2576072045250749385, guid: f37e7e47d8c29f146a9fa5eb83cade3e, type: 3}
+    - {fileID: 2576072045250749385, guid: f37e7e47d8c29f146a9fa5eb83cade3e, type: 3}
+    - {fileID: 2576072045250749385, guid: f37e7e47d8c29f146a9fa5eb83cade3e, type: 3}
+    - {fileID: 2576072045250749385, guid: f37e7e47d8c29f146a9fa5eb83cade3e, type: 3}
+    - {fileID: 2576072045250749385, guid: f37e7e47d8c29f146a9fa5eb83cade3e, type: 3}
+    - {fileID: 2576072045250749385, guid: f37e7e47d8c29f146a9fa5eb83cade3e, type: 3}
     - {fileID: 2576072045250749385, guid: f37e7e47d8c29f146a9fa5eb83cade3e, type: 3}
     timeBetweenSpawns: 1
     timeToNextWave: 1

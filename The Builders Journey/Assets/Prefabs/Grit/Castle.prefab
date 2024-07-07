@@ -381,8 +381,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   totalHealth: 100
   currentHealth: 0
-  healthSlider: {fileID: 0}
-  attackPoints: []
+  healthSlider: {fileID: 5391037814808076129}
+  attackPoints:
+  - {fileID: 5391037814989247653}
+  - {fileID: 5391037813833232870}
+  - {fileID: 5391037813722249206}
+  - {fileID: 5391037813876469096}
+  - {fileID: 5391037814580889658}
+  - {fileID: 5391037815299914652}
+  - {fileID: 5391037814220417105}
+  - {fileID: 5391037814050755548}
+  - {fileID: 5391037813162345961}
+  - {fileID: 5391037815258565192}
+  - {fileID: 5391037814870992561}
 --- !u!65 &5391037814656261304
 BoxCollider:
   m_ObjectHideFlags: 0

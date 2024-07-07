@@ -17,7 +17,7 @@ public class Castle : MonoBehaviour
 
 
     // Start is called before the first frame update
-    void Initialize()
+    void Start()
     {
         currentHealth = totalHealth;
 

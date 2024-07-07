@@ -7,6 +7,7 @@ public class TowerUpgradePanel : MonoBehaviour
 {
     public GameObject rangeButton, firerateButton;
     public TMP_Text rangeText, firerateText;
+    public bool mouseOver = false;
 
     public void SetupPanel()
     {
@@ -89,4 +90,15 @@ public class TowerUpgradePanel : MonoBehaviour
             }
         }
     }
+
+    public void OnMouseOver()
+    {
+        mouseOver = true;
+    }
+
+    public void OnMouseExit()
+    {
+        mouseOver = false;
+    }
+
 }

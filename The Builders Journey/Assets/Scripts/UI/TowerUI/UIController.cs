@@ -41,6 +41,14 @@ public class UIController : MonoBehaviour
         {
             PauseUnpause();
         }
+        if(Input.GetMouseButtonUp(0))
+        {
+            if (towerUpgradePanel.gameObject.activeSelf && !towerUpgradePanel.mouseOver) CloseTowerUpgradePanel();
+        }
+        else if(Input.GetMouseButtonDown(1))
+        {
+            if (towerUpgradePanel.gameObject.activeSelf && !towerUpgradePanel.mouseOver) CloseTowerUpgradePanel();
+        }
     }
 
     public void PauseUnpause()

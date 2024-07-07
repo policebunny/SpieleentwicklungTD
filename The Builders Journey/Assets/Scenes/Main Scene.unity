@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571337, b: 0.3069219, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028331, g: 0.2257133, b: 0.3069217, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -6280,6 +6280,7 @@ GameObject:
   - component: {fileID: 1186600132}
   - component: {fileID: 1186600131}
   - component: {fileID: 1186600133}
+  - component: {fileID: 1186600134}
   m_Layer: 5
   m_Name: Tower Upgrade Panel
   m_TagString: Untagged
@@ -6364,6 +6365,28 @@ MonoBehaviour:
   firerateButton: {fileID: 1980486358}
   rangeText: {fileID: 762154391}
   firerateText: {fileID: 1980486357}
+  mouseOver: 1
+--- !u!65 &1186600134
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1186600129}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 840, y: 160, z: 10}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1197068346
 GameObject:
   m_ObjectHideFlags: 0
@@ -9326,10 +9349,10 @@ MonoBehaviour:
     to their unwavering determination to shape a better future for all who dwelled
     in the realms.
 
-    
 
-    The origins of the citadel lay shrouded in mystery,
-    its foundations rooted in the aftermath of Ragnarok. As the chaos of the cataclysm
+
+    The origins of the citadel lay shrouded in mystery, its
+    foundations rooted in the aftermath of Ragnarok. As the chaos of the cataclysm
     subsided and the realms began to rebuild, the nameless being felt a stirring
     within them, a calling to create a sanctuary where scholars and mages from across
     the realms could gather in harmony and unity. Drawing upon their mastery of ice,
@@ -9337,16 +9360,16 @@ MonoBehaviour:
     and majesty, a place where the wonders of magic and the mysteries of the cosmos
     could be explored and understood.
 
-    
 
-    As the citadel took shape, it
-    became a hub of innovation and discovery, attracting scholars and mages from
-    far and wide who sought to unlock the secrets of the universe. Within its hallowed
-    halls, ancient tomes and scrolls whispered of forgotten lore, while arcane experiments
+
+    As the citadel took shape, it became
+    a hub of innovation and discovery, attracting scholars and mages from far and
+    wide who sought to unlock the secrets of the universe. Within its hallowed halls,
+    ancient tomes and scrolls whispered of forgotten lore, while arcane experiments
     crackled with raw power. It was a place of boundless potential, where the boundaries
     of what was possible were pushed ever further with each passing day.
 
-    
+
 
     But
     the citadel was more than just a center of learning; it was also a crucible of
@@ -9356,7 +9379,7 @@ MonoBehaviour:
     relics were restored to their former glory. It was a place of constant innovation,
     where the limits of imagination were challenged and surpassed with each new breakthrough.
 
-    
+
 
     In
     the end, the citadel stood as a symbol of hope and progress in a world scarred
@@ -22507,7 +22530,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7475455231501717055}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 9167107359454548730}
+        m_TargetAssemblyTypeName: UI_ControllerHelper, Assembly-CSharp
+        m_MethodName: ShowSidepanelCalmness4
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &803835526969513404
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30979,7 +31014,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5596521218565460571}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 245619499}
+        m_TargetAssemblyTypeName: ForschungsController, Assembly-CSharp
+        m_MethodName: researchMovement2
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1371130432918080452
 GameObject:
   m_ObjectHideFlags: 0
@@ -30994,6 +31041,7 @@ GameObject:
   - component: {fileID: 9167107359454548728}
   - component: {fileID: 4749133263510349081}
   - component: {fileID: 9167107359454548729}
+  - component: {fileID: 9167107359454548730}
   m_Layer: 5
   m_Name: UI Canvas InGame
   m_TagString: Untagged
@@ -39107,7 +39155,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6366676500110585955}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 245619499}
+        m_TargetAssemblyTypeName: ForschungsController, Assembly-CSharp
+        m_MethodName: researchMovement0
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1994778644453448599
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39953,7 +40013,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4791643887186128245}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 9167107359454548730}
+        m_TargetAssemblyTypeName: UI_ControllerHelper, Assembly-CSharp
+        m_MethodName: ShowSidepanelCalmness1
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!222 &2047774282188091911
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -48768,7 +48840,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5210105685637750028}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 245619499}
+        m_TargetAssemblyTypeName: ForschungsController, Assembly-CSharp
+        m_MethodName: researchBuildtime3
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2632100187681800244
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -50729,7 +50813,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2486838247794501205}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 245619499}
+        m_TargetAssemblyTypeName: ForschungsController, Assembly-CSharp
+        m_MethodName: researchBuildtime5
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2795540196654952598
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -68149,7 +68245,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3545265062562715426}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 9167107359454548730}
+        m_TargetAssemblyTypeName: UI_ControllerHelper, Assembly-CSharp
+        m_MethodName: ShowSidepanelCalmness2
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!224 &4030438247613194668
 RectTransform:
   m_ObjectHideFlags: 0
@@ -73665,7 +73773,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5611688131550982586}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 245619499}
+        m_TargetAssemblyTypeName: ForschungsController, Assembly-CSharp
+        m_MethodName: researchBuildtime4
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &4407709193378601127
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -73855,7 +73975,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5841806150947418322}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 245619499}
+        m_TargetAssemblyTypeName: ForschungsController, Assembly-CSharp
+        m_MethodName: researchMovement1
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!222 &4413437429307451698
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -113612,7 +113744,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 4749133263510349081}
         m_TargetAssemblyTypeName: UIControllerNew, Assembly-CSharp
-        m_MethodName: ShowHideCitadel
+        m_MethodName: ShowHideResearch
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -120011,7 +120143,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1013422727176998965}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 9167107359454548730}
+        m_TargetAssemblyTypeName: UI_ControllerHelper, Assembly-CSharp
+        m_MethodName: ShowSidepanelCalmness5
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &7440116704280334017
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -138885,7 +139029,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6818849031087355177}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 9167107359454548730}
+        m_TargetAssemblyTypeName: UI_ControllerHelper, Assembly-CSharp
+        m_MethodName: ShowSidepanelCalmness3
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &8572052075183539917
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -143617,7 +143773,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7087325480310291601}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 9167107359454548730}
+        m_TargetAssemblyTypeName: UI_ControllerHelper, Assembly-CSharp
+        m_MethodName: ShowSidepanelCalmness0
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &8849773018233001137
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -150164,6 +150332,29 @@ MonoBehaviour:
   pauseScreen: {fileID: 7802582925452311547}
   towerUpgradePanel: {fileID: 1186600133}
   waveText: {fileID: 5894139211893502634}
+--- !u!114 &9167107359454548730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1371130432918080452}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 167ed77355b62d64fae386605b82cd4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SidepanelGreen: []
+  SidepanelBlue: []
+  SidepanelRed: []
+  SidepanelYellow: []
+  SidepanelLightblue:
+  - {fileID: 1429344363422571299}
+  - {fileID: 3316854124421227863}
+  - {fileID: 4814663479274315968}
+  - {fileID: 8394693620014997447}
+  - {fileID: 5639506301464528517}
+  - {fileID: 2250802322832272060}
 --- !u!1 &9177090562710793719
 GameObject:
   m_ObjectHideFlags: 0

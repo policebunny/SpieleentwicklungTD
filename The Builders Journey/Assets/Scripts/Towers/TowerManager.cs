@@ -59,11 +59,7 @@ public class TowerManager : MonoBehaviour
                     if (MoneyManager.instance.SpendMoney(activeTower.cost))
                     {
 
-                        
-
                         UIController.instance.notEnoughMoneyWarning.SetActive(false);
-
-                        
 
                         builder.AddTowerToList(activeTower, indicator, 0);
 
@@ -76,7 +72,8 @@ public class TowerManager : MonoBehaviour
                         UIController.instance.notEnoughMoneyWarning.SetActive(false);
 
                         */
-                        StartTowerPlacement(activeTower);
+                        isPlacing = false;
+                        UIController.instance.notEnoughMoneyWarning.SetActive(false);
                     }
                     
                 }

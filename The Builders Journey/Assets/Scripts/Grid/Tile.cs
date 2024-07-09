@@ -36,38 +36,10 @@ public class Tile : MonoBehaviour
     public void setTcost(int cost)
     {
         tCost = cost;
-        spawnDeko();
 
     }
 
-    public void spawnDeko()
-    {
-        float totalWeight = 0;
-        foreach (var deco in gameBoard.dekoPrefeb)
-        {
-            totalWeight += deco.weighting;
-        }
-        float randomValue = UnityEngine.Random.Range(0, totalWeight);
-        float cumulativeWeight = 0;
 
-        foreach (var deco in gameBoard.dekoPrefeb)
-        {
-            cumulativeWeight += deco.weighting;
-            if (randomValue <= cumulativeWeight)
-            {
-                if (deco.deco!=null)
-                {
-                    Instantiate(deco.deco, transform.position+offset,Quaternion.Euler(0, UnityEngine.Random.Range(0, 360), 0),this.transform);
-                    if(deco.notWalkable)
-                    {
-                        isWalkable = false;
-                    }
-                }
-                break;
-            }
-        }
-
-    }
 
     // Method to add a neighbor tile
     public void AddNeighbor(Tile neighbor)

@@ -13,7 +13,7 @@ public class GameBoard : MonoBehaviour
     public GameObject straightWay;
     public GameObject cornerWay;
     public GameObject tWay;
-    public DecoObject[] dekoPrefeb;
+    public TilePrefaps[] tilePrefebs;
     private GameObject castle;
     private Tile castleTile;
     private Tile[,] tiles; // 2D array to hold references to all tiles
@@ -24,9 +24,9 @@ public class GameBoard : MonoBehaviour
     public GameObject path1;
 
     [System.Serializable]
-    public class DecoObject
+    public class TilePrefaps
     {
-        public GameObject deco;
+        public Tile tileprefap;
         public bool notWalkable;
         public int size;
         public float weighting;
@@ -34,48 +34,50 @@ public class GameBoard : MonoBehaviour
 
     public void Initialize(Vector2Int psize)
     {
+                       
         size = psize;
-        int rotation = 0;//Random.Range(0, 4) * 90;
+        
         tiles = new Tile[size.x, size.y];
         Vector3 offset = new Vector3((size.x - 1) * 0.5f, 0, (size.y - 1) * 0.5f);
         for (int y = 0; y < size.y; y++)
         {
+ 
             for (int x = 0; x < size.x; x++)
             {
-                
-                int cost = UnityEngine.Random.Range(0, 100);
                 Tile tile;
-                
-                switch (cost)
+                int cost = UnityEngine.Random.Range(0, 100);
+                float totalWeight = 0;
+                foreach (var tileprefap in tilePrefebs)
                 {
-                    case < 7:
-                        tile = Instantiate(tilePrefab[1], offset, Quaternion.Euler(0, rotation, 0));
-                        break;
-                    case < 17:
-                        tile = Instantiate(tilePrefab[2], offset, Quaternion.Euler(0, rotation, 0));
-                        break;
-                    case < 27:
-                        tile = Instantiate(tilePrefab[3], offset, Quaternion.Euler(0, rotation, 0));
-                        break;
-                    case < 31:
-                        tile = Instantiate(tilePrefab[4], offset, Quaternion.Euler(0, rotation, 0));
-                        break;
-                    case < 42:
-                        tile = Instantiate(tilePrefab[5], offset, Quaternion.Euler(0, rotation, 0));
-                        break;
-                    case < 51:
-                        tile = Instantiate(tilePrefab[6], offset, Quaternion.Euler(0, rotation, 0));
-                        break;
-                    default:
-                        tile = Instantiate(tilePrefab[0], offset, Quaternion.Euler(0, rotation, 0));
-                        break;
-                };
-                tile.gameBoard = this;
+                    totalWeight += tileprefap.weighting;
+                }
+                float randomValue = UnityEngine.Random.Range(0, totalWeight);
+                float cumulativeWeight = 0;
+
+                foreach (var tileprefap in tilePrefebs)
+                {
+                    int rotation = Random.Range(0, 4) * 90;
+                    cumulativeWeight += tileprefap.weighting;
+                    if (randomValue <= cumulativeWeight)
+                    {
+                        if (tileprefap.tileprefap!=null)
+                        {
+                            tile = Instantiate(tileprefap.tileprefap, transform.position+offset,Quaternion.Euler(0, rotation, 0),this.transform);
+                                            tile.gameBoard = this;
                 tile.setTcost(cost);
                 tile.transform.SetParent(transform, false);
                 tile.transform.localPosition = new Vector3(x - offset.x, 0f, y - offset.y);
                 tile.SetPosition(x, y);
                 tiles[x, y] = tile;
+                            if(tileprefap.notWalkable)
+                            {
+                                tileprefap.notWalkable = false;
+                            }
+                        }
+                        break;
+                    }
+                }
+
             }
         }
 

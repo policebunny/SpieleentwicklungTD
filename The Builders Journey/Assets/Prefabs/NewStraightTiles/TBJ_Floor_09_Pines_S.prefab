@@ -52,6 +52,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TBJ_Floor_09_Pines_S
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8164247303b2fe0429c4fee6801a4b63, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -59,6 +63,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8164247303b2fe0429c4fee6801a4b63, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1510292162181308569}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8164247303b2fe0429c4fee6801a4b63, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -8157432582724345832}
   m_SourcePrefab: {fileID: 100100000, guid: 8164247303b2fe0429c4fee6801a4b63, type: 3}
 --- !u!1 &2455072915864275850 stripped
 GameObject:
@@ -86,3 +93,24 @@ MonoBehaviour:
   parent: {fileID: 0}
   tCost: 1
   neighbors: []
+--- !u!65 &-8157432582724345832
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2455072915864275850}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 5.8997006, y: 6.144532, z: 6.2216845}
+  m_Center: {x: 0.0000001192093, y: 2.9705179, z: 0.16099168}

@@ -52,6 +52,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TBJ_Floor_14_Trees_S_R
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b7df2b0dd82161f4c883f1bccd2aa5ca, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -59,6 +63,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: b7df2b0dd82161f4c883f1bccd2aa5ca, type: 3}
       insertIndex: -1
       addedObject: {fileID: -8680197565501628798}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: b7df2b0dd82161f4c883f1bccd2aa5ca, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -1667879346595829992}
   m_SourcePrefab: {fileID: 100100000, guid: b7df2b0dd82161f4c883f1bccd2aa5ca, type: 3}
 --- !u!1 &8746299737930183408 stripped
 GameObject:
@@ -86,3 +93,24 @@ MonoBehaviour:
   parent: {fileID: 0}
   tCost: 1
   neighbors: []
+--- !u!65 &-1667879346595829992
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8746299737930183408}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.01006769, y: 0.010498324, z: 0.009999999}
+  m_Center: {x: -0.00003384496, y: 0.005100524, z: 0}

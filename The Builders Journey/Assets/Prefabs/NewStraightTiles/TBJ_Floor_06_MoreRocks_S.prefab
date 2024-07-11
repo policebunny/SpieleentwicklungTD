@@ -52,6 +52,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TBJ_Floor_06_MoreRocks_S
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 698dc1dfbe3737f47be98f0879a7e9bd, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -59,6 +63,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 698dc1dfbe3737f47be98f0879a7e9bd, type: 3}
       insertIndex: -1
       addedObject: {fileID: -4550178998893034805}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 698dc1dfbe3737f47be98f0879a7e9bd, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -8448157616733821557}
   m_SourcePrefab: {fileID: 100100000, guid: 698dc1dfbe3737f47be98f0879a7e9bd, type: 3}
 --- !u!1 &2290269181185726812 stripped
 GameObject:
@@ -86,3 +93,24 @@ MonoBehaviour:
   parent: {fileID: 0}
   tCost: 1
   neighbors: []
+--- !u!65 &-8448157616733821557
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2290269181185726812}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.01, y: 0.0049671233, z: 0.01}
+  m_Center: {x: 4.656613e-10, y: 0.0019754483, z: -1.4036405e-17}

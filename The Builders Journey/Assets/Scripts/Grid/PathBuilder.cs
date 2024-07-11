@@ -31,19 +31,19 @@ public class PathBuilder : MonoBehaviour
         {
             if (pathPointer == 0)
             {
-                buildPath(startTiel,pathList[pathPointer], pathList[pathPointer + 1]);
+              //  buildPath(startTiel,pathList[pathPointer], pathList[pathPointer + 1]);
                 pathPointer++;
                 timer = timeinterval;
             }
             else if (pathPointer < pathList.Count-1)
             {
-                buildPath(pathList[pathPointer - 1], pathList[pathPointer], pathList[pathPointer + 1]);
+              //  buildPath(pathList[pathPointer - 1], pathList[pathPointer], pathList[pathPointer + 1]);
                 pathPointer++;
                 timer = timeinterval;
             }else if (pathPointer == pathList.Count-1)
             {
                 Debug.Log("END");
-                buildPath(pathList[pathPointer - 1], pathList[pathPointer],endTile);
+              //  buildPath(pathList[pathPointer - 1], pathList[pathPointer],endTile);
                 InitializeStart(startTiel,gameBoard.path1);
                 this.enabled = false;
             }

@@ -40,7 +40,7 @@ public class UIController : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Escape))
         {
             PauseUnpause();
-        }
+        }/*
         if(Input.GetMouseButtonUp(0))
         {
             if (towerUpgradePanel.gameObject.activeSelf && !towerUpgradePanel.mouseOver) CloseTowerUpgradePanel();
@@ -49,6 +49,7 @@ public class UIController : MonoBehaviour
         {
             if (towerUpgradePanel.gameObject.activeSelf && !towerUpgradePanel.mouseOver) CloseTowerUpgradePanel();
         }
+        */
     }
 
     public void PauseUnpause()

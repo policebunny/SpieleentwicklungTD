@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Castle : MonoBehaviour
 {
     public float totalHealth = 100f;
-    [HideInInspector]
+    // [HideInInspector]
     public float currentHealth;
 
     public Slider healthSlider;

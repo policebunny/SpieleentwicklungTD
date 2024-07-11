@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028331, g: 0.2257133, b: 0.3069217, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4642,7 +4642,6 @@ GameObject:
   - component: {fileID: 454680366}
   - component: {fileID: 454680365}
   - component: {fileID: 454680364}
-  - component: {fileID: 454680363}
   - component: {fileID: 454680362}
   m_Layer: 5
   m_Name: Attackspeed
@@ -4718,19 +4717,6 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
---- !u!114 &454680363
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 454680360}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31a170efe8e5c42418737013b2b0a23a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  towerToPlace: {fileID: 5268485137428662981, guid: a04dd91e61583164bbcdf89efcaa8463, type: 3}
 --- !u!114 &454680364
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4775,9 +4761,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 454680363}
-        m_TargetAssemblyTypeName: TowerButton, Assembly-CSharp
-        m_MethodName: SelectTower
+      - m_Target: {fileID: 2022870661}
+        m_TargetAssemblyTypeName: TowerUpgradePanelNew, Assembly-CSharp
+        m_MethodName: UpgradeFireRate
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -11763,7 +11749,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1149536711}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 9167107359454548729}
+        m_TargetAssemblyTypeName: UIController, Assembly-CSharp
+        m_MethodName: CloseTowerUpgradePanel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1149536711
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12280,7 +12278,6 @@ GameObject:
   - component: {fileID: 1195489146}
   - component: {fileID: 1195489145}
   - component: {fileID: 1195489144}
-  - component: {fileID: 1195489143}
   - component: {fileID: 1195489142}
   m_Layer: 5
   m_Name: Slowdown
@@ -12356,19 +12353,6 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
---- !u!114 &1195489143
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1195489140}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31a170efe8e5c42418737013b2b0a23a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  towerToPlace: {fileID: 5268485137428662981, guid: a04dd91e61583164bbcdf89efcaa8463, type: 3}
 --- !u!114 &1195489144
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12413,9 +12397,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1195489143}
-        m_TargetAssemblyTypeName: TowerButton, Assembly-CSharp
-        m_MethodName: SelectTower
+      - m_Target: {fileID: 2022870661}
+        m_TargetAssemblyTypeName: TowerUpgradePanelNew, Assembly-CSharp
+        m_MethodName: UpgradeFireRate
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -14754,7 +14738,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1512911670}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2022870661}
+        m_TargetAssemblyTypeName: TowerUpgradePanelNew, Assembly-CSharp
+        m_MethodName: RemoveTower
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1512911670
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15112,7 +15108,6 @@ GameObject:
   - component: {fileID: 1562065612}
   - component: {fileID: 1562065611}
   - component: {fileID: 1562065610}
-  - component: {fileID: 1562065609}
   - component: {fileID: 1562065608}
   m_Layer: 5
   m_Name: Range
@@ -15188,19 +15183,6 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
---- !u!114 &1562065609
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1562065606}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31a170efe8e5c42418737013b2b0a23a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  towerToPlace: {fileID: 5268485137428662981, guid: a04dd91e61583164bbcdf89efcaa8463, type: 3}
 --- !u!114 &1562065610
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15245,9 +15227,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1562065609}
-        m_TargetAssemblyTypeName: TowerButton, Assembly-CSharp
-        m_MethodName: SelectTower
+      - m_Target: {fileID: 2022870661}
+        m_TargetAssemblyTypeName: TowerUpgradePanelNew, Assembly-CSharp
+        m_MethodName: UpgradeRange
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -19891,6 +19873,7 @@ GameObject:
   - component: {fileID: 2022870657}
   - component: {fileID: 2022870659}
   - component: {fileID: 2022870658}
+  - component: {fileID: 2022870661}
   m_Layer: 5
   m_Name: Enchant/Upgradepanel
   m_TagString: Untagged
@@ -19962,6 +19945,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2022870656}
   m_CullTransparentMesh: 1
+--- !u!114 &2022870661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2022870656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5962993516ace9446a763e98cf0171fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rangeButton: {fileID: 1562065606}
+  firerateButton: {fileID: 454680360}
+  TowerIcons: []
+  rangeText: {fileID: 1725009111}
+  rangeLevel: {fileID: 128398882}
+  rangeCost: {fileID: 1294536397}
+  firerateText: {fileID: 98339934}
+  firerateLevel: {fileID: 1332507014}
+  firerateCost: {fileID: 624032666}
+  mouseOver: 0
 --- !u!1 &2045819162
 GameObject:
   m_ObjectHideFlags: 0

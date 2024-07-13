@@ -106,6 +106,7 @@ MonoBehaviour:
   enemiesUpdated: 0
   rangeModel: {fileID: 6669405261784507372}
   cost: 150
+  isTower: 2
   upgrader: {fileID: 0}
 --- !u!136 &7305704447854379172
 CapsuleCollider:

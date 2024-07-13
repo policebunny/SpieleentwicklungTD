@@ -10393,7 +10393,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &994020114
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12244,7 +12244,7 @@ MonoBehaviour:
   firerateButton: {fileID: 1980486358}
   rangeText: {fileID: 762154391}
   firerateText: {fileID: 1980486357}
-  mouseOver: 1
+  mouseOver: 0
 --- !u!65 &1186600134
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19959,13 +19959,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rangeButton: {fileID: 1562065606}
   firerateButton: {fileID: 454680360}
-  TowerIcons: []
+  slowButton: {fileID: 1195489140}
+  TowerIcons:
+  - {fileID: 994020113}
+  - {fileID: 71769325}
+  - {fileID: 1698516331}
+  - {fileID: 2823100200891235629}
   rangeText: {fileID: 1725009111}
   rangeLevel: {fileID: 128398882}
   rangeCost: {fileID: 1294536397}
   firerateText: {fileID: 98339934}
   firerateLevel: {fileID: 1332507014}
   firerateCost: {fileID: 624032666}
+  slowText: {fileID: 526899917}
+  slowLevel: {fileID: 1067176336}
+  slowCost: {fileID: 975641549}
   mouseOver: 0
 --- !u!1 &2045819162
 GameObject:
@@ -60787,7 +60795,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2823657594889311499
 RectTransform:
   m_ObjectHideFlags: 0
@@ -159970,7 +159978,7 @@ MonoBehaviour:
   levelSelectScene: Start
   mainMenuScene: Start
   pauseScreen: {fileID: 7802582925452311547}
-  towerUpgradePanel: {fileID: 1186600133}
+  towerUpgradePanel: {fileID: 2022870661}
   waveText: {fileID: 5894139211893502634}
 --- !u!114 &9167107359454548730
 MonoBehaviour:

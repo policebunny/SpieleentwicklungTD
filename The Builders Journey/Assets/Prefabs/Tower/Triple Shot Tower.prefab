@@ -92,6 +92,7 @@ MonoBehaviour:
   enemiesUpdated: 0
   rangeModel: {fileID: 5544370550094008676}
   cost: 250
+  isTower: 3
   upgrader: {fileID: 0}
 --- !u!114 &5268485137428662980
 MonoBehaviour:

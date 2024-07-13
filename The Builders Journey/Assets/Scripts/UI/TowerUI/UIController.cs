@@ -24,7 +24,7 @@ public class UIController : MonoBehaviour
 
     public GameObject pauseScreen;
 
-    public TowerUpgradePanel towerUpgradePanel;
+    public TowerUpgradePanelNew towerUpgradePanel;
 
     public TMP_Text waveText;
 

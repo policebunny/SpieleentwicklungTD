@@ -6,10 +6,11 @@ using TMPro;
 
 public class TowerUpgradePanelNew : MonoBehaviour
 {
-    public GameObject rangeButton, firerateButton;
+    public GameObject rangeButton, firerateButton, slowButton;
     public List<GameObject> TowerIcons = new List<GameObject>();
     public TMP_Text rangeText, rangeLevel, rangeCost;
     public TMP_Text firerateText, firerateLevel, firerateCost;
+    public TMP_Text slowText, slowLevel, slowCost;
     public bool mouseOver = false;
 
     public void SetupPanel()
@@ -31,16 +32,50 @@ public class TowerUpgradePanelNew : MonoBehaviour
         if (TowerManager.instance.selectedTower.upgrader.hasFirerateUpgrade)
         {
             TowerUpgradeController upgrader = TowerManager.instance.selectedTower.upgrader;
-            firerateText.text = upgrader.fireRateText;
-            firerateCost.text = upgrader.firerateUpgrades[upgrader.currentFirerateUpgrade].cost + " Bones";
-            firerateLevel.text = upgrader.currentFirerateUpgrade + "";
-
-            firerateButton.SetActive(true);
+            if(TowerManager.instance.selectedTower.isTower == 2)
+            {
+                firerateButton.SetActive(false);
+                slowButton.SetActive(true);
+                slowText.text = upgrader.fireRateText;
+                slowCost.text = upgrader.firerateUpgrades[upgrader.currentFirerateUpgrade].cost + " Bones";
+                slowLevel.text = upgrader.currentFirerateUpgrade + "";
+            } else
+            {
+                slowButton.SetActive(false);
+                firerateButton.SetActive(true);
+                firerateText.text = upgrader.fireRateText;
+                firerateCost.text = upgrader.firerateUpgrades[upgrader.currentFirerateUpgrade].cost + " Bones";
+                firerateLevel.text = upgrader.currentFirerateUpgrade + "";
+            }
+            
         }
         else
         {
             firerateButton.SetActive(false);
         }
+        foreach (GameObject icon in TowerIcons)
+        {
+            icon.SetActive(false);
+        }
+        switch(TowerManager.instance.selectedTower.isTower)
+        {
+            case 0:
+                TowerIcons[0].SetActive(true);
+                break;
+            case 1:
+                TowerIcons[1].SetActive(true);
+                break;
+            case 2:
+                TowerIcons[2].SetActive(true);
+                break;
+            case 3:
+                TowerIcons[3].SetActive(true);
+                break;
+            default:
+                TowerIcons[0].SetActive(true);
+                break;
+        }
+
     }
 
     public void RemoveTower()

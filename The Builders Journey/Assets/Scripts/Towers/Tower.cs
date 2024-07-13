@@ -21,6 +21,14 @@ public class Tower : MonoBehaviour
 
     public int cost = 100;
 
+    public int isTower = 0;
+    /* Tower Index:
+     * 0 = Canon Tower default
+     * 1 = Bomb Tower
+     * 2 = Slow Tower
+     * 3 = Triple Shot Tower
+     */
+
     [HideInInspector]
     public TowerUpgradeController upgrader;
 

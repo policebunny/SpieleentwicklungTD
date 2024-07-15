@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 
 public class LevelManager : MonoBehaviour
@@ -11,8 +12,10 @@ public class LevelManager : MonoBehaviour
     }
 
     public bool levelActive;
-
+    private float timer;
+    private float startdelay=10f;
     private int gameover;
+    private bool isRunning;
     private bool levelVictory;
 
     private Castle[] theCastles;
@@ -42,12 +45,14 @@ public class LevelManager : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
+    {   
+        timer += Time.deltaTime;
+        if (timer>startdelay)
+            isRunning=true;
+        if(isRunning){
         theCastles = FindObjectsOfType<Castle>();
         //enemySpawner = FindObjectOfType<SimpleEnemySpawner>();
         waveSpawners = FindObjectsOfType<EnemyWaveSpawner>();
-
-        levelActive = true;
 
 
         if (levelActive)
@@ -83,10 +88,10 @@ public class LevelManager : MonoBehaviour
             if (activeEnemies.Count == 0 && wavesComplete)
             {
                 //levelActive = false;
-                levelVictory = true;
+                //levelVictory = true;
 
 
-                UIController.instance.towerButtons.SetActive(false);
+                //UIController.instance.towerButtons.SetActive(false);
             }
 
             if (!levelActive)
@@ -107,6 +112,7 @@ public class LevelManager : MonoBehaviour
 
             gameover = 2;
             Debug.Log("Gameover");
+        }
         }
 
     }

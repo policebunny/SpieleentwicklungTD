@@ -19,7 +19,8 @@ public class EnemyWaveSpawner : MonoBehaviour
     public float waveDisplayTime;
     private float waveDisplayCounter;
     private int waveCounter;
-
+    private float timer = 0;
+    private float timermax =8f;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,7 +31,8 @@ public class EnemyWaveSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (shouldSpawn)
+        timer += Time.deltaTime;
+        if (shouldSpawn&&timer>timermax)
         {
             spawnCounter -= Time.deltaTime;
             if(spawnCounter <= 0)

@@ -22,6 +22,10 @@ public class GameBoard : MonoBehaviour
     public GameObject startPrefab;
     public GameObject pathPointPrefab;
     public GameObject path1;
+    public GameObject builder;
+    private float timer = 0f;
+    private float pathfindingInterval = 45f;
+    private int pathcounter = 0;
 
     [System.Serializable]
     public class TilePrefaps
@@ -81,18 +85,30 @@ public class GameBoard : MonoBehaviour
             }
         }
 
-        PlaceCastle(); // Function to place a castle on the board
-        SetNeighbors(size); // Establish neighbors for each tile
-        FindPath(0); // Example of how to use the pathfinding
+        PlaceCastle(); 
+        SetNeighbors(size); 
+        //FindPath(0,pathcounter);
+        //pathcounter++;
+        timer=40; 
     }
 
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            FindPath(0.2f);
-        }
+ 
+            timer += Time.deltaTime;
+            if (timer >= pathfindingInterval)
+            {
+                timer = 0f;
+                FindPath(0.2f,pathcounter);
+                pathcounter++;
+            }
+
+            if (Input.GetKeyDown(KeyCode.P))
+            {
+                FindPath(0.2f,pathcounter);
+                pathcounter++;
+            }
     }
     private void SetNeighbors(Vector2Int gridSize)
     {
@@ -121,9 +137,10 @@ public class GameBoard : MonoBehaviour
         GameObject castle1 = Instantiate(castlePrefab, selectedTile.transform.position+new Vector3(-0.5f,0,-0.5f), Quaternion.Euler(0, Random.Range(0, 4) * 90, 0));
         castle1.transform.SetParent(selectedTile.transform);
         castle = castle1;
+        //Instantiate(builder, selectedTile.transform.position+new Vector3(2f,0.2f,-2f), Quaternion.Euler(0, Random.Range(0, 4) * 90, 0));
         //Destroy(selectedTile.GetComponent<MyClickableObject>());
     }
-    public void FindPath(float timeinterval)
+    public void FindPath(float timeinterval,int pathcounter)
     {
         AStarPathfinding pathfinding = GetComponent<AStarPathfinding>();
         if (pathfinding == null)
@@ -136,7 +153,6 @@ public class GameBoard : MonoBehaviour
         int counter = 0;
         while (path == null && counter < 100)
         {
-            startTile.GetComponent<Renderer>().material.color = Color.white;
             startTile = CreateStart();
             path = pathfinding.FindPath(startTile, castleTile);
             counter++;
@@ -156,12 +172,11 @@ public class GameBoard : MonoBehaviour
             pb.gameBoard = this;
             pb.timeinterval = timeinterval;
             if (timeinterval == 0)
-                InitializeStart(startTile, path1);
+                //InitializeStart(startTile, path1);
             Debug.Log("Path found! Length: " + path.Count + " tiles.");
             foreach (Tile tile in path)
             {
-                tile.GetComponent<Renderer>().material.color = Color.green;
-                GameObject pathPoint = Instantiate(pathPointPrefab, tile.transform.position+new Vector3(-0.5f,0,-0.5f), Quaternion.Euler(0, Random.Range(0, 4) * 90, 0));
+                GameObject pathPoint = Instantiate(pathPointPrefab, tile.transform.position+new Vector3(0f,0,0f), Quaternion.Euler(0, Random.Range(0, 4) * 90, 0));
                 if (pathPoint != null)
                 {
                     pathPoint.transform.SetParent(path1.transform);
@@ -180,77 +195,6 @@ public class GameBoard : MonoBehaviour
     }
 
 
-    public void InitializeStart(Tile startTile, GameObject gamePath)
-    {
-        if (startTile == null)
-        {
-            Debug.LogError("InitializeStart: startTile is null.");
-            return;
-        }
-
-        // Change the color of the starting tile
-        Renderer tileRenderer = startTile.GetComponent<Renderer>();
-        if (tileRenderer != null)
-        {
-            tileRenderer.material.color = Color.gray;
-        }
-        else
-        {
-            Debug.LogError("InitializeStart: Renderer component not found on startTile.");
-        }
-
-        // Instantiate the starting prefab at the position of the start tile
-        GameObject spawn = Instantiate(startPrefab, startTile.transform.position+new Vector3(-0.5f,0,-0.5f), Quaternion.Euler(0, Random.Range(0, 4) * 90, 0));
-        if (spawn == null)
-        {
-            Debug.LogError("InitializeStart: Failed to instantiate startPrefab.");
-            return;
-        }
-
-        // Get the EnemyWaveSpawner component
-        EnemyWaveSpawner spawner = spawn.GetComponent<EnemyWaveSpawner>();
-        if (spawner != null)
-        {
-            // Ensure the gamePath GameObject has a Path component
-            Path pathComponent = gamePath.GetComponent<Path>();
-            if (pathComponent != null)
-            {
-                spawner.thePath = pathComponent;
-            }
-            else
-            {
-                Debug.LogError("InitializeStart: Path component not found on gamePath GameObject.");
-            }
-
-            // Assign the castle component
-            Debug.Log("Castle: " + castle);
-            if (castle != null)
-            {
-                Castle castleComponent = castle.GetComponent<Castle>();
-                if (castle != null)
-                {
-                    spawner.theCastle = castleComponent;
-                    Debug.Log("Spawner Position: " + spawn.transform.position);
-                    Debug.Log("Start Tile Position: " + startTile.transform.position);
-                }
-                else
-                {
-                    Debug.LogError("InitializeStart: Castle component not found on castle GameObject.");
-                }
-            }
-            else
-            {
-                Debug.LogError("InitializeStart: castle GameObject is null.");
-            }
-        }
-        else
-        {
-            Debug.LogError("InitializeStart: EnemyWaveSpawner component not found on spawn GameObject.");
-        }
-
-        // Set the parent of the spawn GameObject to be the startTile
-        spawn.transform.SetParent(startTile.transform);
-    }
 
     private Tile CreateStart()
     {

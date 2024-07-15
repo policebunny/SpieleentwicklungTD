@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028331, g: 0.2257133, b: 0.3069217, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -17620,6 +17620,10 @@ PrefabInstance:
       value: Game
       objectReference: {fileID: 0}
     - target: {fileID: 5261068599848498702, guid: 0d8a5ca87d83fe341ae86423d4684011, type: 3}
+      propertyPath: builder
+      value: 
+      objectReference: {fileID: 4761565809269087808, guid: 21a970561aeafc648af43491fab9f94d, type: 3}
+    - target: {fileID: 5261068599848498702, guid: 0d8a5ca87d83fe341ae86423d4684011, type: 3}
       propertyPath: cornerWay
       value: 
       objectReference: {fileID: 1968159588769211226, guid: 6d754b2551e010c4682c09649d36248a, type: 3}
@@ -17630,7 +17634,7 @@ PrefabInstance:
     - target: {fileID: 5261068599848498702, guid: 0d8a5ca87d83fe341ae86423d4684011, type: 3}
       propertyPath: straightWay
       value: 
-      objectReference: {fileID: 3974063826113008554, guid: fc1fa011d4e4abc4eaced23f441ed069, type: 3}
+      objectReference: {fileID: 7477281188955461517, guid: 86ccd1105882d8647bd9e8a31ae7af20, type: 3}
     - target: {fileID: 5261068599848498702, guid: 0d8a5ca87d83fe341ae86423d4684011, type: 3}
       propertyPath: castlePrefab
       value: 

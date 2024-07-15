@@ -13,6 +13,7 @@ public class Tile : MonoBehaviour
     public int fCost;
     public Tile parent;
     public int tCost = 1;
+    public bool isplacebel = true;
 
     public List<Tile> neighbors = new List<Tile>(); // List to store references to neighboring tiles
 

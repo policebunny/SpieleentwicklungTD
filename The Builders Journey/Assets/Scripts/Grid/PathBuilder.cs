@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 
@@ -31,22 +32,22 @@ public class PathBuilder : MonoBehaviour
         {
             if (pathPointer == 0)
             {
-              //  buildPath(startTiel,pathList[pathPointer], pathList[pathPointer + 1]);
+                buildPath(startTiel,pathList[pathPointer], pathList[pathPointer + 1]);
                 pathPointer++;
                 timer = timeinterval;
             }
             else if (pathPointer < pathList.Count-1)
             {
-              //  buildPath(pathList[pathPointer - 1], pathList[pathPointer], pathList[pathPointer + 1]);
+                buildPath(pathList[pathPointer - 1], pathList[pathPointer], pathList[pathPointer + 1]);
                 pathPointer++;
                 timer = timeinterval;
             }else if (pathPointer == pathList.Count-1)
             {
                 Debug.Log("END");
-              //  buildPath(pathList[pathPointer - 1], pathList[pathPointer],endTile);
+                buildPath(pathList[pathPointer - 1], pathList[pathPointer],endTile);
                 InitializeStart(startTiel,gameBoard.path1);
                 this.enabled = false;
-            }
+            };
         }
     }
 
@@ -64,65 +65,72 @@ public class PathBuilder : MonoBehaviour
         }
         if (direction == new Vector3(0, 0, 2) || direction == new Vector3(0, 0, -2))
         {
-            GameObject newWay = GameObject.Instantiate(straightWay, thisTile.transform.position + new Vector3(-0f,0.025f,-1), Quaternion.Euler(0, 0, 0));
-            newWay.transform.SetParent(thisTile.transform);
-            newWay.transform.localScale = scale;
+            GameObject newWay = GameObject.Instantiate(straightWay, thisTile.transform.position + new Vector3(0.5f,0,0.5f), Quaternion.Euler(0, 0, 0));
+            newWay.transform.SetParent(thisTile.transform.parent);
+            newWay.GetComponent<Tile>().isplacebel = false;
+            
         }
         else if (direction == new Vector3(2, 0, 0) || direction == new Vector3(-2, 0, 0))
         {
-            GameObject newWay = GameObject.Instantiate(straightWay, thisTile.transform.position + new Vector3(-1,0.025f,-1f), Quaternion.Euler(0, 90, 0));
-            newWay.transform.SetParent(thisTile.transform);
-            newWay.transform.localScale = scale;
+            GameObject newWay = GameObject.Instantiate(straightWay, thisTile.transform.position + new Vector3(0.5f,0,0.5f), Quaternion.Euler(0, 90, 0));
+            newWay.transform.SetParent(thisTile.transform.parent);
+            newWay.GetComponent<Tile>().isplacebel = false;
         }
         else if (directionnext == new Vector3(1, 0, 0) && directionpref == new Vector3(0, 0, 1))
         {
-            GameObject newWay = GameObject.Instantiate(cornerWay, thisTile.transform.position + new Vector3(-0f,0.025f,-1f), Quaternion.Euler(0, 0, 0));
-            newWay.transform.SetParent(thisTile.transform);
-            newWay.transform.localScale = scale;
+            GameObject newWay = GameObject.Instantiate(cornerWay, thisTile.transform.position + new Vector3(0.5f,0,0.5f), Quaternion.Euler(0, 90, 0));
+            newWay.transform.SetParent(thisTile.transform.parent);
+            newWay.GetComponent<Tile>().isplacebel = false;
+            
         }
         else if (directionnext == new Vector3(1, 0, 0) && directionpref == new Vector3(0, 0, -1))
         {
-            GameObject newWay = GameObject.Instantiate(cornerWay, thisTile.transform.position + new Vector3(-1f,0.025f,-1f), Quaternion.Euler(0, 90, 0));//-----------
-            newWay.transform.SetParent(thisTile.transform);
-            newWay.transform.localScale = scale;
+            GameObject newWay = GameObject.Instantiate(cornerWay, thisTile.transform.position + new Vector3(0.5f,0,0.5f), Quaternion.Euler(0, 180, 0));//-----------
+            newWay.transform.SetParent(thisTile.transform.parent);
+            newWay.GetComponent<Tile>().isplacebel = false;
+            
         }
         else if (directionnext == new Vector3(-1, 0, 0) && directionpref == new Vector3(0, 0, 1))
         {
-            GameObject newWay = GameObject.Instantiate(cornerWay, thisTile.transform.position + new Vector3(-0f,0.025f,0f), Quaternion.Euler(0, 270, 0));
-            newWay.transform.SetParent(thisTile.transform);
-            newWay.transform.localScale = scale;
+            GameObject newWay = GameObject.Instantiate(cornerWay, thisTile.transform.position + new Vector3(0.5f,0,0.5f), Quaternion.Euler(0, 0, 0));
+            newWay.transform.SetParent(thisTile.transform.parent);
+            newWay.GetComponent<Tile>().isplacebel = false;
+           
         }
         else if (directionnext == new Vector3(-1, 0, 0) && directionpref == new Vector3(0, 0, -1))
         {
-            GameObject newWay = GameObject.Instantiate(cornerWay, thisTile.transform.position + new Vector3(-1f,0.025f,0f), Quaternion.Euler(0, 180, 0));//----
-            newWay.transform.SetParent(thisTile.transform);
-            newWay.transform.localScale = scale;
+            GameObject newWay = GameObject.Instantiate(cornerWay, thisTile.transform.position + new Vector3(0.5f,0,0.5f), Quaternion.Euler(0, 270, 0));//----
+            newWay.transform.SetParent(thisTile.transform.parent);
+            newWay.GetComponent<Tile>().isplacebel = false;
+             
         } 
         else if (directionnext == new Vector3(0, 0, 1) && directionpref == new Vector3(1, 0, 0))
         {
-            GameObject newWay = GameObject.Instantiate(cornerWay, thisTile.transform.position + new Vector3(-0f,0.025f,-1f), Quaternion.Euler(0, 0, 0));
-            newWay.transform.SetParent(thisTile.transform);
-            newWay.transform.localScale = scale;
+            GameObject newWay = GameObject.Instantiate(cornerWay, thisTile.transform.position + new Vector3(0.5f,0,0.5f), Quaternion.Euler(0, 90, 0));
+            newWay.transform.SetParent(thisTile.transform.parent);
+            newWay.GetComponent<Tile>().isplacebel = false;
+            
         }
         else if (directionnext == new Vector3(0, 0, 1) && directionpref == new Vector3(-1, 0, 0))
         {
-            GameObject newWay = GameObject.Instantiate(cornerWay, thisTile.transform.position + new Vector3(-0f,0.025f,-0f), Quaternion.Euler(0, 270, 0));
-            newWay.transform.SetParent(thisTile.transform);
-            newWay.transform.localScale = scale;
+            GameObject newWay = GameObject.Instantiate(cornerWay, thisTile.transform.position + new Vector3(0.5f,0,0.5f), Quaternion.Euler(0, 0, 0));
+            newWay.transform.SetParent(thisTile.transform.parent);
+            newWay.GetComponent<Tile>().isplacebel = false;
         }
         else if (directionnext == new Vector3(0, 0, -1) && directionpref == new Vector3(1, 0, 0))
         {
-            GameObject newWay = GameObject.Instantiate(cornerWay, thisTile.transform.position + new Vector3(-1f,0.025f,-1f), Quaternion.Euler(0, 90, 0));//-----
-            newWay.transform.SetParent(thisTile.transform);
-            newWay.transform.localScale = scale;
+            GameObject newWay = GameObject.Instantiate(cornerWay, thisTile.transform.position + new Vector3(0.5f,0,0.5f), Quaternion.Euler(0, 180, 0));//-----
+            newWay.transform.SetParent(thisTile.transform.parent);
+            newWay.GetComponent<Tile>().isplacebel = false;
         }
         else if (directionnext == new Vector3(0, 0, -1) && directionpref == new Vector3(-1, 0, 0))
         {
-            GameObject newWay = GameObject.Instantiate(cornerWay, thisTile.transform.position + new Vector3(-1f,0.025f,0f), Quaternion.Euler(0, 180, 0));//-----
-            newWay.transform.SetParent(thisTile.transform);
-            newWay.transform.localScale = scale;
+            GameObject newWay = GameObject.Instantiate(cornerWay, thisTile.transform.position + new Vector3(0.5f,0,0.5f), Quaternion.Euler(0, 270, 0));//-----
+            newWay.transform.SetParent(thisTile.transform.parent);
+            newWay.GetComponent<Tile>().isplacebel = false;
         }
-        thisTile.GetComponent<Renderer>().material.color = Color.blue;
+        thisTile.isplacebel = false;
+        Destroy(thisTile.gameObject.GetComponent<MeshRenderer>());
     }
 
 
@@ -147,7 +155,7 @@ public class PathBuilder : MonoBehaviour
         }
 
         // Instantiate the starting prefab at the position of the start tile
-        GameObject spawn = Instantiate(startPrefab, startTile.transform.position+new Vector3(-0.5f,0,-0.5f), Quaternion.identity);
+        GameObject spawn = Instantiate(startPrefab, startTile.transform.position+new Vector3(0f,0,0f), Quaternion.identity);
         if (spawn == null)
         {
             Debug.LogError("InitializeStart: Failed to instantiate startPrefab.");

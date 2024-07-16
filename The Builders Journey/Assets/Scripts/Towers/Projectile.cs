@@ -18,7 +18,7 @@ public class Projectile : MonoBehaviour
     {
         theRB.velocity = transform.forward * moveSpeed;
 
-        AudioManager.Instance.PlaySFX("Tower_placed_1");
+        AudioManager.Instance.PlaySFX("Cannon_shot_1");
     }
 
     private void OnTriggerEnter(Collider other)

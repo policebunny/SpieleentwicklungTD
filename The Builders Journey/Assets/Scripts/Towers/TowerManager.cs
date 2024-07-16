@@ -64,6 +64,8 @@ public class TowerManager : MonoBehaviour
                         builder.AddTowerToList(activeTower, indicator, 0);
 
                         AudioManager.Instance.PlaySFX("Tower_placed_1");
+
+        Debug.Log("Tower placed");
                         /*
                         Instantiate(activeTower, indicator.position, activeTower.transform.rotation);
 

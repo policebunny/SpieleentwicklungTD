@@ -42,7 +42,8 @@ public class TowerUpgradePanel : MonoBehaviour
 
         UIController.instance.CloseTowerUpgradePanel();
 
-        AudioManager.Instance.PlaySFX("Tower_placed_1");
+        // AudioManager.Instance.PlayUI("Upgrade");
+        // Debug.Log("Remove Tower");
     }
 
     public void UpgradeRange()
@@ -59,7 +60,8 @@ public class TowerUpgradePanel : MonoBehaviour
 
                 UIController.instance.notEnoughMoneyWarning.SetActive(false);
 
-                AudioManager.Instance.PlaySFX("Tower_placed_1");
+        // AudioManager.Instance.PlayUI("Upgrade");
+        // Debug.Log("Upgrade Range");
             } else
             {
                 UIController.instance.notEnoughMoneyWarning.SetActive(true);
@@ -82,7 +84,8 @@ public class TowerUpgradePanel : MonoBehaviour
 
                 UIController.instance.notEnoughMoneyWarning.SetActive(false);
 
-                AudioManager.Instance.PlaySFX("Tower_placed_1");
+        // AudioManager.Instance.PlayUI("Upgrade");
+        // Debug.Log("Upgrade Fire Rate");
             }
             else
             {

@@ -6,12 +6,51 @@ public class UI_ControllerHelper : MonoBehaviour
 {
     public static UI_ControllerHelper instance;
 
+    public GameObject glossary, options;
+    public GameObject OpSound, OpDisplay;
+
     public List<GameObject> SidepanelGlossary = new List<GameObject>();
     public List<GameObject> SidepanelLightblue = new List<GameObject>();
 
     private void Awake()
     {
         instance = this;
+    }
+
+    public void ShowHideGlossary()
+    {
+        if (glossary.activeSelf == false)
+        {
+            glossary.SetActive(true);
+        }
+        else
+        {
+            glossary.SetActive(false);
+        }
+    }
+
+    public void ShowHideOptions()
+    {
+        if (options.activeSelf == false)
+        {
+            options.SetActive(true);
+        }
+        else
+        {
+            options.SetActive(false);
+        }
+    }
+
+    public void OptionsSound()
+    {
+        OpDisplay.SetActive(false);
+        OpSound.SetActive(true);
+    }
+
+    public void OptionsDisplay()
+    {
+        OpSound.SetActive(false);
+        OpDisplay.SetActive(true);
     }
 
     public void HideAllPanel()

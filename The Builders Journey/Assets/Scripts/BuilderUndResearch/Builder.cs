@@ -179,7 +179,6 @@ public class Builder : MonoBehaviour
         indicatorAdded.gameObject.SetActive(false);
         UIController.instance.notEnoughMoneyWarning.SetActive(false);
 
-        AudioManager.Instance.PlaySFX("Construction_complete_1");
 
         Destroy(indicatorAdded.gameObject);
         /*
@@ -198,6 +197,9 @@ public class Builder : MonoBehaviour
 
     public void CompletedTower()
     {
+        AudioManager.Instance.PlaySFX("Construction_complete_1");
+        Debug.Log("Construction complete");
+
         TowerInstantiate(BuildingList[0], BuildTransformList[0]);
         BuildingList.RemoveAt(0);
         BuildTransformList.RemoveAt(0);

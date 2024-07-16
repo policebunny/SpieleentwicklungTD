@@ -55,6 +55,8 @@ public class ForschungSystem : MonoBehaviour
 
     public bool removeSkillpoint()
     {
+
+
         Skillpoints--;
         if(Skillpoints < 0)
         {
@@ -66,6 +68,9 @@ public class ForschungSystem : MonoBehaviour
         {
             skillPoint.text = Skillpoints.ToString();
         }
+
+                        AudioManager.Instance.PlayUI("Upgrade");
+                Debug.Log("Builder upgrade");
         return true; // successfull research
     }
 

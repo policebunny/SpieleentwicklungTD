@@ -10,7 +10,7 @@ public class ForschungsController : MonoBehaviour
     public Builder bob;
     public bool isAvailable;
 
-    // index für spriterenderer für jeden button on change
+    // index fï¿½r spriterenderer fï¿½r jeden button on change
     // private Image CIRangeColorImage;
     // public GameObject CIRangeIcon;
 
@@ -66,14 +66,17 @@ public class ForschungsController : MonoBehaviour
             case 0:
                 // case Movementspeed
                 bob.UpgradeMovement();
+
                 break;
             case 1:
                 // case Movementspeed
                 bob.UpgradeMovement();
+                
                 break;
             case 2:
                 // case Movementspeed
                 bob.UpgradeMovement();
+
                 break;
             case 3:
                 // case Buildspeed
@@ -82,6 +85,7 @@ public class ForschungsController : MonoBehaviour
             case 4:
                 // case Buildspeed
                 bob.UpgradeBuildtime();
+
                 break;
             case 5:
                 // case Buildspeed
@@ -92,7 +96,7 @@ public class ForschungsController : MonoBehaviour
         }
     }
 
-    // methode für jede research
+    // methode fï¿½r jede research
 
     public void researchMovement0()
     {
@@ -106,6 +110,7 @@ public class ForschungsController : MonoBehaviour
             } else
             {
                 ForschungSystem.instance.addSkillpoint();
+                
             }
         }
     }

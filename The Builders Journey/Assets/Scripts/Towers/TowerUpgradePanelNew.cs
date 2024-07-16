@@ -86,7 +86,7 @@ public class TowerUpgradePanelNew : MonoBehaviour
 
         UIController.instance.CloseTowerUpgradePanel();
 
-        AudioManager.Instance.PlaySFX("Tower_placed_1");
+        AudioManager.Instance.PlayUI("Upgrade");
     }
 
     public void UpgradeRange()
@@ -103,7 +103,7 @@ public class TowerUpgradePanelNew : MonoBehaviour
 
                 UIController.instance.notEnoughMoneyWarning.SetActive(false);
 
-                AudioManager.Instance.PlaySFX("Tower_placed_1");
+                AudioManager.Instance.PlayUI("Upgrade");
             }
             else
             {
@@ -127,7 +127,7 @@ public class TowerUpgradePanelNew : MonoBehaviour
 
                 UIController.instance.notEnoughMoneyWarning.SetActive(false);
 
-                AudioManager.Instance.PlaySFX("Tower_placed_1");
+                AudioManager.Instance.PlayUI("Upgrade");
             }
             else
             {

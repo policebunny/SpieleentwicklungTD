@@ -12,6 +12,7 @@ public class TowerButton : MonoBehaviour
         {
 
             TowerManager.instance.StartTowerPlacement(towerToPlace);
+
         }
     }
 }

@@ -6,10 +6,7 @@ public class UI_ControllerHelper : MonoBehaviour
 {
     public static UI_ControllerHelper instance;
 
-    public List<GameObject> SidepanelGreen = new List<GameObject>();
-    public List<GameObject> SidepanelBlue = new List<GameObject>();
-    public List<GameObject> SidepanelRed = new List<GameObject>();
-    public List<GameObject> SidepanelYellow = new List<GameObject>();
+    public List<GameObject> SidepanelGlossary = new List<GameObject>();
     public List<GameObject> SidepanelLightblue = new List<GameObject>();
 
     private void Awake()
@@ -19,19 +16,7 @@ public class UI_ControllerHelper : MonoBehaviour
 
     public void HideAllPanel()
     {
-        foreach (GameObject panel in SidepanelGreen)
-        {
-            panel.SetActive(false);
-        }
-        foreach (GameObject panel in SidepanelBlue)
-        {
-            panel.SetActive(false);
-        }
-        foreach (GameObject panel in SidepanelRed)
-        {
-            panel.SetActive(false);
-        }
-        foreach (GameObject panel in SidepanelYellow)
+        foreach (GameObject panel in SidepanelGlossary)
         {
             panel.SetActive(false);
         }
@@ -41,165 +26,69 @@ public class UI_ControllerHelper : MonoBehaviour
         }
     }
 
-    public void ShowSidepanelDestruction0()
+    public void ShowSidepanelLore()
     {
         HideAllPanel();
-        SidepanelRed[0].SetActive(true);
+        SidepanelGlossary[0].SetActive(true);
     }
 
-    public void ShowSidepanelDestruction1()
+    public void ShowSidepanelCitadel()
     {
         HideAllPanel();
-        SidepanelRed[1].SetActive(true);
+        SidepanelGlossary[1].SetActive(true);
     }
 
-    public void ShowSidepanelDestruction2()
+    public void ShowSidepanelAsgard()
     {
         HideAllPanel();
-        SidepanelRed[2].SetActive(true);
+        SidepanelGlossary[2].SetActive(true);
     }
 
-    public void ShowSidepanelDestruction3()
+    public void ShowSidepanelAlfheim()
     {
         HideAllPanel();
-        SidepanelRed[3].SetActive(true);
+        SidepanelGlossary[3].SetActive(true);
     }
 
-    public void ShowSidepanelDestruction4()
+    public void ShowSidepanelMuspelheim()
     {
         HideAllPanel();
-        SidepanelRed[4].SetActive(true);
+        SidepanelGlossary[4].SetActive(true);
     }
 
-    public void ShowSidepanelDestruction5()
+    public void ShowSidepanelMidgard()
     {
         HideAllPanel();
-        SidepanelRed[5].SetActive(true);
+        SidepanelGlossary[5].SetActive(true);
     }
-    public void ShowSidepanelDestruction6()
+    public void ShowSidepanelVanaheim()
     {
         HideAllPanel();
-        SidepanelRed[6].SetActive(true);
-    }
-
-    public void ShowSidePanelCommon0()
-    {
-        HideAllPanel();
-        SidepanelBlue[0].SetActive(true);
+        SidepanelGlossary[6].SetActive(true);
     }
 
-    public void ShowSidePanelCommon1()
+    public void ShowSidepanelNidavellir()
     {
         HideAllPanel();
-        SidepanelBlue[1].SetActive(true);
+        SidepanelGlossary[7].SetActive(true);
     }
 
-    public void ShowSidePanelCommon2()
+    public void ShowSidepanelJotunheim()
     {
         HideAllPanel();
-        SidepanelBlue[2].SetActive(true);
+        SidepanelGlossary[8].SetActive(true);
     }
 
-    public void ShowSidePanelCommon3()
+    public void ShowSidepanelNilfheim()
     {
         HideAllPanel();
-        SidepanelBlue[3].SetActive(true);
+        SidepanelGlossary[9].SetActive(true);
     }
 
-    public void ShowSidePanelCommon4()
+    public void ShowSidepanelHelmheim()
     {
         HideAllPanel();
-        SidepanelBlue[4].SetActive(true);
-    }
-
-    public void ShowSidePanelCommon5()
-    {
-        HideAllPanel();
-        SidepanelBlue[5].SetActive(true);
-    }
-
-    public void ShowSidepanelUpheaval0()
-    {
-        HideAllPanel();
-        SidepanelYellow[0].SetActive(true);
-    }
-
-    public void ShowSidepanelUpheaval1()
-    {
-        HideAllPanel();
-        SidepanelYellow[1].SetActive(true);
-    }
-
-    public void ShowSidepanelUpheaval2()
-    {
-        HideAllPanel();
-        SidepanelYellow[2].SetActive(true);
-    }
-
-    public void ShowSidepanelUpheaval3()
-    {
-        HideAllPanel();
-        SidepanelYellow[3].SetActive(true);
-    }
-
-    public void ShowSidepanelUpheaval4()
-    {
-        HideAllPanel();
-        SidepanelYellow[4].SetActive(true);
-    }
-
-    public void ShowSidepanelUpheaval5()
-    {
-        HideAllPanel();
-        SidepanelYellow[5].SetActive(true);
-    }
-
-    public void ShowSidepanelUpheaval6()
-    {
-        HideAllPanel();
-        SidepanelYellow[6].SetActive(true);
-    }
-
-    public void ShowSidepanelHardenedwill0()
-    {
-        HideAllPanel();
-        SidepanelGreen[0].SetActive(true);
-    }
-
-    public void ShowSidepanelHardenedwill1()
-    {
-        HideAllPanel();
-        SidepanelGreen[1].SetActive(true);
-    }
-
-    public void ShowSidepanelHardenedwill2()
-    {
-        HideAllPanel();
-        SidepanelGreen[2].SetActive(true);
-    }
-
-    public void ShowSidepanelHardenedwill3()
-    {
-        HideAllPanel();
-        SidepanelGreen[3].SetActive(true);
-    }
-
-    public void ShowSidepanelHardenedwill4()
-    {
-        HideAllPanel();
-        SidepanelGreen[4].SetActive(true);
-    }
-
-    public void ShowSidepanelHardenedwill5()
-    {
-        HideAllPanel();
-        SidepanelGreen[5].SetActive(true);
-    }
-
-    public void ShowSidepanelHardenedwill6()
-    {
-        HideAllPanel();
-        SidepanelGreen[6].SetActive(true);
+        SidepanelGlossary[10].SetActive(true);
     }
 
     public void ShowSidepanelCalmness0()

@@ -465,9 +465,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4749133263510349081}
-        m_TargetAssemblyTypeName: UIControllerNew, Assembly-CSharp
-        m_MethodName: GlossaryMidgard
+      - m_Target: {fileID: 9167107359454548730}
+        m_TargetAssemblyTypeName: UI_ControllerHelper, Assembly-CSharp
+        m_MethodName: ShowSidepanelAlfheim
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3855,9 +3855,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4749133263510349081}
-        m_TargetAssemblyTypeName: UIControllerNew, Assembly-CSharp
-        m_MethodName: GlossaryMidgard
+      - m_Target: {fileID: 9167107359454548730}
+        m_TargetAssemblyTypeName: UI_ControllerHelper, Assembly-CSharp
+        m_MethodName: ShowSidepanelHelmheim
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4626,9 +4626,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4749133263510349081}
-        m_TargetAssemblyTypeName: UIControllerNew, Assembly-CSharp
-        m_MethodName: GlossaryMidgard
+      - m_Target: {fileID: 9167107359454548730}
+        m_TargetAssemblyTypeName: UI_ControllerHelper, Assembly-CSharp
+        m_MethodName: ShowSidepanelNilfheim
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5906,9 +5906,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4749133263510349081}
-        m_TargetAssemblyTypeName: UIControllerNew, Assembly-CSharp
-        m_MethodName: GlossaryMidgard
+      - m_Target: {fileID: 9167107359454548730}
+        m_TargetAssemblyTypeName: UI_ControllerHelper, Assembly-CSharp
+        m_MethodName: ShowSidepanelMuspelheim
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9622,9 +9622,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4749133263510349081}
-        m_TargetAssemblyTypeName: UIControllerNew, Assembly-CSharp
-        m_MethodName: GlossaryMidgard
+      - m_Target: {fileID: 9167107359454548730}
+        m_TargetAssemblyTypeName: UI_ControllerHelper, Assembly-CSharp
+        m_MethodName: ShowSidepanelAsgard
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10726,9 +10726,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4749133263510349081}
-        m_TargetAssemblyTypeName: UIControllerNew, Assembly-CSharp
-        m_MethodName: GlossaryMidgard
+      - m_Target: {fileID: 9167107359454548730}
+        m_TargetAssemblyTypeName: UI_ControllerHelper, Assembly-CSharp
+        m_MethodName: ShowSidepanelVanaheim
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -11687,9 +11687,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4749133263510349081}
-        m_TargetAssemblyTypeName: UIControllerNew, Assembly-CSharp
-        m_MethodName: GlossaryCitadel
+      - m_Target: {fileID: 9167107359454548730}
+        m_TargetAssemblyTypeName: UI_ControllerHelper, Assembly-CSharp
+        m_MethodName: ShowSidepanelCitadel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -13659,9 +13659,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4749133263510349081}
-        m_TargetAssemblyTypeName: UIControllerNew, Assembly-CSharp
-        m_MethodName: GlossaryMidgard
+      - m_Target: {fileID: 9167107359454548730}
+        m_TargetAssemblyTypeName: UI_ControllerHelper, Assembly-CSharp
+        m_MethodName: ShowSidepanelNidavellir
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -20337,9 +20337,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4749133263510349081}
-        m_TargetAssemblyTypeName: UIControllerNew, Assembly-CSharp
-        m_MethodName: GlossaryMidgard
+      - m_Target: {fileID: 9167107359454548730}
+        m_TargetAssemblyTypeName: UI_ControllerHelper, Assembly-CSharp
+        m_MethodName: ShowSidepanelJotunheim
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -55486,7 +55486,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -388.6001, y: 747.65}
+  m_AnchoredPosition: {x: -388.6001, y: 747.6498}
   m_SizeDelta: {x: 767.0022, y: 2000}
   m_Pivot: {x: 0, y: 1}
 --- !u!224 &2085502769473039339
@@ -133492,10 +133492,10 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1412132376}
   - {fileID: 3525235107257968915}
   - {fileID: 7868691185375995625}
   - {fileID: 6501695473714273103}
-  - {fileID: 1412132376}
   m_Father: {fileID: 5087033440474100065}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -136716,9 +136716,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4749133263510349081}
-        m_TargetAssemblyTypeName: UIControllerNew, Assembly-CSharp
-        m_MethodName: GlossaryCitadel
+      - m_Target: {fileID: 9167107359454548730}
+        m_TargetAssemblyTypeName: UI_ControllerHelper, Assembly-CSharp
+        m_MethodName: ShowSidepanelLore
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -137697,8 +137697,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3377558778951514835}
   m_HandleRect: {fileID: 8556137940494132368}
   m_Direction: 2
-  m_Value: 1
-  m_Size: 0.7476501
+  m_Value: 1.0000007
+  m_Size: 0.74757326
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -145674,9 +145674,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4749133263510349081}
-        m_TargetAssemblyTypeName: UIControllerNew, Assembly-CSharp
-        m_MethodName: GlossaryMidgard
+      - m_Target: {fileID: 9167107359454548730}
+        m_TargetAssemblyTypeName: UI_ControllerHelper, Assembly-CSharp
+        m_MethodName: ShowSidepanelMidgard
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -153780,7 +153780,7 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 3967350681679646916}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.2523499}
+  m_AnchorMin: {x: 0, y: 0.25242674}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
@@ -165345,10 +165345,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 167ed77355b62d64fae386605b82cd4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SidepanelGreen: []
-  SidepanelBlue: []
-  SidepanelRed: []
-  SidepanelYellow: []
+  SidepanelGlossary:
+  - {fileID: 358774215}
+  - {fileID: 8579278881528004174}
+  - {fileID: 8716238209815740976}
+  - {fileID: 371177820}
+  - {fileID: 1863287153}
+  - {fileID: 1213033204}
+  - {fileID: 483166914}
+  - {fileID: 1162310583}
+  - {fileID: 1673056095}
+  - {fileID: 1224880211}
+  - {fileID: 1009989992}
   SidepanelLightblue:
   - {fileID: 659246676}
   - {fileID: 1142874670}

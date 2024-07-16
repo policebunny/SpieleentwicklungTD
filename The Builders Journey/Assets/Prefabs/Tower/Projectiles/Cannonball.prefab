@@ -131,9 +131,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   theRB: {fileID: 3163549427675777786}
-  moveSpeed: 10
+  moveSpeed: 30
   impactEffect: {fileID: 3872692991217085041, guid: 9720c5a2cd531e14aa49bfd649469405, type: 3}
-  damageAmount: 5
+  damageAmount: 4
 --- !u!135 &3163549427675777787
 SphereCollider:
   m_ObjectHideFlags: 0

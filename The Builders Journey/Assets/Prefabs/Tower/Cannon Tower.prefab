@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e01343059e5939c49a3497cc1ae0fc16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotateSpeed: 5
+  rotateSpeed: 1
 --- !u!1 &8492344929493621542
 GameObject:
   m_ObjectHideFlags: 0
@@ -169,6 +169,7 @@ MonoBehaviour:
   enemiesUpdated: 0
   rangeModel: {fileID: 8085714271689303795}
   cost: 100
+  isTower: 0
   upgrader: {fileID: 0}
 --- !u!114 &8492344930071035219
 MonoBehaviour:
@@ -286,15 +287,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: c79f686c2b0d29c4b815fb6f8d78c41e, type: 3}
       propertyPath: m_LocalScale.x
-      value: 38.7
+      value: 29.7
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c79f686c2b0d29c4b815fb6f8d78c41e, type: 3}
       propertyPath: m_LocalScale.y
-      value: 38.699997
+      value: 29.7
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c79f686c2b0d29c4b815fb6f8d78c41e, type: 3}
       propertyPath: m_LocalScale.z
-      value: 38.699997
+      value: 29.7
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c79f686c2b0d29c4b815fb6f8d78c41e, type: 3}
       propertyPath: m_LocalPosition.x

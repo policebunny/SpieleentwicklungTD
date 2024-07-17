@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571337, b: 0.3069219, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028331, g: 0.2257133, b: 0.3069217, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2989,7 +2989,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 7836990622824716627}
         m_TargetAssemblyTypeName: UI_ControllerHelper, Assembly-CSharp
         m_MethodName: ShowSidepanelAsgard
         m_Mode: 1
@@ -5100,7 +5100,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 7836990622824716627}
         m_TargetAssemblyTypeName: UI_ControllerHelper, Assembly-CSharp
         m_MethodName: ShowSidepanelCitadel
         m_Mode: 1
@@ -8809,11 +8809,11 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8621320294488354518}
-  - {fileID: 7856882321017385012}
-  - {fileID: 1315728454181205083}
   - {fileID: 6078400915093765357}
   - {fileID: 1161498308139501486}
   - {fileID: 6900331425765640180}
+  - {fileID: 7856882321017385012}
+  - {fileID: 1315728454181205083}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -9673,7 +9673,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 7836990622824716627}
         m_TargetAssemblyTypeName: UI_ControllerHelper, Assembly-CSharp
         m_MethodName: ShowSidepanelMidgard
         m_Mode: 1
@@ -11016,7 +11016,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 7836990622824716627}
         m_TargetAssemblyTypeName: UI_ControllerHelper, Assembly-CSharp
         m_MethodName: ShowSidepanelNilfheim
         m_Mode: 1
@@ -12776,7 +12776,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1337390258984433768}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7836990622824716627}
+        m_TargetAssemblyTypeName: UI_ControllerHelper, Assembly-CSharp
+        m_MethodName: ShowHideOptions
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &3501192602868487555
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13631,7 +13643,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 7836990622824716627}
         m_TargetAssemblyTypeName: UI_ControllerHelper, Assembly-CSharp
         m_MethodName: ShowSidepanelVanaheim
         m_Mode: 1
@@ -17368,8 +17380,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UIControllerNew, Assembly-CSharp
+      - m_Target: {fileID: 7836990622824716627}
+        m_TargetAssemblyTypeName: UI_ControllerHelper, Assembly-CSharp
         m_MethodName: ShowHideGlossary
         m_Mode: 1
         m_Arguments:
@@ -17707,7 +17719,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 7836990622824716627}
         m_TargetAssemblyTypeName: UI_ControllerHelper, Assembly-CSharp
         m_MethodName: ShowSidepanelMuspelheim
         m_Mode: 1
@@ -17960,7 +17972,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6484063128698207033}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7836990622824716627}
+        m_TargetAssemblyTypeName: UI_ControllerHelper, Assembly-CSharp
+        m_MethodName: ShowHideGlossary
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &4938363833396654283
 GameObject:
   m_ObjectHideFlags: 0
@@ -20135,8 +20159,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UIControllerNew, Assembly-CSharp
+      - m_Target: {fileID: 7836990622824716627}
+        m_TargetAssemblyTypeName: UI_ControllerHelper, Assembly-CSharp
         m_MethodName: OptionsSound
         m_Mode: 1
         m_Arguments:
@@ -22402,6 +22426,7 @@ GameObject:
   - component: {fileID: 4491434714232592935}
   - component: {fileID: 7836990622824716625}
   - component: {fileID: 7836990622824716626}
+  - component: {fileID: 7836990622824716627}
   m_Layer: 5
   m_Name: Canvas StartMenu
   m_TagString: Untagged
@@ -22728,9 +22753,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 7836990622824716627}
         m_TargetAssemblyTypeName: UI_ControllerHelper, Assembly-CSharp
-        m_MethodName: ShowSidepanelHelmheim
+        m_MethodName: ShowSidepanelNilfheim
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -23588,8 +23613,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UIControllerNew, Assembly-CSharp
+      - m_Target: {fileID: 7836990622824716627}
+        m_TargetAssemblyTypeName: UI_ControllerHelper, Assembly-CSharp
         m_MethodName: OptionsDisplay
         m_Mode: 1
         m_Arguments:
@@ -23924,7 +23949,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 7836990622824716627}
         m_TargetAssemblyTypeName: UI_ControllerHelper, Assembly-CSharp
         m_MethodName: ShowSidepanelNidavellir
         m_Mode: 1
@@ -25305,7 +25330,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 7836990622824716627}
         m_TargetAssemblyTypeName: UI_ControllerHelper, Assembly-CSharp
         m_MethodName: ShowSidepanelAlfheim
         m_Mode: 1
@@ -27460,8 +27485,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UIControllerNew, Assembly-CSharp
+      - m_Target: {fileID: 7836990622824716627}
+        m_TargetAssemblyTypeName: UI_ControllerHelper, Assembly-CSharp
         m_MethodName: ShowHideOptions
         m_Mode: 1
         m_Arguments:
@@ -27575,6 +27600,35 @@ MonoBehaviour:
   - {fileID: 3291487518275552360}
   canvasGroup: {fileID: 7868098193358781342}
   rectTransform: {fileID: 3343430269728443204}
+--- !u!114 &7836990622824716627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6328940871709395124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 167ed77355b62d64fae386605b82cd4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  glossary: {fileID: 3866149543500581944}
+  options: {fileID: 6726580155079852085}
+  OpSound: {fileID: 8675316380432491211}
+  OpDisplay: {fileID: 1105742873682236437}
+  SidepanelGlossary:
+  - {fileID: 3730985301176495469}
+  - {fileID: 9089172217746859640}
+  - {fileID: 4756431771914368417}
+  - {fileID: 9182417267748409584}
+  - {fileID: 2783456320835349132}
+  - {fileID: 4620674454471310726}
+  - {fileID: 2353065412649923762}
+  - {fileID: 9184017362092265766}
+  - {fileID: 8933296476794510321}
+  - {fileID: 8310853397722595538}
+  - {fileID: 4914919484826879216}
+  SidepanelLightblue: []
 --- !u!82 &7842406248498343158
 AudioSource:
   m_ObjectHideFlags: 0
@@ -28721,7 +28775,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 7836990622824716627}
         m_TargetAssemblyTypeName: UI_ControllerHelper, Assembly-CSharp
         m_MethodName: ShowSidepanelLore
         m_Mode: 1
@@ -31928,7 +31982,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6473606496306677283}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7836990622824716627}
+        m_TargetAssemblyTypeName: UI_ControllerHelper, Assembly-CSharp
+        m_MethodName: QuitButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &9089955765590368003
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32442,7 +32508,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 7836990622824716627}
         m_TargetAssemblyTypeName: UI_ControllerHelper, Assembly-CSharp
         m_MethodName: ShowSidepanelJotunheim
         m_Mode: 1

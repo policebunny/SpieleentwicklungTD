@@ -53,6 +53,11 @@ public class UI_ControllerHelper : MonoBehaviour
         OpDisplay.SetActive(true);
     }
 
+    public void QuitButton()
+    {
+        Application.Quit();
+    }
+
     public void HideAllPanel()
     {
         foreach (GameObject panel in SidepanelGlossary)

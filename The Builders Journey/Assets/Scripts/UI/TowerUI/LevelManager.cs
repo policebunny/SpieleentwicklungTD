@@ -40,7 +40,9 @@ public class LevelManager : MonoBehaviour
         Debug.Log("Gameover set auf" + gameover);
 
 
+        AudioManager.Instance.musicPlaylist = new string[] { "Ingame_1", "Ingame_2", "Ingame_3" };
         AudioManager.Instance.StartPlaylist();
+        AudioManager.Instance.PlayUI("Woosh");
     }
 
     // Update is called once per frame

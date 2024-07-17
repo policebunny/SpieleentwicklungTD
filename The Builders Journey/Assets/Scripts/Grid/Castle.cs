@@ -42,7 +42,7 @@ public class Castle : MonoBehaviour
 
         } else
         {
-            //AudioManager.Instance.PlaySFX(getRandomSound());
+            AudioManager.Instance.PlaySFX(getRandomSound());
         }
 
         healthSlider.value = currentHealth;

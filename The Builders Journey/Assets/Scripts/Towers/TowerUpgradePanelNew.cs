@@ -86,7 +86,7 @@ public class TowerUpgradePanelNew : MonoBehaviour
 
         UIController.instance.CloseTowerUpgradePanel();
 
-        AudioManager.Instance.PlayUI("Upgrade");
+        AudioManager.Instance.PlayUI("Destroy");
     }
 
     public void UpgradeRange()

@@ -69,8 +69,8 @@ public class ForschungSystem : MonoBehaviour
             skillPoint.text = Skillpoints.ToString();
         }
 
-                        AudioManager.Instance.PlayUI("Upgrade");
-                Debug.Log("Builder upgrade");
+            AudioManager.Instance.PlayUI("Upgrade");
+            Debug.Log("Builder upgrade");
         return true; // successfull research
     }
 

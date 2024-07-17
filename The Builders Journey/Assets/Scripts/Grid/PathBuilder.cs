@@ -183,6 +183,7 @@ public class PathBuilder : MonoBehaviour
                 if (endTile != null)
                 {
                     spawner.theCastle = castleComponent;
+                    AudioManager.Instance.PlayUI("Wave");
                     Debug.Log("Spawner Position: " + spawn.transform.position);
                     Debug.Log("Start Tile Position: " + startTile.transform.position);
                 }

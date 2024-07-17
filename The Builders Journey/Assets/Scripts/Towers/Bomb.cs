@@ -33,7 +33,7 @@ public class Bomb : MonoBehaviour
 
         model.transform.position = startPosition;
 
-        AudioManager.Instance.PlaySFX("Cannon_shot_1");
+        AudioManager.Instance.PlaySFX("Bomb_shot_1");
     }
 
     // Update is called once per frame
@@ -58,7 +58,7 @@ public class Bomb : MonoBehaviour
                 Instantiate(explodeEffect, model.position, Quaternion.identity);
             }
 
-            AudioManager.Instance.PlaySFX("Enemy_damage_1");
+            AudioManager.Instance.PlaySFX("Bomb_hit_1");
 
             Destroy(gameObject);
         }

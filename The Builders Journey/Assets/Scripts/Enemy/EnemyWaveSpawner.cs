@@ -60,6 +60,7 @@ public class EnemyWaveSpawner : MonoBehaviour
                             spawnCounter = wavesToSpawn[0].timeToNextWave;
 
                             wavesToSpawn.RemoveAt(0);
+
                             waveCounter++;
 
                             if(wavesToSpawn.Count == 0)

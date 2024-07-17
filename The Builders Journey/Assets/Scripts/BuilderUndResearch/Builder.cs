@@ -9,6 +9,7 @@ public class Builder : MonoBehaviour
     public Vector3 StartPosition;
     // public Vector3 newPosition;
     public Vector3 rightClickMovement;
+    public Vector3 fixPosition = new Vector3(1, 2, 1);
     public GameObject BobtheBuilder;
     public float MovementSpeed;
     public GameObject selectedBuilderEffect;
@@ -44,7 +45,7 @@ public class Builder : MonoBehaviour
     void Start()
     {
         StartPosition = transform.position;
-
+        rightClickMovement = StartPosition + fixPosition;
         UIControllerNew.instance.magicText.text = ForschungSystem.instance.returnCurrentXP().ToString();
         StartUp();
 
@@ -83,7 +84,7 @@ public class Builder : MonoBehaviour
 
             // get new mouse position to move towards
             rightClickMovement = TowerManager.instance.GetGridPosition();
-            rightClickMovement = rightClickMovement + (new Vector3(0, 0.5f, 0));
+            rightClickMovement = rightClickMovement + (new Vector3(0, 0.5f, 0)) + fixPosition;
 
             IsBuilding = false;
             DoneBuilding = false;
@@ -98,8 +99,8 @@ public class Builder : MonoBehaviour
             {
                 
                 //Debug.Log("Move it");
-                transform.position = Vector3.MoveTowards(transform.position, BuildTransformList[0].position, MovementSpeed * Time.deltaTime);
-                if (Vector3.Distance(transform.position, BuildTransformList[0].position) < .8f)
+                transform.position = Vector3.MoveTowards(transform.position, BuildTransformList[0].position + fixPosition, MovementSpeed * Time.deltaTime);
+                if (Vector3.Distance(transform.position, BuildTransformList[0].position + fixPosition) < .8f)
                 {
                     IsMoving = false;
                     IsBuilding = true;
@@ -140,7 +141,7 @@ public class Builder : MonoBehaviour
                     DoneBuilding = false;
                 } else
                 {
-                    transform.position = Vector3.MoveTowards(transform.position, StartPosition, MovementSpeed * Time.deltaTime);
+                    transform.position = Vector3.MoveTowards(transform.position, StartPosition + fixPosition, MovementSpeed * Time.deltaTime);
                 }
                 
             }

@@ -85,6 +85,7 @@ public class UIController : MonoBehaviour
 
     public void TryAgain()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 

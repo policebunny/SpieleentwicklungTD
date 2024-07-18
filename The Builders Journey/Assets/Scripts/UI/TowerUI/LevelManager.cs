@@ -104,6 +104,7 @@ public class LevelManager : MonoBehaviour
                 ForschungSystem.instance.ResetList();
 
                 UIController.instance.CloseTowerUpgradePanel();
+                Time.timeScale = 0f;
             }
         }
 

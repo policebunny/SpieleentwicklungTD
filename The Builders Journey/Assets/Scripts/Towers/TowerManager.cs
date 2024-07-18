@@ -53,39 +53,46 @@ public class TowerManager : MonoBehaviour
                 indicator.gameObject.SetActive(true);
 
                 UIController.instance.notEnoughMoneyWarning.SetActive(MoneyManager.instance.currentMoney < activeTower.cost);
-
-                if (Input.GetMouseButtonDown(0))
+                if(IsOverUI.Instance.mouseOver)
                 {
-                    if (MoneyManager.instance.SpendMoney(activeTower.cost))
-                    {
-
-                        UIController.instance.notEnoughMoneyWarning.SetActive(false);
-
-                        builder.AddTowerToList(activeTower, indicator, 0);
-
-                        AudioManager.Instance.PlaySFX("Tower_placed_1");
-
-        Debug.Log("Tower placed");
-                        /*
-                        Instantiate(activeTower, indicator.position, activeTower.transform.rotation);
-
-                        indicator.gameObject.SetActive(false);
-
-                        UIController.instance.notEnoughMoneyWarning.SetActive(false);
-
-                        */
-                        isPlacing = false;
-                        UIController.instance.notEnoughMoneyWarning.SetActive(false);
-                    }
-                    
-                }
-                if (Input.GetMouseButtonDown(1))
-                {
-                    isPlacing = false;
                     indicator.gameObject.SetActive(false);
                     UIController.instance.notEnoughMoneyWarning.SetActive(false);
-                    // builderMove = true;
+                } else
+                {
+                    if (Input.GetMouseButtonDown(0) && !IsOverUI.Instance.mouseOver)
+                    {
+                        if (MoneyManager.instance.SpendMoney(activeTower.cost))
+                        {
+
+                            UIController.instance.notEnoughMoneyWarning.SetActive(false);
+
+                            builder.AddTowerToList(activeTower, indicator, 0);
+
+                            AudioManager.Instance.PlaySFX("Tower_placed_1");
+
+                            Debug.Log("Tower placed");
+                            /*
+                            Instantiate(activeTower, indicator.position, activeTower.transform.rotation);
+
+                            indicator.gameObject.SetActive(false);
+
+                            UIController.instance.notEnoughMoneyWarning.SetActive(false);
+
+                            */
+                            isPlacing = false;
+                            UIController.instance.notEnoughMoneyWarning.SetActive(false);
+                        }
+
+                    }
+                    if (Input.GetMouseButtonDown(1))
+                    {
+                        isPlacing = false;
+                        indicator.gameObject.SetActive(false);
+                        UIController.instance.notEnoughMoneyWarning.SetActive(false);
+                        // builderMove = true;
+                    }
                 }
+                
             }
         }
     }

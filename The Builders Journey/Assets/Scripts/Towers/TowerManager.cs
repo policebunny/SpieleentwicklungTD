@@ -123,7 +123,7 @@ public class TowerManager : MonoBehaviour
         Debug.DrawRay(ray.origin, ray.direction * 200f, Color.red);
 
         RaycastHit hit;
-        if (Physics.Raycast(ray, out hit, 200f, whatIsPlacement))
+        if (Physics.Raycast(ray, out hit, 200f, whatIsPlacement) && hit.transform.gameObject.GetComponent<Tile>() != null)
         {
             if(hit.transform.gameObject.GetComponent<Tile>().isplacebel)
                 location = hit.transform.gameObject.transform.position;

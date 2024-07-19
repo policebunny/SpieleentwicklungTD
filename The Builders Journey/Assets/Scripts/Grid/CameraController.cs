@@ -4,7 +4,7 @@ public class CameraController : MonoBehaviour
 {
     public float panSpeed = 20f; // Speed of camera movement with WASD keys
     public float scrollSpeed = 20f; // Speed of zoom
-    public Vector2 panLimit = new Vector2(50, 50); // Limits of the camera movement
+    public Vector2 panLimit = new Vector2(50, 80); // Limits of the camera movement
     public float minY = 10f; // Minimum height of the camera
     public float maxY = 80f; // Maximum height of the camera
     public float edgeScrollSpeed = 20f; // Speed of camera movement when mouse is at screen edge
@@ -12,7 +12,7 @@ public class CameraController : MonoBehaviour
     public Vector3 initialPosition = new Vector3(0, 40, 0); // Initial position of the camera
 
     private Vector3 basePosition;
-
+    
     void Start()
     {
         // Start the camera at the initial position

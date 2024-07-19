@@ -15,6 +15,7 @@ public class ForschungsController : MonoBehaviour
     // public GameObject CIRangeIcon;
 
     public int[] discovered = new int[6];
+    public Button[] disabled = new Button[6];
 
 
     private void Awake()
@@ -107,6 +108,7 @@ public class ForschungsController : MonoBehaviour
             {
                 bob.UpgradeMovement();
                 discovered[0] = 1;
+                disabled[0].interactable = false;
             } else
             {
                 ForschungSystem.instance.addSkillpoint();
@@ -124,6 +126,7 @@ public class ForschungsController : MonoBehaviour
             {
                 bob.UpgradeMovement();
                 discovered[1] = 1;
+                disabled[1].interactable = false;
             }
             else
             {
@@ -141,6 +144,7 @@ public class ForschungsController : MonoBehaviour
             {
                 bob.UpgradeMovement();
                 discovered[2] = 1;
+                disabled[2].interactable = false;
             }
             else
             {
@@ -158,6 +162,7 @@ public class ForschungsController : MonoBehaviour
             {
                 bob.UpgradeBuildtime();
                 discovered[3] = 1;
+                disabled[3].interactable = false;
             }
             else
             {
@@ -175,6 +180,7 @@ public class ForschungsController : MonoBehaviour
             {
                 bob.UpgradeBuildtime();
                 discovered[4] = 1;
+                disabled[4].interactable = false;
             }
             else
             {
@@ -192,6 +198,7 @@ public class ForschungsController : MonoBehaviour
             {
                 bob.UpgradeBuildtime();
                 discovered[5] = 1;
+                disabled[5].interactable = false;
             }
             else
             {
@@ -200,230 +207,4 @@ public class ForschungsController : MonoBehaviour
         }
     }
 
-    /*
-    public void CalmnessIceRange()
-    {
-        isAvailable = ForschungSystem.instance.removeSkillpoint();
-        if(isAvailable)
-        {
-            if(!checkIfdiscovered(0))
-            {
-                foreach (Tower researchTower in ForschungSystem.instance.activeTowers)
-                {
-                    researchTower.upgrader.UpgradeRange();
-                }
-                discovered[0] = 1; // gesetzt als discovered 
-            } else
-            {
-                ForschungSystem.instance.addSkillpoint();
-            }
-
-
-        }
-    }
-
-    public void CalmnessIceShattered()
-    {
-        // frozen enemies recieve more damage, as their defense is pierced
-        isAvailable = ForschungSystem.instance.removeSkillpoint();
-        if (isAvailable)
-        {
-            if (!checkIfdiscovered(1))
-            {
-                foreach (Tower researchTower in ForschungSystem.instance.activeTowers)
-                {
-                    // todo
-                }
-                discovered[1] = 1; // gesetzt als discovered
-            }
-            else
-            {
-                ForschungSystem.instance.addSkillpoint();
-            }
-
-
-        }
-    }
-
-    public void CalmnessIceSpiked()
-    {
-        // frozen enemies are spiked and passing enemies recieve damage
-        isAvailable = ForschungSystem.instance.removeSkillpoint();
-        if (isAvailable)
-        {
-            if (!checkIfdiscovered(2))
-            {
-                foreach (Tower researchTower in ForschungSystem.instance.activeTowers)
-                {
-                    // todo
-                }
-                discovered[2] = 1; // gesetzt als discovered
-            }
-            else
-            {
-                ForschungSystem.instance.addSkillpoint();
-            }
-
-        }
-    }
-
-    public void CalmnessTickSpeed()
-    {
-        // ??? Available twice
-        // is basically Attackspeed
-        isAvailable = ForschungSystem.instance.removeSkillpoint();
-        if (isAvailable)
-        {
-            if (!checkIfdiscovered(3))
-            {
-                foreach (Tower researchTower in ForschungSystem.instance.activeTowers)
-                {
-                    researchTower.upgrader.UpgradeFireRate();
-                }
-                discovered[3] = 1; // gesetzt als discovered
-            }
-            else
-            {
-                ForschungSystem.instance.addSkillpoint();
-            }
-            
-
-        }
-    }
-
-    public void CalmnessIce()
-    {
-        // freezes all enemies in range
-        // old AOE slow tower
-        isAvailable = ForschungSystem.instance.removeSkillpoint();
-        if (isAvailable)
-        {
-            if (!checkIfdiscovered(4))
-            {
-                foreach (Tower researchTower in ForschungSystem.instance.activeTowers)
-                {
-                    // todo
-                }
-                discovered[4] = 1; // gesetzt als discovered
-            }
-            else
-            {
-                ForschungSystem.instance.addSkillpoint();
-            }
-            
-
-        }
-    }
-
-    public void CalmnessWater()
-    {
-        // instead of slowing aura, the tower has knockback
-        isAvailable = ForschungSystem.instance.removeSkillpoint();
-        if (isAvailable)
-        {
-            if (!checkIfdiscovered(5))
-            {
-                foreach (Tower researchTower in ForschungSystem.instance.activeTowers)
-                {
-                    // todo
-                }
-                discovered[5] = 1; // gesetzt als discovered
-            }
-            else
-            {
-                ForschungSystem.instance.addSkillpoint();
-            }
-            
-
-        }
-    }
-
-    public void CalmnessWaterAttackspeed()
-    {
-        // attackspeed
-        isAvailable = ForschungSystem.instance.removeSkillpoint();
-        if (isAvailable)
-        {
-            if (!checkIfdiscovered(6))
-            {
-                foreach (Tower researchTower in ForschungSystem.instance.activeTowers)
-                {
-                    researchTower.upgrader.UpgradeFireRate();
-                }
-                discovered[6] = 1; // gesetzt als discovered
-            }
-            else
-            {
-                ForschungSystem.instance.addSkillpoint();
-            }
-            
-        }
-    }
-
-    public void CalmnessWaterWhirlpool()
-    {
-        // water attacks create a vortex ???
-        isAvailable = ForschungSystem.instance.removeSkillpoint();
-        if (isAvailable)
-        {
-            if (!checkIfdiscovered(7))
-            {
-                foreach (Tower researchTower in ForschungSystem.instance.activeTowers)
-                {
-                    // to do
-                }
-                discovered[7] = 1; // gesetzt als discovered
-            }
-            else
-            {
-                ForschungSystem.instance.addSkillpoint();
-            }
-
-        }
-    }
-
-    public void CalmnessWaterPiercingchill()
-    {
-        // water attacks are piercing(more dmg), to all in their path??
-        isAvailable = ForschungSystem.instance.removeSkillpoint();
-        if (isAvailable)
-        {
-            if (!checkIfdiscovered(8))
-            {
-                foreach (Tower researchTower in ForschungSystem.instance.activeTowers)
-                {
-                    // to do
-                }
-                discovered[8] = 1; // gesetzt als discovered
-            }
-            else
-            {
-                ForschungSystem.instance.addSkillpoint();
-            }            
-
-        }
-    }
-
-    public void CalmnessWaterKnockbackrange()
-    {
-        // knockback is higher
-        isAvailable = ForschungSystem.instance.removeSkillpoint();
-        if (isAvailable)
-        {
-            if (!checkIfdiscovered(9))
-            {
-                foreach (Tower researchTower in ForschungSystem.instance.activeTowers)
-                {
-                    // to do
-                }
-                discovered[9] = 1; // gesetzt als discovered
-            }
-            else
-            {
-                ForschungSystem.instance.addSkillpoint();
-            }          
-
-        }
-    }
-    */
 }

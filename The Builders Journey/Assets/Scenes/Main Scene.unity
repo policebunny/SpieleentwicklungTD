@@ -2849,6 +2849,13 @@ MonoBehaviour:
   bob: {fileID: 808462415}
   isAvailable: 0
   discovered: 000000000000000000000000000000000000000000000000
+  disabled:
+  - {fileID: 1167361305}
+  - {fileID: 1928452729}
+  - {fileID: 137596776}
+  - {fileID: 724270987}
+  - {fileID: 1407287245}
+  - {fileID: 1146655131}
 --- !u!114 &245619500
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7999,7 +8006,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panSpeed: 20
   scrollSpeed: 20
-  panLimit: {x: 10, y: 10}
+  panLimit: {x: 10, y: 30}
   minY: 10
   maxY: 80
   edgeScrollSpeed: 20

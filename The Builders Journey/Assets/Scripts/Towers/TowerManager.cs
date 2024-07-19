@@ -39,7 +39,7 @@ public class TowerManager : MonoBehaviour
         if(isPlacing)
         {
             indicator.position = GetGridPosition();
-
+            indicator.gameObject.SetActive(true);
             RaycastHit hit;
             if(Input.mousePosition.y > Screen.height * (1f - (topSafePercent/ 100f)))
             {
@@ -59,6 +59,7 @@ public class TowerManager : MonoBehaviour
                     UIController.instance.notEnoughMoneyWarning.SetActive(false);
                 } else
                 {
+                    indicator.gameObject.SetActive(true);
                     if (Input.GetMouseButtonDown(0) && !IsOverUI.Instance.mouseOver)
                     {
                         if (MoneyManager.instance.SpendMoney(activeTower.cost))

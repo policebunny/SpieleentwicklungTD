@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028331, g: 0.2257133, b: 0.3069217, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -7155,6 +7155,30 @@ PrefabInstance:
       propertyPath: selectedBuilderEffect
       value: 
       objectReference: {fileID: 808462416}
+    - target: {fileID: 8733779340025455773, guid: 21a970561aeafc648af43491fab9f94d, type: 3}
+      propertyPath: disabled.Array.data[0]
+      value: 
+      objectReference: {fileID: 1167361305}
+    - target: {fileID: 8733779340025455773, guid: 21a970561aeafc648af43491fab9f94d, type: 3}
+      propertyPath: disabled.Array.data[1]
+      value: 
+      objectReference: {fileID: 1928452729}
+    - target: {fileID: 8733779340025455773, guid: 21a970561aeafc648af43491fab9f94d, type: 3}
+      propertyPath: disabled.Array.data[2]
+      value: 
+      objectReference: {fileID: 137596776}
+    - target: {fileID: 8733779340025455773, guid: 21a970561aeafc648af43491fab9f94d, type: 3}
+      propertyPath: disabled.Array.data[3]
+      value: 
+      objectReference: {fileID: 724270987}
+    - target: {fileID: 8733779340025455773, guid: 21a970561aeafc648af43491fab9f94d, type: 3}
+      propertyPath: disabled.Array.data[4]
+      value: 
+      objectReference: {fileID: 1407287245}
+    - target: {fileID: 8733779340025455773, guid: 21a970561aeafc648af43491fab9f94d, type: 3}
+      propertyPath: disabled.Array.data[5]
+      value: 
+      objectReference: {fileID: 1146655131}
     - target: {fileID: 8995460419513104349, guid: 21a970561aeafc648af43491fab9f94d, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -56312,7 +56336,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &2578775778082343872
 GameObject:
   m_ObjectHideFlags: 0

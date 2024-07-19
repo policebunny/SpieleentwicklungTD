@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Builder : MonoBehaviour
 {
@@ -13,6 +14,8 @@ public class Builder : MonoBehaviour
     public GameObject BobtheBuilder;
     public float MovementSpeed;
     public GameObject selectedBuilderEffect;
+
+    public Button[] disabled = new Button[6];
 
     public bool IsBuilding;
     public bool IsMoving;
@@ -272,6 +275,11 @@ public class Builder : MonoBehaviour
 
     public void StartUp()
     {
+        ForschungsController.instance.bob = this;
+        for(int i = 0; i < disabled.Length; i++)
+        {
+            ForschungsController.instance.disabled[i] = disabled[i];
+        }
         foreach (TMP_Text LvL in UIControllerNew.instance.lvlTextList)
         {
             LvL.text = ForschungSystem.instance.returnCurrentLvl().ToString();

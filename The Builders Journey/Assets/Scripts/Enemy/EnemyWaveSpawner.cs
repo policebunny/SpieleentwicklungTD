@@ -12,6 +12,7 @@ public class EnemyWaveSpawner : MonoBehaviour
     public Transform spawnPoint;
 
     public Castle theCastle;
+    public int index = 0;
     public Path thePath;
     //jic i want to disable spawns
     public bool shouldSpawn = true;
@@ -19,54 +20,52 @@ public class EnemyWaveSpawner : MonoBehaviour
     public float waveDisplayTime;
     private float waveDisplayCounter;
     private int waveCounter;
-    private float timer = 0;
-    private float timermax =8f;
+    private float timer = 15;
+    private float timermax = 20f;
     // Start is called before the first frame update
     void Start()
     {
         spawnCounter = waitForFirstSpawn;
-        waveCounter = 1;
+        waveCounter = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
         timer += Time.deltaTime;
-        if (shouldSpawn&&timer>timermax)
+        if (shouldSpawn && timer > timermax)
         {
             spawnCounter -= Time.deltaTime;
-            if(spawnCounter <= 0)
+            if (spawnCounter <= 0)
             {
-                if(wavesToSpawn[0].shouldDisplayWave)
+                if (wavesToSpawn[waveCounter].shouldDisplayWave)
                 {
-                    wavesToSpawn[0].shouldDisplayWave = false;
+                    wavesToSpawn[waveCounter].shouldDisplayWave = false;
 
                     //UIController.instance.waveText.gameObject.SetActive(true);
                     //UIController.instance.waveText.text = "Wave " + waveCounter;
                     waveDisplayCounter = waveDisplayTime;
                 }
 
-                if(wavesToSpawn.Count > 0)
+                if (wavesToSpawn.Count > 0)
                 {
-                    if(wavesToSpawn[0].enemySpawnOrder.Count > 0)
+                    if (wavesToSpawn[waveCounter].enemySpawnOrder.Count > 0)
                     {
-                        Instantiate(wavesToSpawn[0].enemySpawnOrder[0], spawnPoint.position, spawnPoint.rotation).Setup(theCastle, thePath);
-
-                        spawnCounter = wavesToSpawn[0].timeBetweenSpawns;
-
-                        wavesToSpawn[0].enemySpawnOrder.RemoveAt(0);
-                        if(wavesToSpawn[0].enemySpawnOrder.Count == 0)
+                        Instantiate(wavesToSpawn[waveCounter].enemySpawnOrder[index], spawnPoint.position, spawnPoint.rotation).Setup(theCastle, thePath);
+                        index++;
+                        spawnCounter = wavesToSpawn[waveCounter].timeBetweenSpawns;
+                        if (wavesToSpawn[waveCounter].enemySpawnOrder.Count == index)
                         {
-                            spawnCounter = wavesToSpawn[0].timeToNextWave;
-
-                            wavesToSpawn.RemoveAt(0);
-
+                            spawnCounter = wavesToSpawn[waveCounter].timeToNextWave;
                             waveCounter++;
 
-                            if(wavesToSpawn.Count == 0)
+                            if (wavesToSpawn.Count == waveCounter)
                             {
+                                index = 0;
+                                timer = 0;
+                                waveCounter = 0;
                                 //disables spawn
-                                shouldSpawn = false;
+                                //shouldSpawn = false;
                             }
                         }
                     }
@@ -74,10 +73,10 @@ public class EnemyWaveSpawner : MonoBehaviour
             }
         }
 
-        if(waveDisplayCounter > 0)
+        if (waveDisplayCounter > 0)
         {
             waveDisplayCounter -= Time.deltaTime;
-            if(waveDisplayCounter <= 0)
+            if (waveDisplayCounter <= 0)
             {
                 //UIController.instance.waveText.gameObject.SetActive(false);
             }

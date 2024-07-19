@@ -17,6 +17,7 @@ public class LevelManager : MonoBehaviour
     private int gameover;
     private bool isRunning;
     private bool levelVictory;
+    public int pathcounter=0;
 
     private Castle[] theCastles;
 
@@ -78,19 +79,10 @@ public class LevelManager : MonoBehaviour
 
             }
 
-            bool wavesComplete = true;
-            foreach (EnemyWaveSpawner wavespawn in waveSpawners)
+            if (pathcounter>10)
             {
-                if (wavespawn.wavesToSpawn.Count > 0)
-                {
-                    wavesComplete = false;
-                }
-            }
-
-            if (activeEnemies.Count == 0 && wavesComplete)
-            {
-                //levelActive = false;
-                //levelVictory = true;
+                levelActive = false;
+                levelVictory = true;
 
 
                 //UIController.instance.towerButtons.SetActive(false);

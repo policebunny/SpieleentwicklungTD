@@ -25,7 +25,7 @@ public class GameBoard : MonoBehaviour
     public GameObject builder;
     private float timer = 0f;
     private float pathfindingInterval = 45f;
-    private int pathcounter = 0;
+    public int pathcounter = 0;
 
     [System.Serializable]
     public class TilePrefaps
@@ -131,10 +131,10 @@ public class GameBoard : MonoBehaviour
         int randomY = Random.Range(size.y / 3, 2 * size.y / 3); // Select a random Y within the middle third
         Tile selectedTile = transform.GetChild(randomX + randomY * size.x).GetComponent<Tile>(); // Get the tile at the random position
         castleTile = selectedTile;
+        selectedTile.isplacebel = false;
         selectedTile.gameObject.AddComponent<Castle_empty>();
-        selectedTile.GetComponent<Renderer>().material.color = Color.magenta;
         // Instantiate the castle prefab at the selected tile's position
-        GameObject castle1 = Instantiate(castlePrefab, selectedTile.transform.position+new Vector3(-0.5f,0,-0.5f), Quaternion.Euler(0, Random.Range(0, 4) * 90, 0));
+        GameObject castle1 = Instantiate(castlePrefab, selectedTile.transform.position, Quaternion.Euler(0, Random.Range(0, 4) * 90, 0));
         castle1.transform.SetParent(selectedTile.transform);
         castle = castle1;
         //Instantiate(builder, selectedTile.transform.position+new Vector3(2f,0.2f,-2f), Quaternion.Euler(0, Random.Range(0, 4) * 90, 0));
@@ -176,6 +176,7 @@ public class GameBoard : MonoBehaviour
             Debug.Log("Path found! Length: " + path.Count + " tiles.");
             foreach (Tile tile in path)
             {
+                tile.isplacebel =false;
                 GameObject pathPoint = Instantiate(pathPointPrefab, tile.transform.position+new Vector3(0f,0,0f), Quaternion.Euler(0, Random.Range(0, 4) * 90, 0));
                 if (pathPoint != null)
                 {

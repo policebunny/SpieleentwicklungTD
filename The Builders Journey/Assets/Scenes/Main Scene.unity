@@ -50276,6 +50276,7 @@ GameObject:
   - component: {fileID: 8029678157041817807}
   - component: {fileID: 8017371396099577727}
   - component: {fileID: 4828877480799462808}
+  - component: {fileID: 8029678157041817808}
   m_Layer: 5
   m_Name: timeButtons
   m_TagString: Untagged
@@ -50748,7 +50749,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 6dfde80a4ac96234fb7e4261e99e020a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d1da9777ad1981e409689a1b4dcf4631, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -51529,7 +51530,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2774829644278267348}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8029678157041817808}
+        m_TargetAssemblyTypeName: TimeButton, Assembly-CSharp
+        m_MethodName: TimeSlower
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2255269998792649532
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59216,7 +59229,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: d1da9777ad1981e409689a1b4dcf4631, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7c4d630b94da0524c961cd441e424b6b, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -70434,7 +70447,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3646802853702970395}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8029678157041817808}
+        m_TargetAssemblyTypeName: TimeButton, Assembly-CSharp
+        m_MethodName: TimeFaster
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &3486247665831224462
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -72677,7 +72702,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 0faf3646d580d4c67861f61552d6fcc3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b610220bedeb0430199de699e1027365, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -144375,6 +144400,18 @@ RectTransform:
   m_AnchoredPosition: {x: -340, y: 99}
   m_SizeDelta: {x: 249.71991, y: 86.100006}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &8029678157041817808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2171559044664217741}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c69bcc851ca33dc47a200ac9c50b1e88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &8030589368024974955
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -159243,7 +159280,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2208064737574065207}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8029678157041817808}
+        m_TargetAssemblyTypeName: TimeButton, Assembly-CSharp
+        m_MethodName: PauseButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &8883083799167794865
 MonoBehaviour:
   m_ObjectHideFlags: 0

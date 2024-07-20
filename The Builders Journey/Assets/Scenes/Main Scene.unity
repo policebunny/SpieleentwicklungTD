@@ -2825,10 +2825,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 245619501}
-  - component: {fileID: 245619500}
   - component: {fileID: 245619499}
   m_Layer: 0
-  m_Name: ForschungSystem
+  m_Name: ForschungController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2848,6 +2847,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bob: {fileID: 808462415}
   isAvailable: 0
+  isSpecific: 0
   discovered: 000000000000000000000000000000000000000000000000
   disabled:
   - {fileID: 1167361305}
@@ -2856,23 +2856,6 @@ MonoBehaviour:
   - {fileID: 724270987}
   - {fileID: 1407287245}
   - {fileID: 1146655131}
---- !u!114 &245619500
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 245619498}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5874aba4da0acc47aa394d0e34cb787, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CurrentXP: 0
-  CurrentLvl: 1
-  Skillpoints: 1
-  Threshold: 50
-  activeTowers: []
 --- !u!4 &245619501
 Transform:
   m_ObjectHideFlags: 0
@@ -56336,7 +56319,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &2578775778082343872
 GameObject:
   m_ObjectHideFlags: 0

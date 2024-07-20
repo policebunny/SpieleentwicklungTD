@@ -13,6 +13,8 @@ public class ForschungSystem : MonoBehaviour
     public int Skillpoints = 1;
     public int Threshold = 50;
     public List<Tower> activeTowers = new List<Tower>();
+
+    public int[] discovered = new int[6];
     // Start is called before the first frame update
     private void Awake()
     {
@@ -27,6 +29,11 @@ public class ForschungSystem : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        discovered = new int[6];
+        for (int i = 0; i < discovered.Length; i++)
+        {
+            discovered[i] = 0;
+        }
     }
 
     void Start()
@@ -35,6 +42,10 @@ public class ForschungSystem : MonoBehaviour
         // UIControllerNew.instance.skillPointsText.text = Skillpoints.ToString();
     }
 
+    public int[] getDiscovered()
+    {
+        return discovered;
+    }
     public void GetXP(int amountOfXP)
     {
         CurrentXP += amountOfXP;

@@ -275,11 +275,13 @@ public class Builder : MonoBehaviour
 
     public void StartUp()
     {
-        ForschungsController.instance.bob = this;
+        // ForschungsController.instance.bob = this;
+        /*
         for(int i = 0; i < disabled.Length; i++)
         {
             ForschungsController.instance.disabled[i] = disabled[i];
         }
+        */
         foreach (TMP_Text LvL in UIControllerNew.instance.lvlTextList)
         {
             LvL.text = ForschungSystem.instance.returnCurrentLvl().ToString();

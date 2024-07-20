@@ -10,6 +10,8 @@ public class ForschungsController : MonoBehaviour
     public Builder bob;
     public bool isAvailable;
 
+    public bool isSpecific = false;
+
     // index f�r spriterenderer f�r jeden button on change
     // private Image CIRangeColorImage;
     // public GameObject CIRangeIcon;
@@ -20,30 +22,22 @@ public class ForschungsController : MonoBehaviour
 
     private void Awake()
     {
-        if (instance == null)
-        {
 
-            instance = this;
-            // CIRangeColorImage = CIRangeIcon.GetComponent<Image>();
-
-            DontDestroyOnLoad(gameObject);
-        }
-        else if (instance != this)
-        {
-            Destroy(gameObject);
-        }
-        discovered = new int[6];
-        for(int i = 0; i < discovered.Length; i++)
-        {
-            discovered[i] = 0;
-        }
+        
     }
 
 
     // Start is called before the first frame update
     void Start()
     {
-        // CIRangeColorImage = CIRangeIcon.GetComponent<Image>();
+        discovered = ForschungSystem.instance.getDiscovered();
+        for (int i = 0; i < discovered.Length; i++)
+        {
+            if (discovered[i] != 0)
+            {
+                ApplySpecificResearch(i);
+            }
+        }
     }
 
     public int[] getdiscovered()
@@ -67,31 +61,43 @@ public class ForschungsController : MonoBehaviour
         {
             case 0:
                 // case Movementspeed
-                bob.UpgradeMovement();
+                isSpecific = true;
+                researchMovement0();
+                isSpecific = false;
 
                 break;
             case 1:
                 // case Movementspeed
-                bob.UpgradeMovement();
-                
+                isSpecific = true;
+                researchMovement1();
+                isSpecific = false;
+
                 break;
             case 2:
                 // case Movementspeed
-                bob.UpgradeMovement();
+                isSpecific = true;
+                researchMovement2();
+                isSpecific = false;
 
                 break;
             case 3:
                 // case Buildspeed
-                bob.UpgradeBuildtime();
+                isSpecific = true;
+                researchBuildtime3();
+                isSpecific = false;
                 break;
             case 4:
                 // case Buildspeed
-                bob.UpgradeBuildtime();
+                isSpecific = true;
+                researchBuildtime4();
+                isSpecific = false;
 
                 break;
             case 5:
                 // case Buildspeed
-                bob.UpgradeBuildtime();
+                isSpecific = true;
+                researchBuildtime5();
+                isSpecific = false;
                 break;
             default:
                 break;
@@ -102,109 +108,166 @@ public class ForschungsController : MonoBehaviour
 
     public void researchMovement0()
     {
-        isAvailable = ForschungSystem.instance.removeSkillpoint();
-        if(isAvailable)
+        if(!isSpecific)
         {
-            if(!checkIfdiscovered(0))
+            isAvailable = ForschungSystem.instance.removeSkillpoint();
+            if (isAvailable)
             {
-                bob.UpgradeMovement();
-                discovered[0] = 1;
-                disabled[0].interactable = false;
-            } else
-            {
-                ForschungSystem.instance.addSkillpoint();
-                
+                if (!checkIfdiscovered(0))
+                {
+                    bob.UpgradeMovement();
+                    discovered[0] = 1;
+                    disabled[0].interactable = false;
+                }
+                else
+                {
+                    ForschungSystem.instance.addSkillpoint();
+
+                }
             }
+        } else
+        {
+            bob.UpgradeMovement();
+            discovered[0] = 1;
+            disabled[0].interactable = false;
         }
+        
     }
 
     public void researchMovement1()
     {
-        isAvailable = ForschungSystem.instance.removeSkillpoint();
-        if (isAvailable)
+        if (!isSpecific)
         {
-            if (!checkIfdiscovered(1))
+            isAvailable = ForschungSystem.instance.removeSkillpoint();
+            if (isAvailable)
             {
-                bob.UpgradeMovement();
-                discovered[1] = 1;
-                disabled[1].interactable = false;
+                if (!checkIfdiscovered(1))
+                {
+                    bob.UpgradeMovement();
+                    discovered[1] = 1;
+                    disabled[1].interactable = false;
+                }
+                else
+                {
+                    ForschungSystem.instance.addSkillpoint();
+
+                }
             }
-            else
-            {
-                ForschungSystem.instance.addSkillpoint();
-            }
+        }
+        else
+        {
+            bob.UpgradeMovement();
+            discovered[1] = 1;
+            disabled[1].interactable = false;
         }
     }
 
     public void researchMovement2()
     {
-        isAvailable = ForschungSystem.instance.removeSkillpoint();
-        if (isAvailable)
+        if (!isSpecific)
         {
-            if (!checkIfdiscovered(2))
+            isAvailable = ForschungSystem.instance.removeSkillpoint();
+            if (isAvailable)
             {
-                bob.UpgradeMovement();
-                discovered[2] = 1;
-                disabled[2].interactable = false;
+                if (!checkIfdiscovered(2))
+                {
+                    bob.UpgradeMovement();
+                    discovered[2] = 1;
+                    disabled[2].interactable = false;
+                }
+                else
+                {
+                    ForschungSystem.instance.addSkillpoint();
+
+                }
             }
-            else
-            {
-                ForschungSystem.instance.addSkillpoint();
-            }
+        }
+        else
+        {
+            bob.UpgradeMovement();
+            discovered[2] = 1;
+            disabled[2].interactable = false;
         }
     }
 
     public void researchBuildtime3()
     {
-        isAvailable = ForschungSystem.instance.removeSkillpoint();
-        if (isAvailable)
+        if(!isSpecific)
         {
-            if (!checkIfdiscovered(3))
+            isAvailable = ForschungSystem.instance.removeSkillpoint();
+            if (isAvailable)
             {
-                bob.UpgradeBuildtime();
-                discovered[3] = 1;
-                disabled[3].interactable = false;
+                if (!checkIfdiscovered(3))
+                {
+                    bob.UpgradeBuildtime();
+                    discovered[3] = 1;
+                    disabled[3].interactable = false;
+                }
+                else
+                {
+                    ForschungSystem.instance.addSkillpoint();
+                }
             }
-            else
-            {
-                ForschungSystem.instance.addSkillpoint();
-            }
+        } else
+        {
+            bob.UpgradeBuildtime();
+            discovered[3] = 1;
+            disabled[3].interactable = false;
         }
+        
     }
 
     public void researchBuildtime4()
     {
-        isAvailable = ForschungSystem.instance.removeSkillpoint();
-        if (isAvailable)
+        if (!isSpecific)
         {
-            if (!checkIfdiscovered(4))
+            isAvailable = ForschungSystem.instance.removeSkillpoint();
+            if (isAvailable)
             {
-                bob.UpgradeBuildtime();
-                discovered[4] = 1;
-                disabled[4].interactable = false;
+                if (!checkIfdiscovered(4))
+                {
+                    bob.UpgradeBuildtime();
+                    discovered[4] = 1;
+                    disabled[4].interactable = false;
+                }
+                else
+                {
+                    ForschungSystem.instance.addSkillpoint();
+                }
             }
-            else
-            {
-                ForschungSystem.instance.addSkillpoint();
-            }
+        }
+        else
+        {
+            bob.UpgradeBuildtime();
+            discovered[4] = 1;
+            disabled[4].interactable = false;
         }
     }
 
     public void researchBuildtime5()
     {
-        isAvailable = ForschungSystem.instance.removeSkillpoint();
-        if (isAvailable)
+        if (!isSpecific)
         {
-            if (!checkIfdiscovered(5))
+            isAvailable = ForschungSystem.instance.removeSkillpoint();
+            if (isAvailable)
             {
-                bob.UpgradeBuildtime();
-                discovered[5] = 1;
-                disabled[5].interactable = false;
+                if (!checkIfdiscovered(5))
+                {
+                    bob.UpgradeBuildtime();
+                    discovered[5] = 1;
+                    disabled[5].interactable = false;
+                }
+                else
+                {
+                    ForschungSystem.instance.addSkillpoint();
+                }
             }
-            else
-            {
-                ForschungSystem.instance.addSkillpoint();
-            }
+        }
+        else
+        {
+            bob.UpgradeBuildtime();
+            discovered[5] = 1;
+            disabled[5].interactable = false;
         }
     }
 

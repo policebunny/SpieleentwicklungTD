@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
-
+using UnityEngine.UI;
 
 public class PathBuilder : MonoBehaviour
 {
@@ -18,6 +18,8 @@ public class PathBuilder : MonoBehaviour
     public float timeinterval =0.2f;
     int pathPointer = 0;
     public List<Tile> pathList;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -184,9 +186,11 @@ public class PathBuilder : MonoBehaviour
                 if (endTile != null)
                 {
                     spawner.theCastle = castleComponent;
+                    WaveManager.Instance.IncrementWaveCounter();
                     AudioManager.Instance.PlayUI("Wave");
                     Debug.Log("Spawner Position: " + spawn.transform.position);
                     Debug.Log("Start Tile Position: " + startTile.transform.position);
+
                 }
                 else
                 {

@@ -1,16 +1,19 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TimeButton : MonoBehaviour
 {
     public static TimeButton instance;
     private float timestamp;
-    // Start is called before the first frame update
+
+    public Sprite pausedIcon;
+    public Sprite playingIcon;
+
     private void Awake()
     {
         instance = this;
     }
+
     void Start()
     {
         timestamp = Time.timeScale;
@@ -21,22 +24,24 @@ public class TimeButton : MonoBehaviour
         return timestamp;
     }
 
-    // Update is called once per frame
-    public void PauseButton()
+    public void PauseButton(Image buttonImage)
     {
-        if(Time.timeScale > 0)
+        if (Time.timeScale > 0)
         {
             Time.timeScale = 0;
-        } else
-        {
-            Time.timeScale = timestamp;
         }
+        else
+        {
+            Time.timeScale = 1;
+        }
+
+        UpdateButtonIcon(buttonImage);
     }
 
     public void TimeFaster()
     {
         timestamp += 0.25f;
-        if(timestamp >= 3f)
+        if (timestamp >= 3f)
         {
             timestamp = 3f;
         }
@@ -46,10 +51,22 @@ public class TimeButton : MonoBehaviour
     public void TimeSlower()
     {
         timestamp -= 0.25f;
-        if(timestamp <= 0f)
+        if (timestamp <= 0f)
         {
             timestamp = 0.25f;
         }
         Time.timeScale = timestamp;
+    }
+
+    private void UpdateButtonIcon(Image buttonImage)
+    {
+        if (Time.timeScale == 0)
+        {
+            buttonImage.sprite = pausedIcon;
+        }
+        else
+        {
+            buttonImage.sprite = playingIcon;
+        }
     }
 }

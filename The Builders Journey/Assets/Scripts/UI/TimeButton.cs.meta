@@ -3,7 +3,9 @@ guid: c69bcc851ca33dc47a200ac9c50b1e88
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - pausedIcon: {fileID: 21300000, guid: 0dcd38508d5f76640902b5ec0d5e85c7, type: 3}
+  - playingIcon: {fileID: 21300000, guid: d1da9777ad1981e409689a1b4dcf4631, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

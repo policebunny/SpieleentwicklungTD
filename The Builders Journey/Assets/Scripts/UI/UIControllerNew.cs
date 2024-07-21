@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 public class UIControllerNew : MonoBehaviour
@@ -24,6 +25,8 @@ public class UIControllerNew : MonoBehaviour
     public GameObject InfoMidgard;
     public GameObject OpSound;
     public GameObject OpDisplay;
+
+    public Slider _musicSlider, _sfxSlider, _globalVolumeSlider;
 
     public TMP_Text boneText;
     public TMP_Text magicText;
@@ -153,6 +156,31 @@ public class UIControllerNew : MonoBehaviour
     {
         OpSound.SetActive(false);
         OpDisplay.SetActive(true);
+    }
+
+    public void ToggleMusic()
+    {
+        AudioManager.Instance.ToggleMusic();
+    }
+
+    public void ToggleSFX()
+    {
+        AudioManager.Instance.ToggleSFX();
+    }
+
+    public void MusicVolume()
+    {
+        AudioManager.Instance.MusicVolume(_musicSlider.value);
+    }
+
+    public void SFXVolume()
+    {
+        AudioManager.Instance.SFXVolume(_sfxSlider.value);
+    }
+
+    public void GlobalVolume()
+    {
+        AudioManager.Instance.GlobalVolume(_globalVolumeSlider.value);
     }
 }
 

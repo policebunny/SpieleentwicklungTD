@@ -137,4 +137,9 @@ public class AudioManager : MonoBehaviour
         sfxSource.volume = volume;
         uiSource.volume = volume;
     }
+
+    public void GlobalVolume(float volume)
+    {
+        AudioListener.volume = volume;
+    }
 }

@@ -78,9 +78,14 @@ public class UIController : MonoBehaviour
 
     public void MainMenu()
     {
+        AudioManager.Instance.StopMusic();
+
         Time.timeScale = 1f;
 
         SceneManager.LoadScene(mainMenuScene);
+
+        AudioManager.Instance.musicPlaylist = new string[] { "MenuTheme"};
+        AudioManager.Instance.StartPlaylist();
     }
 
     public void TryAgain()

@@ -134,7 +134,7 @@ public class GameBoard : MonoBehaviour
         selectedTile.isplacebel = false;
         selectedTile.gameObject.AddComponent<Castle_empty>();
         // Instantiate the castle prefab at the selected tile's position
-        GameObject castle1 = Instantiate(castlePrefab, selectedTile.transform.position, Quaternion.Euler(0, Random.Range(0, 4) * 90, 0));
+        GameObject castle1 = Instantiate(castlePrefab, selectedTile.transform.position, Quaternion.Euler(0, 0, 0));
         castle1.transform.SetParent(selectedTile.transform);
         castle = castle1;
         //Instantiate(builder, selectedTile.transform.position+new Vector3(2f,0.2f,-2f), Quaternion.Euler(0, Random.Range(0, 4) * 90, 0));

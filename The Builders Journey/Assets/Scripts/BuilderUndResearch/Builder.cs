@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TreeEditor;
 
 public class Builder : MonoBehaviour
 {
@@ -86,7 +87,7 @@ public class Builder : MonoBehaviour
             }
 
             // get new mouse position to move towards
-            rightClickMovement = TowerManager.instance.GetGridPosition();
+            rightClickMovement = TowerManager.instance.GetGridPosition().transform.position;
             rightClickMovement = rightClickMovement + (new Vector3(0, 0.5f, 0)) + fixPosition;
 
             IsBuilding = false;
@@ -203,7 +204,7 @@ public class Builder : MonoBehaviour
     {
         AudioManager.Instance.PlaySFX("Construction_complete_1");
         Debug.Log("Construction complete");
-
+        
         TowerInstantiate(BuildingList[0], BuildTransformList[0]);
         BuildingList.RemoveAt(0);
         BuildTransformList.RemoveAt(0);

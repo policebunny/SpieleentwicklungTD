@@ -4,7 +4,6 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using TreeEditor;
 
 public class Builder : MonoBehaviour
 {
@@ -46,14 +45,23 @@ public class Builder : MonoBehaviour
      */
 
     // Start is called before the first frame update
-    void Start()
-    {
-        StartPosition = transform.position;
-        rightClickMovement = StartPosition + fixPosition;
-        UIControllerNew.instance.magicText.text = ForschungSystem.instance.returnCurrentXP().ToString();
-        StartUp();
+void Start()
+{
+    StartPosition = transform.position;
+    rightClickMovement = StartPosition + fixPosition;
 
+    if (UIControllerNew.instance != null && ForschungSystem.instance != null)
+    {
+        UIControllerNew.instance.magicText.text = ForschungSystem.instance.returnCurrentXP().ToString();
     }
+    else
+    {
+      //  Debug.LogError("UIControllerNew.instance or ForschungSystem.instance is not initialized.");
+    }
+
+    StartUp();
+}
+
 
 
     // Update is called once per frame
@@ -274,31 +282,67 @@ public class Builder : MonoBehaviour
         mouseOver = false;
     }
 
-    public void StartUp()
+private void StartUp()
+{
+    if (UIControllerNew.instance != null)
     {
-        // ForschungsController.instance.bob = this;
-        /*
-        for(int i = 0; i < disabled.Length; i++)
+        if (UIControllerNew.instance.lvlTextList != null)
         {
-            ForschungsController.instance.disabled[i] = disabled[i];
-        }
-        */
-        foreach (TMP_Text LvL in UIControllerNew.instance.lvlTextList)
-        {
-            LvL.text = ForschungSystem.instance.returnCurrentLvl().ToString();
-        }
-        foreach (TMP_Text skillPoint in UIControllerNew.instance.skillPointsList)
-        {
-            skillPoint.text = ForschungSystem.instance.returnSkill().ToString();
-        }
-        for(int i = 0; i < ForschungsController.instance.discovered.Length; i++)
-        {
-            if(ForschungsController.instance.checkIfdiscovered(i))
+            foreach (TMP_Text lvl in UIControllerNew.instance.lvlTextList)
             {
-                ForschungsController.instance.ApplySpecificResearch(i);
+                if (ForschungSystem.instance != null)
+                {
+                    lvl.text = ForschungSystem.instance.returnCurrentLvl().ToString();
+                }
             }
-            
+        }
+        else
+        {
+            Debug.LogError("UIControllerNew.instance.lvlTextList is not initialized.");
+        }
+
+        if (UIControllerNew.instance.skillPointsList != null)
+        {
+            foreach (TMP_Text skillPoint in UIControllerNew.instance.skillPointsList)
+            {
+                if (ForschungSystem.instance != null)
+                {
+                    skillPoint.text = ForschungSystem.instance.returnSkill().ToString();
+                }
+            }
+        }
+        else
+        {
+            Debug.LogError("UIControllerNew.instance.skillPointsList is not initialized.");
         }
     }
+    else
+    {
+        Debug.LogError("UIControllerNew.instance is not initialized.");
+    }
+
+    if (ForschungsController.instance != null)
+    {
+        if (ForschungsController.instance.discovered != null)
+        {
+            for (int i = 0; i < ForschungsController.instance.discovered.Length; i++)
+            {
+                if (ForschungsController.instance.checkIfdiscovered(i))
+                {
+                    ForschungsController.instance.ApplySpecificResearch(i);
+                }
+            }
+        }
+        else
+        {
+            Debug.LogError("ForschungsController.instance.discovered is not initialized.");
+        }
+    }
+    else
+    {
+       // Debug.LogError("ForschungsController.instance is not initialized.");
+    }
+}
+
 
 }

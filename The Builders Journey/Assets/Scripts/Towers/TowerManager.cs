@@ -10,7 +10,7 @@ public class TowerManager : MonoBehaviour
     {
         instance = this;
     }
-
+    public GameObject defulttiel;
     public Tower activeTower;
     public Tile prePathTile;
     public Transform indicator;
@@ -30,21 +30,31 @@ public class TowerManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(isPlacing)
+        if (isPlacing)
         {
-            indicator.position = GetGridPosition();
-            indicator.gameObject.SetActive(true);
+            Tile tile = null;
+            GameObject gritposition = GetGridPosition();
+            Vector3 location = new Vector3(0, 0, 0);
+            if (gritposition != null)
+            {
+                tile = gritposition.GetComponent<Tile>();
+                location = gritposition.transform.position;
+                location.y = 0f;
+                indicator.position=location;
+                indicator.gameObject.SetActive(true);
+            }
             RaycastHit hit;
-            if(Input.mousePosition.y > Screen.height * (1f - (topSafePercent/ 100f)))
+            if (Input.mousePosition.y > Screen.height * (1f - (topSafePercent / 100f)))
             {
                 indicator.gameObject.SetActive(false);
-            } else if (Physics.Raycast(indicator.position + new Vector3(0f, -2f, 0f), Vector3.up, out hit, 10f, whatIsObstacle))
+            }
+            else if (Physics.Raycast(indicator.position + new Vector3(0f, -2f, 0f), Vector3.up, out hit, 10f, whatIsObstacle))
             {
                 indicator.gameObject.SetActive(false);
             }
@@ -53,11 +63,12 @@ public class TowerManager : MonoBehaviour
                 indicator.gameObject.SetActive(true);
 
                 UIController.instance.notEnoughMoneyWarning.SetActive(MoneyManager.instance.currentMoney < activeTower.cost);
-                if(IsOverUI.Instance.mouseOver)
+                if (IsOverUI.Instance.mouseOver)
                 {
                     indicator.gameObject.SetActive(false);
                     UIController.instance.notEnoughMoneyWarning.SetActive(false);
-                } else
+                }
+                else
                 {
                     indicator.gameObject.SetActive(true);
                     if (Input.GetMouseButtonDown(0) && !IsOverUI.Instance.mouseOver)
@@ -66,15 +77,21 @@ public class TowerManager : MonoBehaviour
                         {
 
                             UIController.instance.notEnoughMoneyWarning.SetActive(false);
-
-                            //hit.transform.gameObject.GetComponent<Tile>().isWalkable = false;
-
+                            if(tile!=null){
+                                tile.isWalkable = false;
+                                tile.isplacebel = false;
+                                GameObject newtile = GameObject.Instantiate(defulttiel, gritposition.transform.position + new Vector3(0.5f,0,0.5f), Quaternion.Euler(0, 0, 0));
+                                newtile.transform.SetParent(tile.transform.parent);
+                                newtile.GetComponent<Tile>().isplacebel = false;
+                                newtile.GetComponent<Tile>().isWalkable = false;
+                                Destroy(gritposition);
+                            }
                             builder.AddTowerToList(activeTower, indicator, 0);
 
                             AudioManager.Instance.PlaySFX("Tower_placed_1");
 
                             Debug.Log("Tower placed");
-                            
+
                             /*
                             Instantiate(activeTower, indicator.position, activeTower.transform.rotation);
 
@@ -96,7 +113,7 @@ public class TowerManager : MonoBehaviour
                         // builderMove = true;
                     }
                 }
-                
+
             }
         }
     }
@@ -107,7 +124,7 @@ public class TowerManager : MonoBehaviour
 
         isPlacing = true;
 
-       // Destroy(indicator.gameObject);
+        // Destroy(indicator.gameObject);
         Tower placeTower = Instantiate(activeTower);
 
         placeTower.enabled = false;
@@ -118,10 +135,9 @@ public class TowerManager : MonoBehaviour
         placeTower.PlacementModel.transform.localScale = new Vector3(placeTower.range, 1f, placeTower.range);
     }
 
-    public Vector3 GetGridPosition()
+    public GameObject GetGridPosition()
     {
-        Vector3 location = Vector3.zero;
-
+        GameObject location = null;
 
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         Debug.DrawRay(ray.origin, ray.direction * 200f, Color.red);
@@ -129,18 +145,16 @@ public class TowerManager : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit, 200f, whatIsPlacement) && hit.transform.gameObject.GetComponent<Tile>() != null)
         {
-            if(hit.transform.gameObject.GetComponent<Tile>().isplacebel)
-                location = hit.transform.gameObject.transform.position;
+            if (hit.transform.gameObject.GetComponent<Tile>().isplacebel)
+                location = hit.transform.gameObject;
         }
-
-        location.y = 0f;
 
         return location;
     }
 
     public void MoveTowerSelectionEffect()
     {
-        if(selectedTower != null)
+        if (selectedTower != null)
         {
             selectedTowerEffect.transform.position = selectedTower.transform.position;
             selectedTowerEffect.SetActive(true);

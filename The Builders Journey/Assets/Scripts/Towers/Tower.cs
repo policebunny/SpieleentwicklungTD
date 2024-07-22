@@ -17,7 +17,8 @@ public class Tower : MonoBehaviour
     [HideInInspector]
     public bool enemiesUpdated;
 
-    public GameObject rangeModel;
+    public GameObject PlacementModel;
+    public GameObject SelectedModel; // Zweites Range Model
 
     public int cost = 100;
 
@@ -38,9 +39,10 @@ public class Tower : MonoBehaviour
         checkCounter = checkTime;
 
         upgrader = GetComponent<TowerUpgradeController>();
+        SelectedModel.SetActive(false); // Zweites Range Model ausblenden
     }
 
-    // Update is called once per frame
+    // Update is called einmal pro frame
     void Update()
     {
         enemiesUpdated = false;
@@ -49,7 +51,6 @@ public class Tower : MonoBehaviour
         if (checkCounter <= 0)
         {
             checkCounter = checkTime;
-
 
             colliderInRange = Physics.OverlapSphere(transform.position, range, whatIsEnemy);
 
@@ -62,10 +63,17 @@ public class Tower : MonoBehaviour
             enemiesUpdated = true;
         }
 
-        if(TowerManager.instance.selectedTower == this)
+        if (TowerManager.instance.selectedTower == this)
         {
-            rangeModel.SetActive(true);
-            rangeModel.transform.localScale = new Vector3(range, 1f, range);
+            PlacementModel.SetActive(false);
+            SelectedModel.SetActive(true); // Zweites Range Model anzeigen
+            PlacementModel.transform.localScale = new Vector3(range, 1f, range);
+            SelectedModel.transform.localScale = new Vector3(range, 1f, range);
+        }
+        else
+        {
+            PlacementModel.SetActive(false);
+            SelectedModel.SetActive(false); // Zweites Range Model ausblenden
         }
     }
 
@@ -73,10 +81,10 @@ public class Tower : MonoBehaviour
     {
         if (LevelManager.instance.levelActive)
         {
-
             if (TowerManager.instance.selectedTower != null)
             {
-                TowerManager.instance.selectedTower.rangeModel.SetActive(false);
+                TowerManager.instance.selectedTower.PlacementModel.SetActive(false);
+                TowerManager.instance.selectedTower.SelectedModel.SetActive(false); // Zweites Range Model des vorherigen Turms ausblenden
             }
 
             TowerManager.instance.selectedTower = this;

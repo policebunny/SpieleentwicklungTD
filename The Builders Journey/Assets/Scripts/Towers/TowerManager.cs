@@ -114,8 +114,8 @@ public class TowerManager : MonoBehaviour
         placeTower.GetComponent<Collider>().enabled = false;
         indicator = placeTower.transform;
 
-        placeTower.rangeModel.SetActive(true);
-        placeTower.rangeModel.transform.localScale = new Vector3(placeTower.range, 1f, placeTower.range);
+        placeTower.PlacementModel.SetActive(true);
+        placeTower.PlacementModel.transform.localScale = new Vector3(placeTower.range, 1f, placeTower.range);
     }
 
     public Vector3 GetGridPosition()

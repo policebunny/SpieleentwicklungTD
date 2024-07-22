@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Slow Range
+  m_Name: Selection
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -81,6 +81,6 @@ Material:
     - _UVSec: 0
     - _ZWrite: 0
     m_Colors:
-    - _Color: {r: 0.74430704, g: 0.745283, b: 0.35506406, a: 0.15686275}
-    - _EmissionColor: {r: 0.16621965, g: 0.19227399, b: 0.71915436, a: 1}
+    - _Color: {r: 0, g: 0.7405727, b: 0.8207547, a: 0.3529412}
+    - _EmissionColor: {r: 0, g: 0.50888145, b: 0.637597, a: 1}
   m_BuildTextureStacks: []

@@ -114,7 +114,7 @@ public class UIController : MonoBehaviour
 
         if (TowerManager.instance.selectedTower != null)
         {
-            TowerManager.instance.selectedTower.rangeModel.SetActive(false);
+            TowerManager.instance.selectedTower.SelectedModel.SetActive(false);
             TowerManager.instance.selectedTower = null;
         }
 

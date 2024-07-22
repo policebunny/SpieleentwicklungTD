@@ -12,7 +12,7 @@ public class TowerManager : MonoBehaviour
     }
 
     public Tower activeTower;
-
+    public Tile prePathTile;
     public Transform indicator;
     public bool isPlacing;
 
@@ -67,11 +67,14 @@ public class TowerManager : MonoBehaviour
 
                             UIController.instance.notEnoughMoneyWarning.SetActive(false);
 
+                            //hit.transform.gameObject.GetComponent<Tile>().isWalkable = false;
+
                             builder.AddTowerToList(activeTower, indicator, 0);
 
                             AudioManager.Instance.PlaySFX("Tower_placed_1");
 
                             Debug.Log("Tower placed");
+                            
                             /*
                             Instantiate(activeTower, indicator.position, activeTower.transform.rotation);
 
@@ -106,6 +109,7 @@ public class TowerManager : MonoBehaviour
 
        // Destroy(indicator.gameObject);
         Tower placeTower = Instantiate(activeTower);
+
         placeTower.enabled = false;
         placeTower.GetComponent<Collider>().enabled = false;
         indicator = placeTower.transform;

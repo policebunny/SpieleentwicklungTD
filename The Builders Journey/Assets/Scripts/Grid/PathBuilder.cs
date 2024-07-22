@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class PathBuilder : MonoBehaviour
 {
     public GameBoard gameBoard;
     public GameObject straightWay;
     public GameObject cornerWay;
+    public List<GameObject> prepathlist;
     public GameObject tWay;
     public Tile startTiel;
     public Tile endTile;
@@ -17,9 +17,8 @@ public class PathBuilder : MonoBehaviour
     public float timer = 0.1f;
     public float timeinterval =0.2f;
     int pathPointer = 0;
+    
     public List<Tile> pathList;
-
-
     // Start is called before the first frame update
     void Start()
     {
@@ -49,6 +48,8 @@ public class PathBuilder : MonoBehaviour
                 Debug.Log("END");
                 buildPath(pathList[pathPointer - 1], pathList[pathPointer],endTile);
                 InitializeStart(startTiel,gameBoard.path1);
+                foreach(GameObject a in prepathlist)
+                    Destroy(a);
                 this.enabled = false;
             };
         }
@@ -71,7 +72,6 @@ public class PathBuilder : MonoBehaviour
             GameObject newWay = GameObject.Instantiate(straightWay, thisTile.transform.position + new Vector3(0.5f,0,0.5f), Quaternion.Euler(0, 0, 0));
             newWay.transform.SetParent(thisTile.transform.parent);
             newWay.GetComponent<Tile>().isplacebel = false;
-            
         }
         else if (direction == new Vector3(2, 0, 0) || direction == new Vector3(-2, 0, 0))
         {
@@ -133,6 +133,7 @@ public class PathBuilder : MonoBehaviour
             newWay.GetComponent<Tile>().isplacebel = false;
         }
         thisTile.isplacebel = false;
+
         Destroy(thisTile.gameObject.GetComponent<MeshRenderer>());
     }
 
@@ -190,7 +191,6 @@ public class PathBuilder : MonoBehaviour
                     AudioManager.Instance.PlayUI("Wave");
                     Debug.Log("Spawner Position: " + spawn.transform.position);
                     Debug.Log("Start Tile Position: " + startTile.transform.position);
-
                 }
                 else
                 {

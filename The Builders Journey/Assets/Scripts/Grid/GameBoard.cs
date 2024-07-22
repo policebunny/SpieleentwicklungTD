@@ -9,6 +9,8 @@ public class GameBoard : MonoBehaviour
     [SerializeField] Tile[] tilePrefab = default;
     [SerializeField] Vector2Int size; // Size of the grid
     
+    public List<GameObject> prepathlist = new List<GameObject>();
+    public GameObject prepathprefeb;
     public GameObject waypref;
     public GameObject straightWay;
     public GameObject cornerWay;
@@ -81,10 +83,8 @@ public class GameBoard : MonoBehaviour
                         break;
                     }
                 }
-
             }
         }
-
         PlaceCastle(); 
         SetNeighbors(size); 
         //FindPath(0,pathcounter);
@@ -171,6 +171,7 @@ public class GameBoard : MonoBehaviour
             pb.startPrefab = startPrefab;
             pb.gameBoard = this;
             pb.timeinterval = timeinterval;
+            pb.prepathlist = prepathlist;
             if (timeinterval == 0)
                 //InitializeStart(startTile, path1);
             Debug.Log("Path found! Length: " + path.Count + " tiles.");
@@ -178,6 +179,7 @@ public class GameBoard : MonoBehaviour
             {
                 tile.isplacebel =false;
                 GameObject pathPoint = Instantiate(pathPointPrefab, tile.transform.position+new Vector3(0f,0,0f), Quaternion.Euler(0, Random.Range(0, 4) * 90, 0));
+                prepathlist.Add(Instantiate(prepathprefeb, tile.transform.position+new Vector3(0.5f,0,0.5f), Quaternion.Euler(0, Random.Range(0, 4) * 90, 0)));
                 if (pathPoint != null)
                 {
                     pathPoint.transform.SetParent(path1.transform);
@@ -188,6 +190,7 @@ public class GameBoard : MonoBehaviour
                     Debug.LogError("Path point is null");
                 }
             }
+
         }
         else
         {

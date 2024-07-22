@@ -21,7 +21,7 @@ public class EnemyWaveSpawner : MonoBehaviour
     private float waveDisplayCounter;
     private int waveCounter;
     private float timer = 15;
-    private float timermax = 20f;
+    private float timermax = 25f;
     // Start is called before the first frame update
     void Start()
     {
@@ -62,7 +62,7 @@ public class EnemyWaveSpawner : MonoBehaviour
                             if (wavesToSpawn.Count == waveCounter)
                             {
                                 index = 0;
-                                timer = 0;
+                                timer = waveCounter;
                                 waveCounter = 0;
                                 //disables spawn
                                 //shouldSpawn = false;

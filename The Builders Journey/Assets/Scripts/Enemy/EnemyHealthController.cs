@@ -8,15 +8,16 @@ public class EnemyHealthController : MonoBehaviour
     public float totalHealth;
 
     public Slider healthBar;
-
     public int moneyOnDeath = 50;
     public int magicOnDeath = 10;
 
     // Start is called before the first frame update
     void Start()
     {
-        healthBar.maxValue = totalHealth;
-        healthBar.value = totalHealth;
+        int enemyWaveSpawnerCount = GameObject.FindObjectsOfType<EnemyWaveSpawner>().Length;
+        Debug.Log(enemyWaveSpawnerCount);
+        healthBar.maxValue = totalHealth+(10*enemyWaveSpawnerCount);
+        healthBar.value = totalHealth+(10*enemyWaveSpawnerCount);
 
         LevelManager.instance.activeEnemies.Add(this);
     }

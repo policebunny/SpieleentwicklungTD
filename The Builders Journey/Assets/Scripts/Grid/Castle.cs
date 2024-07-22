@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,6 +13,9 @@ public class Castle : MonoBehaviour
     public Slider healthSlider;
 
     public Transform[] attackPoints;
+    private float timemax =45f;
+
+    private float timer = 0f;
 
     private List<string> SFX = new List<string> { "Castle_damage_1", "Castle_damage_2", "Castle_damage_3", "Castle_damage_4", "Castle_damage_5", "Castle_damage_6", "Castle_damage_7", "Castle_damage_8" };
 
@@ -28,7 +32,12 @@ public class Castle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        timer += Time.deltaTime;
+        if (timer > timemax)
+        {
+            timer = 0;
+            currentHealth += 10f;
+        }
     }
 
     public void TakeDamage(float damageToTake)

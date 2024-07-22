@@ -8562,12 +8562,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panSpeed: 20
   scrollSpeed: 20
-  panLimit: {x: 15, y: 15}
+  panLimit: {x: 17, y: 17}
   minY: 3
-  maxY: 12
+  maxY: 20
   edgeScrollSpeed: 20
   edgeThreshold: 10
-  initialPosition: {x: 1, y: 10, z: 17}
+  initialPosition: {x: 1, y: 10, z: 14}
 --- !u!1 &975641547
 GameObject:
   m_ObjectHideFlags: 0

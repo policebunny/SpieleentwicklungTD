@@ -4920,6 +4920,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelActive: 0
+  pathcounter: 0
   activeEnemies: []
   nextLevel: 
 --- !u!1 &8479615036473719493
@@ -5052,6 +5053,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activeTower: {fileID: 0}
+  prePathTile: {fileID: 0}
   indicator: {fileID: 8479615036473719490}
   isPlacing: 0
   whatIsPlacement:
@@ -5059,9 +5061,10 @@ MonoBehaviour:
     m_Bits: 128
   whatIsObstacle:
     serializedVersion: 2
-    m_Bits: 1792
+    m_Bits: 768
   topSafePercent: 12
   selectedTower: {fileID: 0}
+  builder: {fileID: 0}
   selectedTowerEffect: {fileID: 36033068}
 --- !u!1 &8479615036761564326
 GameObject:

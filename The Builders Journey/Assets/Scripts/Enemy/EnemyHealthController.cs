@@ -15,8 +15,9 @@ public class EnemyHealthController : MonoBehaviour
     void Start()
     {
         int enemyWaveSpawnerCount = GameObject.FindObjectsOfType<EnemyWaveSpawner>().Length;
-        healthBar.maxValue = totalHealth+(10*enemyWaveSpawnerCount);
-        healthBar.value = totalHealth+(10*enemyWaveSpawnerCount);
+        totalHealth += enemyWaveSpawnerCount;
+        healthBar.maxValue = totalHealth;
+        healthBar.value = totalHealth;
 
         LevelManager.instance.activeEnemies.Add(this);
     }

@@ -37,7 +37,9 @@ public class Castle : MonoBehaviour
         {
             timer = 0;
             currentHealth += 10f;
+            healthSlider.value =currentHealth;
         }
+        
     }
 
     public void TakeDamage(float damageToTake)

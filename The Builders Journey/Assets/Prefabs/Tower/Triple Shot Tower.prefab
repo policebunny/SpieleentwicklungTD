@@ -139,7 +139,7 @@ MonoBehaviour:
   enemiesUpdated: 0
   PlacementModel: {fileID: 5544370550094008676}
   SelectedModel: {fileID: 4420908538701183335}
-  cost: 250
+  cost: 200
   isTower: 3
   upgrader: {fileID: 0}
 --- !u!114 &5268485137428662980

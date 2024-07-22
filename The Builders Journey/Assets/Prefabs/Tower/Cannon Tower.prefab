@@ -174,7 +174,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &8492344930071035221
 Transform:
   m_ObjectHideFlags: 0
@@ -216,7 +216,7 @@ MonoBehaviour:
   enemiesUpdated: 0
   PlacementModel: {fileID: 8085714271689303795}
   SelectedModel: {fileID: 6578247084659398952}
-  cost: 100
+  cost: 200
   isTower: 0
   upgrader: {fileID: 0}
 --- !u!114 &8492344930071035219
@@ -272,20 +272,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rangeUpgrades:
   - amount: 3.5
-    cost: 50
-  - amount: 4
     cost: 100
-  - amount: 4.5
+  - amount: 4
     cost: 150
+  - amount: 4.5
+    cost: 200
   currentRangeUpgrade: 0
   hasRangeUpgrade: 1
   firerateUpgrades:
   - amount: 0.7
     cost: 100
   - amount: 0.5
-    cost: 100
-  - amount: 0.1
-    cost: 100
+    cost: 150
+  - amount: 0.2
+    cost: 200
   currentFirerateUpgrade: 0
   hasFirerateUpgrade: 1
   fireRateText: 'Upgrade

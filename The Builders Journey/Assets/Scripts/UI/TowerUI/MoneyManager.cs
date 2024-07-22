@@ -1,54 +1,66 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MoneyManager : MonoBehaviour
 {
     public static MoneyManager instance;
 
+    public int currentMoney;
+
     private void Awake()
     {
-        instance = this;
+        // Singleton Pattern: Ensuring only one instance exists
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
-
-    public int currentMoney;
 
     // Start is called before the first frame update
     void Start()
     {
-        UIController.instance.goldText.text = currentMoney.ToString();
-        UIControllerNew.instance.boneText.text = currentMoney.ToString();
+        UpdateUI();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        // If you need periodic updates or checks, place them here
     }
 
     public void GiveMoney(int amountToGive)
     {
         currentMoney += amountToGive;
-
-        UIController.instance.goldText.text = currentMoney.ToString();
-        UIControllerNew.instance.boneText.text = currentMoney.ToString();
+        UpdateUI();
     }
 
     public bool SpendMoney(int amountToSpend)
     {
-        bool canSpend = false;
-
-        if(amountToSpend <= currentMoney)
+        if (amountToSpend <= currentMoney)
         {
-            canSpend = true;
-
-            Debug.Log("Spent " + amountToSpend);
             currentMoney -= amountToSpend;
+            Debug.Log("Spent " + amountToSpend);
+            UpdateUI();
+            return true;
+        }
+        return false;
+    }
+
+    private void UpdateUI()
+    {
+        if (UIController.instance != null && UIController.instance.goldText != null)
+        {
+            UIController.instance.goldText.text = currentMoney.ToString();
         }
 
-        UIController.instance.goldText.text = currentMoney.ToString();
-        UIControllerNew.instance.boneText.text = currentMoney.ToString();
-
-        return canSpend;
+        if (UIControllerNew.instance != null && UIControllerNew.instance.boneText != null)
+        {
+            UIControllerNew.instance.boneText.text = currentMoney.ToString();
+        }
     }
 }

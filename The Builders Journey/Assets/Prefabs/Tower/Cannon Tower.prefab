@@ -216,7 +216,7 @@ MonoBehaviour:
   enemiesUpdated: 0
   PlacementModel: {fileID: 8085714271689303795}
   SelectedModel: {fileID: 6578247084659398952}
-  cost: 200
+  cost: 150
   isTower: 0
   upgrader: {fileID: 0}
 --- !u!114 &8492344930071035219
@@ -280,9 +280,9 @@ MonoBehaviour:
   currentRangeUpgrade: 0
   hasRangeUpgrade: 1
   firerateUpgrades:
-  - amount: 0.7
+  - amount: 0.6
     cost: 100
-  - amount: 0.5
+  - amount: 0.4
     cost: 150
   - amount: 0.2
     cost: 200

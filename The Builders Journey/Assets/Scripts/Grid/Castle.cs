@@ -13,7 +13,7 @@ public class Castle : MonoBehaviour
     public Slider healthSlider;
 
     public Transform[] attackPoints;
-    private float timemax =45f;
+    private float timemax = 5f;
 
     private float timer = 0f;
 
@@ -35,23 +35,27 @@ public class Castle : MonoBehaviour
         timer += Time.deltaTime;
         if (timer > timemax)
         {
-            timer = 0;
-            currentHealth += 10f;
-            healthSlider.value =currentHealth;
+            if (currentHealth < totalHealth)
+            {
+                timer = 0;
+                currentHealth += 1f;
+                healthSlider.value = currentHealth;
+            }
         }
-        
+
     }
 
     public void TakeDamage(float damageToTake)
     {
         currentHealth -= damageToTake;
 
-        if(currentHealth <= 0)
+        if (currentHealth <= 0)
         {
             currentHealth = 0;
             gameObject.SetActive(false);
 
-        } else
+        }
+        else
         {
             AudioManager.Instance.PlaySFX(getRandomSound());
         }
@@ -59,7 +63,8 @@ public class Castle : MonoBehaviour
         healthSlider.value = currentHealth;
     }
 
-    private string getRandomSound(){
+    private string getRandomSound()
+    {
         int index = Random.Range(0, SFX.Count);
         return SFX[index];
     }

@@ -9,6 +9,8 @@ public class TimeButton : MonoBehaviour
     public Sprite pausedIcon;
     public Sprite playingIcon;
 
+    public Image pauseButtonImage; // Referenz zum Pause-Button-Image
+
     private void Awake()
     {
         instance = this;
@@ -24,7 +26,7 @@ public class TimeButton : MonoBehaviour
         return timestamp;
     }
 
-    public void PauseButton(Image buttonImage)
+    public void PauseButton()
     {
         if (Time.timeScale > 0)
         {
@@ -35,7 +37,7 @@ public class TimeButton : MonoBehaviour
             Time.timeScale = 1;
         }
 
-        UpdateButtonIcon(buttonImage);
+        UpdateButtonIcon();
     }
 
     public void TimeFaster()
@@ -46,6 +48,8 @@ public class TimeButton : MonoBehaviour
             timestamp = 3f;
         }
         Time.timeScale = timestamp;
+
+        UpdateButtonIcon();
     }
 
     public void TimeSlower()
@@ -56,17 +60,19 @@ public class TimeButton : MonoBehaviour
             timestamp = 0.25f;
         }
         Time.timeScale = timestamp;
+
+        UpdateButtonIcon();
     }
 
-    private void UpdateButtonIcon(Image buttonImage)
+    private void UpdateButtonIcon()
     {
         if (Time.timeScale == 0)
         {
-            buttonImage.sprite = pausedIcon;
+            pauseButtonImage.sprite = pausedIcon;
         }
         else
         {
-            buttonImage.sprite = playingIcon;
+            pauseButtonImage.sprite = playingIcon;
         }
     }
 }

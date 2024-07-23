@@ -102,8 +102,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6440877876096579658}
   - component: {fileID: 6440877876096579661}
-  - component: {fileID: 7305704447854379172}
   - component: {fileID: 7305704447854379173}
+  - component: {fileID: 7305704447854379172}
   - component: {fileID: -5028130520745578450}
   m_Layer: 8
   m_Name: Slow Tower
@@ -157,6 +157,19 @@ MonoBehaviour:
   cost: 300
   isTower: 2
   upgrader: {fileID: 0}
+--- !u!114 &7305704447854379173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6440877876096579659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d307bb4bf5b532a408142a2ce63918e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effectRing: {fileID: 530069274268679486}
 --- !u!136 &7305704447854379172
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -180,19 +193,6 @@ CapsuleCollider:
   m_Height: 2.46
   m_Direction: 1
   m_Center: {x: 0, y: 0.24815267, z: 0}
---- !u!114 &7305704447854379173
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6440877876096579659}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d307bb4bf5b532a408142a2ce63918e5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  effectRing: {fileID: 530069274268679486}
 --- !u!114 &-5028130520745578450
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -223,9 +223,7 @@ MonoBehaviour:
     cost: 300
   currentFirerateUpgrade: 0
   hasFirerateUpgrade: 1
-  fireRateText: 'Upgrade
-
-    Slow Zone
+  fireRateText: 'Slowdown
 
 '
 --- !u!1 &6440877876198188564

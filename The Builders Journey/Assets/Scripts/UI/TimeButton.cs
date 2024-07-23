@@ -9,7 +9,8 @@ public class TimeButton : MonoBehaviour
     public Sprite pausedIcon;
     public Sprite playingIcon;
 
-    public Image pauseButtonImage; // Referenz zum Pause-Button-Image
+    public Image pauseButtonImage; // Reference to the pause button image
+    public Text timeScaleText; // Reference to the UI Text element to display the time scale
 
     private void Awake()
     {
@@ -19,6 +20,7 @@ public class TimeButton : MonoBehaviour
     void Start()
     {
         timestamp = Time.timeScale;
+        UpdateTimeScaleText();
     }
 
     public float getTimeStamp()
@@ -38,6 +40,7 @@ public class TimeButton : MonoBehaviour
         }
 
         UpdateButtonIcon();
+        UpdateTimeScaleText();
     }
 
     public void TimeFaster()
@@ -50,6 +53,7 @@ public class TimeButton : MonoBehaviour
         Time.timeScale = timestamp;
 
         UpdateButtonIcon();
+        UpdateTimeScaleText();
     }
 
     public void TimeSlower()
@@ -62,6 +66,7 @@ public class TimeButton : MonoBehaviour
         Time.timeScale = timestamp;
 
         UpdateButtonIcon();
+        UpdateTimeScaleText();
     }
 
     private void UpdateButtonIcon()
@@ -73,6 +78,17 @@ public class TimeButton : MonoBehaviour
         else
         {
             pauseButtonImage.sprite = playingIcon;
+        }
+    }
+
+    private void UpdateTimeScaleText()
+    {
+        if(Time.timeScale == 0){
+            timeScaleText.text = "Pause";
+
+        }
+        else{
+            timeScaleText.text = Time.timeScale.ToString("0.00") + "x";
         }
     }
 }

@@ -51,6 +51,7 @@ public class TowerUpgradePanelNew : MonoBehaviour
         }
         else
         {
+            slowButton.SetActive(false);
             firerateButton.SetActive(false);
         }
         foreach (GameObject icon in TowerIcons)

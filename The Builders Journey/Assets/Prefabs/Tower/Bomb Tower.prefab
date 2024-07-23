@@ -129,7 +129,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2679890732734550173
 Transform:
   m_ObjectHideFlags: 0
@@ -241,11 +241,7 @@ MonoBehaviour:
     cost: 300
   currentFirerateUpgrade: 0
   hasFirerateUpgrade: 1
-  fireRateText: 'Upgrade
-
-    Fire Rate
-
-'
+  fireRateText: Firerate
 --- !u!1 &7219284420643177272
 GameObject:
   m_ObjectHideFlags: 0

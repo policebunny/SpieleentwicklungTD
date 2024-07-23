@@ -27,43 +27,43 @@ public class CameraController : MonoBehaviour
         // Move camera with WASD keys
         if (Input.GetKey(KeyCode.W))
         {
-            pos.z += panSpeed * Time.deltaTime;
+            pos.z += panSpeed * Time.unscaledDeltaTime;
         }
         if (Input.GetKey(KeyCode.S))
         {
-            pos.z -= panSpeed * Time.deltaTime;
+            pos.z -= panSpeed * Time.unscaledDeltaTime;
         }
         if (Input.GetKey(KeyCode.A))
         {
-            pos.x -= panSpeed * Time.deltaTime;
+            pos.x -= panSpeed * Time.unscaledDeltaTime;
         }
         if (Input.GetKey(KeyCode.D))
         {
-            pos.x += panSpeed * Time.deltaTime;
+            pos.x += panSpeed * Time.unscaledDeltaTime;
         }
 
         // Move camera by moving mouse to screen edges
         Vector3 mousePos = Input.mousePosition;
         if (mousePos.x >= Screen.width - edgeThreshold)
         {
-            pos.x += edgeScrollSpeed * Time.deltaTime;
+            pos.x += edgeScrollSpeed * Time.unscaledDeltaTime;
         }
         if (mousePos.x <= edgeThreshold)
         {
-            pos.x -= edgeScrollSpeed * Time.deltaTime;
+            pos.x -= edgeScrollSpeed * Time.unscaledDeltaTime;
         }
         if (mousePos.y >= Screen.height - edgeThreshold)
         {
-            pos.z += edgeScrollSpeed * Time.deltaTime;
+            pos.z += edgeScrollSpeed * Time.unscaledDeltaTime;
         }
         if (mousePos.y <= edgeThreshold)
         {
-            pos.z -= edgeScrollSpeed * Time.deltaTime;
+            pos.z -= edgeScrollSpeed * Time.unscaledDeltaTime;
         }
 
         // Zoom in and out with mouse scroll wheel
         float scroll = Input.GetAxis("Mouse ScrollWheel");
-        pos.y -= scroll * scrollSpeed * 100f * Time.deltaTime;
+        pos.y -= scroll * scrollSpeed * 100f * Time.unscaledDeltaTime;
 
         // Clamp camera position to pan limits relative to base position
         pos.x = Mathf.Clamp(pos.x, basePosition.x - panLimit.x, basePosition.x + panLimit.x);

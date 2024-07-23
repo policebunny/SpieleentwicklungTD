@@ -211,9 +211,7 @@ MonoBehaviour:
     cost: 300
   currentFirerateUpgrade: 0
   hasFirerateUpgrade: 1
-  fireRateText: 'Upgrade
-
-    Fire Rate
+  fireRateText: 'Firerate
 
 '
 --- !u!1 &5268485137594832028

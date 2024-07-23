@@ -41,6 +41,8 @@ public class TowerUpgradeController : MonoBehaviour
             hasFirerateUpgrade = false;
         }
     }
+
+    
 }
 
 [System.Serializable]
